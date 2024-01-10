@@ -1,0 +1,24 @@
+/* Font Log */
+
+/* Root Variables */
+:root{
+    --TestColor: rgb(255, 84, 84);
+    --TestColor2: rgb(82, 82, 255);
+
+
+}
+/* Initial Setup */
+html{
+    background-color: var(--TestColor2);
+}
+body{
+    background-color: var(--TestColor);
+    margin: 0 auto;
+    width: 393px;
+}
+img{
+    width: 100%;
+}
+a{
+    
+}
