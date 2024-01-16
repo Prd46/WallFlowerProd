@@ -1,12 +1,28 @@
 /* Font Log */
-
+@font-face {
+    font-family: 'DMSans';
+    src: url('../fonts/dmsans-variablefont_opszwght-webfont.woff2') format('woff2'),
+    url('../fonts/dmsans-variablefont_opszwght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lora';
+    src: url('../fonts/lora-variablefont_wght-webfont.woff2') format('woff2'),
+    url('../fonts/lora-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* ~~~ */
 /* Root Variables */
 :root{
     --TestColor: rgb(255, 84, 84);
     --TestColor2: rgb(82, 82, 255);
+    --primary: 
 
 
 }
+/* ~~~ */
 /* Initial Setup */
 html{
     background-color: var(--TestColor2);
@@ -20,5 +36,8 @@ img{
     width: 100%;
 }
 a{
-    
+    text-decoration: none;
 }
+/* Header Elements */
+
+/* Main Elements */
