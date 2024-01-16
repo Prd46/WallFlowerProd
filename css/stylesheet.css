@@ -38,6 +38,11 @@ img{
 a{
     text-decoration: none;
 }
+div{
+    border: solid 2px black;
+    min-height: 1rem;
+    min-width: 1rem;
+}
 /* Header Elements */
 
 /* Main Elements */
