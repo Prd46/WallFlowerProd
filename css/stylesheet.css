@@ -22,11 +22,43 @@
     --testSpacer: .25rem;
     /* Colors */
     --primary: #9ACD32;
+    --p30: #364E00;
+    --p40: #496800;
+    --p50: #5D8300;
+    --p60: #719E00;
+    --p70: #89BB1E; 
+    --p80: #A3D73C;
+    --p90: #BEF456;
+    --p95: #D6FF89;
     --secondary: #FFD449;
+    --s30: #574500;
+    --s40: #735C00;
+    --s50: #917400;
+    --s60: #AF8D00;
+    --s70: #CEA719;
+    --s80: #ECC238;
+    --s90: #FFE088;
+    --s95: #FFEFCC;
     --tertiary: #2CABB6;
+    --t30:#004F55;
+    --t40:#006970;
+    --t50:#00848D;
+    --t60:#00A0AB;
+    --t70:#1FBDC9;
+    --t80:#4DD9E5;
+    --t90:#82F3FF;
+    --t95:#C8FAFF;
     --dark: #2A2E2A;
+    --n40:#4E4E4E;
+    --n50:#7D7D7D;
+    --n60:#A2A2A2;
+    --n70:#C7BBAF;
+    --n80:#DBCFC1;
+    --n90:#F2E6D8;
     --light: #FFF7EE;
     --white: #F5F5F5;
+    --invis: rgb(rgba(0, 0, 0, 0));
+    
     /* Fonts */
     /* All names for variables are coded based  */
     --DL: 4rem 'Lora', 'Times New Roman', Times, serif; 
@@ -49,9 +81,19 @@
     --LL: 1.25rem 'DMSans', Arial, Helvetica, sans-serif;
     --LM: 1.125rem 'DMSans', Arial, Helvetica, sans-serif;
 
+    /* Shadows */
+    --Depth1: 0px 0.54px 1.62px 0.54px rgba(0, 0, 0, 0.15), 0px 0.54px 1.08px 0px rgba(0, 0, 0, 0.30);
+    --Depth2: 0px 1.08px 3.24px 1.08px rgba(0, 0, 0, 0.15), 0px 0.54px 1.08px 0px rgba(0, 0, 0, 0.30);
+    --Depth3: 0px 0.54px 1.62px 0px rgba(0, 0, 0, 0.30), 0px 2.16px 4.32px 1.62px rgba(0, 0, 0, 0.15);
+    --Depth4: 0px 1.08px 1.62px 0px rgba(0, 0, 0, 0.30), 0px 3.24px 5.399px 2.16px rgba(0, 0, 0, 0.15);
+    --Depth5: 0px 2.16px 2.16px 0px rgba(0, 0, 0, 0.30), 0px 4.32px 6.479px 3.24px rgba(0, 0, 0, 0.15);
+
     /* Sizing */
     --icon: 2rem;
     --iconTouchArea: 3rem;
+    /* Spacing */
+    --gutter: 2rem;
+
 
     
     /* Header height: 160 px tall, overflow hidden */
@@ -75,7 +117,6 @@ html{
 body{
     background-image: linear-gradient(var(--primary), var(--secondary));
     margin: 0 auto;
-    width: 320px;
 }
 img{
     height: 100%;
@@ -84,12 +125,16 @@ img{
 }
 a{
     text-decoration: none;
+    color: var(--dark);
+}
+a:visited{
+    color: var(--dark)
 }
 div{
     border: solid 2px black;
     min-height: 1rem;
     min-width: 1rem;
-    padding: var(--testSpacer)
+    padding: var(--testSpacer);
 }
 h3{
     padding: none;
@@ -108,6 +153,7 @@ h3{
 .testSpacer{
     padding: var(--testSpacer);
 }
+
 /* Colors */
 .primary{
     background-color: var(--primary);
@@ -178,11 +224,19 @@ h3{
 .LM{
     font: var(--LM);
 }
+
 /* Sizing */
 .icon{
     height: var(--icon);
     width: var(--icon);
 }
+
+
+
+
+
+
+
 
 /* Layout */
 .flex{
@@ -197,6 +251,13 @@ h3{
 .aicenter{
     align-items: center;
 }
+
+
+
+
+
+
+
 
 /* Header Elements */
 
