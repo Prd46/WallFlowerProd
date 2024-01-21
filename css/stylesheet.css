@@ -3,37 +3,84 @@
     font-family: 'DMSans';
     src: url('../fonts/dmsans-variablefont_opszwght-webfont.woff2') format('woff2'),
     url('../fonts/dmsans-variablefont_opszwght-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 100 1000;
     font-style: normal;
 }
 @font-face {
     font-family: 'Lora';
     src: url('../fonts/lora-variablefont_wght-webfont.woff2') format('woff2'),
     url('../fonts/lora-variablefont_wght-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 100 1000;
     font-style: normal;
 }
 /* ~~~ */
 /* Root Variables */
 :root{
-    --TestColor: rgb(255, 84, 84);
-    --TestColor2: rgb(82, 82, 255);
-    --primary: 
+    /* Testing Variables */
+    --testColor: rgb(255, 84, 84);
+    --testColor2: rgb(82, 82, 255);
+    --testSpacer: .25rem;
+    /* Colors */
+    --primary: #9ACD32;
+    --secondary: #FFD449;
+    --tertiary: #2CABB6;
+    --dark: #2A2E2A;
+    --light: #FFF7EE;
+    --white: #F5F5F5;
+    /* Fonts */
+    /* All names for variables are coded based  */
+    --DL: 4rem 'Lora', 'Times New Roman', Times, serif; 
+    --DM: 3.25rem 'Lora', Arial, Helvetica, sans-serif;
+    --DS: 2.75rem 'Lora', Arial, Helvetica, sans-serif;
+
+    --HL: 2.5rem 'Lora', Arial, Helvetica, sans-serif;
+    --HM: 2.25rem 'Lora', Arial, Helvetica, sans-serif;
+    --HS: 2rem 'Lora', Arial, Helvetica, sans-serif;
+    
+    --TL: 1.75rem 'Lora', Arial, Helvetica, sans-serif;
+    --TM: 1.5rem 'Lora', Arial, Helvetica, sans-serif;
+    --TS: 1.25rem 'Lora', Arial, Helvetica, sans-serif;
+
+    --BL: 1.5rem 'DMSans', Arial, Helvetica, sans-serif;
+    --BM: 1.25rem 'DMSans', Arial, Helvetica, sans-serif;
+    --BS: 1rem 'DMSans', Arial, Helvetica, sans-serif;
+    --BSI: italic 1rem 'DMSans', Arial, Helvetica, sans-serif;
+
+    --LL: 1.25rem 'DMSans', Arial, Helvetica, sans-serif;
+    --LM: 1.125rem 'DMSans', Arial, Helvetica, sans-serif;
+
+    /* Sizing */
+    --icon: 2rem;
+    --iconTouchArea: 3rem;
+
+    
+    /* Header height: 160 px tall, overflow hidden */
+    /* Icon size = 12px, touch box is 24? */
+    /* Interactable icons: 48x48 */
+    /* LOOK AT AUTO LAYOUT TO SEE THE SPACING */
+    /* 2 Rem Gutter */
+    /* font: italic small-caps bold 12px/30px Georgia, serif; */
+
+
+
 
 
 }
+
 /* ~~~ */
 /* Initial Setup */
 html{
-    background-color: var(--TestColor2);
+    background-color: var(--testColor2);
 }
 body{
-    background-color: var(--TestColor);
+    background-image: linear-gradient(var(--primary), var(--secondary));
     margin: 0 auto;
-    width: 393px;
+    width: 320px;
 }
 img{
-    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    border: solid 2px black;
 }
 a{
     text-decoration: none;
@@ -42,7 +89,115 @@ div{
     border: solid 2px black;
     min-height: 1rem;
     min-width: 1rem;
+    padding: var(--testSpacer)
 }
+h3{
+    padding: none;
+    margin: none;
+}
+
+
+/* Shortcut Classes to apply Root Styles */
+/* Testing Variables */
+.testColor{
+    background-color: var(--testColor);
+}
+.testColor2{
+    background-color: var(--testColor2);
+}
+.testSpacer{
+    padding: var(--testSpacer);
+}
+/* Colors */
+.primary{
+    background-color: var(--primary);
+}
+.secondary{
+    background-color: var(--secondary);
+}
+.tertiary{
+    background-color: var(--tertiary);
+}
+.dark{
+    background-color: var(--dark);
+}
+.light{
+    background-color: var(--light);
+}
+.white{
+    background-color: var(--white);
+}
+
+/* Fonts */
+.DL{
+    font: var(--DL);
+}
+.DM{
+    font: var(--DM);
+}
+.DS{
+    font: var(--DS);
+}
+
+.HL{
+    font: var(--HL);
+}
+.HM{
+    font: var(--HM);
+}
+.HS{
+    font: var(--HS);
+}
+
+.TL{
+    font: var(--TL);
+}
+.TM{
+    font: var(--TM);
+}
+.TS{
+    font: var(--TS);
+}
+
+.BL{
+    font: var(--BL);
+}
+.BM{
+    font: var(--BM);
+}
+.BS{
+    font: var(--BS);
+}
+.BSI{
+    font: var(--BSI);
+}
+
+.LL{
+    font: var(--LL);
+}
+.LM{
+    font: var(--LM);
+}
+/* Sizing */
+.icon{
+    height: var(--icon);
+    width: var(--icon);
+}
+
+/* Layout */
+.flex{
+    display: flex;
+}
+.column{
+    flex-direction: column;
+}
+.jccenter{
+    justify-content: center;
+}
+.aicenter{
+    align-items: center;
+}
+
 /* Header Elements */
 
 /* Main Elements */
