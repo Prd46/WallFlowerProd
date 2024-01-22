@@ -1,5 +1,29 @@
 <?php include_once __DIR__ . '/connection.php';
 ?>
+
+<?php
+                /*SELECT QUESTION
+                FROM Questions
+                ORDER BY RAND()  
+                LIMIT 1; */
+                $query = 'SELECT affirmation';
+                $query .= ' FROM Affirmations';
+                $query .= " WHERE affirmationRead = false";
+                $query .= " ORDER BY RAND()";
+                $query .= " LIMIT 1;";
+                $features = mysqli_query($db_connection, $query);
+
+                $site_url = site_url();
+                // echo $db_connection;
+                // echo $query;
+                if (mysqli_num_rows($features) > 0) {
+                    $row = mysqli_fetch_assoc($features);
+                    $affirmationText = $row["affirmation"];
+                } else {
+                    $affirmationText = "No data found";
+                }
+                ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,22 +50,7 @@
         </div>
         <div class="affirmations_main_content">
             <h2 class="affirmations_main_content_affirmation">
-            <?php
-                /*SELECT QUESTION
-                FROM Questions
-                ORDER BY RAND()  
-                LIMIT 1; */
-                $query = 'SELECT *';
-                $query .= 'FROM recipes';
-                $query .= " WHERE affirmationRead = false";
-                $query .= " ORDER BY RAND()";
-                $query .= " LIMIT 1;";
-                $features = mysqli_query($db_connection, $query);
-
-                $site_url = site_url();
-                while ($affirmation = mysqli_fetch_array($features)) {
-                echo "{$affirmation['affirmation']}";} 
-                ?>
+                <?php echo $affirmationText; ?>
             </h2>
             <div class="affirmations_main_content_buttons">
                 <div class="affirmations_main_content_button">
