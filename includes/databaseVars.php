@@ -1,5 +1,6 @@
 
 <?php
+//DO NOT TOUCH
 // Credentials for the database connection coming from our .env file
 $db_host = $APP_CONFIG['database_host'];
 $db_user = $APP_CONFIG['database_user'];

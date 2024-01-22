@@ -116,6 +116,7 @@ html{
 }
 body{
     background-image: linear-gradient(var(--primary), var(--secondary));
+    width: 320px;
     margin: 0 auto;
 }
 img{

@@ -9,12 +9,11 @@ function get_project_path()
 {
     global $APP_CONFIG;
     if ($APP_CONFIG['environment'] === 'development') {
-        return $_SERVER['DOCUMENT_ROOT'] . '/idm232/final';
-    } else {
-        return $_SERVER['DOCUMENT_ROOT'] . '/final';
+        return $_SERVER['DOCUMENT_ROOT'];
+    // } else {
+    //     return $_SERVER['DOCUMENT_ROOT'];
     }
 }
-
 /**
  * Get the site URL defined in your .env file
  * @return string - The site URL | example: http://localhost:8888/final

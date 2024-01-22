@@ -7,18 +7,15 @@ if (!$_POST) {
 }
 
 // Store $_POST data to variables for readability
-$image = sanitize_value($_POST['image_path']);
+$emojiPath= sanitize_value($_POST['emojiPath']);
 $title = sanitize_value($_POST['title']);
-$prepTime = sanitize_value($_POST['prepTime']);
-$rating = sanitize_value($_POST['rating']);
-$ingredients = sanitize_value($_POST['ingredients']);
-$steps = sanitize_value($_POST['steps']);
+$entryText = sanitize_value($_POST['entryText']);
 
-$result = add_recipe($image, $title, $prepTime, $rating, $ingredients, $steps);
+$result = add_journal($emojiPath, $title, $entryText);
 
 // Check there are no errors with our SQL statement
 if ($result) {
-    redirect_to('/allRecipes.php');
+    redirect_to('/reflectHome.php');
 } else {
     $error_message = 'Sorry there was an error creating the user: ' . mysqli_error($db_connection);
     echo $error_message;
