@@ -8,12 +8,16 @@
                 LIMIT 1; */
                 $query = 'SELECT *';
                 $query .= ' FROM Affirmations';
-                $query .= " WHERE affirmationRead = FALSE";
+                $query .= " WHERE affirmationSaved = TRUE";
                 $query .= " ORDER BY RAND()";
-                $query .= " LIMIT 1;";
+                $query .= " LIMIT 5;";
 
-
-                $site_url = site_url();
+                $affirmations = mysqli_query($db_connection, $query);
+                if ($affirmations->num_rows == 0){
+                  $affirmations = false;
+                  }
+                
+                // $site_url = site_url();
                 // echo $db_connection;
                 // echo $query;
                 $checkAllReadSql = "SELECT COUNT(*) AS total_rows FROM Affirmations WHERE affirmationRead = TRUE";
@@ -42,7 +46,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/stylesheet.css">
-    <title>Affirmations</title>
+    <title>Favorites</title>
 </head>
 <body>
     <header>
@@ -60,27 +64,22 @@
             <h1 class="affirmations_main_label_header">Affirmations</h1>
         </div>
         <div class="affirmations_main_content">
-            <h2 class="affirmations_main_content_affirmation">
-                <?php echo $affirmationText; ?>
-            </h2>
-            <div class="affirmations_main_content_buttons">
-                <a href="affirmations.php">
-                    <div class="affirmations_main_content_button">
-                        <img class="icon" src="~"/>
-                        <p class="affirmations_main_content_button_label">Generate</p>
-                    </div>
-                </a>
-                <div class="affirmations_main_content_button">
-                    <img class="icon" src="~"/>
-                    <p class="affirmations_main_content_button_label">Save</p>
-                </div>
-                <a href="paSaved.php">
-                    <div class="affirmations_main_content_button">
-                        <img class="icon" src="~"/>
-                        <p class="affirmations_main_content_button_label">View Saved</p>
-                    </div>
-                </a>
-            </div>
+            
+<?php
+                  if (!$affirmations) {
+                    echo '<p>No results found</p>';
+                }
+
+        if ($affirmations){
+                    while ($affirmation = mysqli_fetch_array($affirmations)) {
+                        echo "
+                        <div class='saved_listing'>
+                        <p class=''>{$affirmation['affirmation']}</p>
+                        </div>";
+                      } 
+                }
+
+?>
         </div>
     </main>
     <footer>

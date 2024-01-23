@@ -7,8 +7,8 @@
                 ORDER BY RAND()  
                 LIMIT 1; */
                 $query = 'SELECT *';
-                $query .= ' FROM Affirmations';
-                $query .= " WHERE affirmationRead = FALSE";
+                $query .= ' FROM ConversationStarters';
+                $query .= " WHERE starterRead = FALSE";
                 $query .= " ORDER BY RAND()";
                 $query .= " LIMIT 1;";
 
@@ -16,22 +16,22 @@
                 $site_url = site_url();
                 // echo $db_connection;
                 // echo $query;
-                $checkAllReadSql = "SELECT COUNT(*) AS total_rows FROM Affirmations WHERE affirmationRead = TRUE";
+                $checkAllReadSql = "SELECT COUNT(*) AS total_rows FROM ConversationStarters WHERE starterRead = TRUE";
                 $checkResult = mysqli_query($db_connection, $checkAllReadSql);
                 $totalRows = mysqli_fetch_assoc($checkResult)["total_rows"];
                 
                 $features = mysqli_query($db_connection, $query);
                 if (mysqli_num_rows($features) > 0) {
                     $row = mysqli_fetch_assoc($features);
-                    $affirmationText = $row["affirmation"];
+                    $convoText = $row["conversationStarter"];
 
-                    $updateSql = "UPDATE Affirmations SET affirmationRead = TRUE WHERE id = " . $row["id"];
+                    $updateSql = "UPDATE ConversationStarters SET starterRead = TRUE WHERE id = " . $row["id"];
                     mysqli_query($db_connection, $updateSql);
                 } else {
-                    $resetReadStatusSql = "UPDATE Affirmations SET affirmationRead = FALSE";
+                    $resetReadStatusSql = "UPDATE ConversationStarters SET starterRead = FALSE";
                     mysqli_query($db_connection, $resetReadStatusSql);
                     $row = mysqli_fetch_assoc($features);
-                    $affirmationText = "I have value.";
+                    $convoText = "How was your day today?";
                 }
                 ?>
 
@@ -42,7 +42,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/stylesheet.css">
-    <title>Affirmations</title>
+    <title>Conversation Starters</title>
 </head>
 <body>
     <header>
@@ -57,14 +57,14 @@
     </header>
     <main>
         <div class="affirmations_main_label">
-            <h1 class="affirmations_main_label_header">Affirmations</h1>
+            <h1 class="affirmations_main_label_header">Conversation Starters</h1>
         </div>
         <div class="affirmations_main_content">
             <h2 class="affirmations_main_content_affirmation">
-                <?php echo $affirmationText; ?>
+                <?php echo $convoText; ?>
             </h2>
             <div class="affirmations_main_content_buttons">
-                <a href="affirmations.php">
+                <a href="conversationStarters.php">
                     <div class="affirmations_main_content_button">
                         <img class="icon" src="~"/>
                         <p class="affirmations_main_content_button_label">Generate</p>
@@ -74,12 +74,10 @@
                     <img class="icon" src="~"/>
                     <p class="affirmations_main_content_button_label">Save</p>
                 </div>
-                <a href="paSaved.php">
-                    <div class="affirmations_main_content_button">
-                        <img class="icon" src="~"/>
-                        <p class="affirmations_main_content_button_label">View Saved</p>
-                    </div>
-                </a>
+                <div class="affirmations_main_content_button">
+                    <img class="icon" src="~"/>
+                    <p class="affirmations_main_content_button_label">View Saved</p>
+                </div>
             </div>
         </div>
     </main>

@@ -22,3 +22,25 @@ $document_title = $page_name . ' | ' . $site_name;
     <!-- <link rel="icon" href="<?php echo site_url(); ?>/media/favicon.png"> -->
 </head>
 <body>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>Affirmations</title>
+</head>
+<body>
+    <header>
+        <div class="header_image_box">
+            <a href="index.html">
+                <div class="header_backButton">
+                    <img class="header_backButtonImage" src="~"/>
+                </div>
+            </a>
+            <img class="header_image" src="~"/>
+        </div>
+    </header>
