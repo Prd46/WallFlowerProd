@@ -90,6 +90,7 @@
 
     /* Sizing */
     --icon: 2rem;
+    --iconSmall: 1.5rem;
     --iconTouchArea: 3rem;
     /* Spacing */
     --gutter: 2rem;
@@ -133,7 +134,7 @@ body{
     flex-direction: column;
 }
 div{
-    border: solid 2px black;
+    /* border: solid 2px rgba(0, 0, 0, 0.141); */
     min-height: 1rem;
     min-width: 1rem;
     /* padding: var(--testSpacer); */
@@ -144,7 +145,7 @@ img{
     /* border: solid 2px black; */
 }
 .backgroundBrick{
-    z-index: -1;
+    z-index: -2;
     overflow: hidden;
     position: absolute;
     bottom: 1rem;
@@ -160,6 +161,11 @@ img{
     border: none;
     padding: none;
     margin: none;
+}
+.leaves_image{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
 }
 a{
     text-decoration: none;
@@ -265,6 +271,10 @@ h3{
     height: var(--icon);
     width: var(--icon);
 }
+.smallIcon{
+    height: var(--iconSmall);
+    width: var(--iconSmall);
+}
 /* Spacing */
 .gutter{
     padding: 2rem;
@@ -304,12 +314,50 @@ h3{
 
 
 /* Header Elements */
+header{
+    height: 80px;
+    /* background-color: var(--testColor2); */
+}
+.header_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 .5rem;
+}
+.header_menu_button{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--p60);
+}
+.header_saved_switch{
+    width: 44px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--n70);
+    border: solid 2px var(--n50);
+}
+.header_saved_switch_knob{
+    background-color: var(--p60);
+    border: solid 2px var(--n50);
+    width: 24px;
+    margin: 2px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Main Elements */
 
 /* Footer Elements */
 footer{
-    
+    height: 80px;
 }
 .footer_buttons{
     display: flex;
@@ -337,7 +385,7 @@ footer{
     height: 34px;
     width: 64px;
     padding: 0;
-    background-color: #574500;
+    background-color: var(--s40);
     margin-bottom: 4px;
     border: none;
 }
