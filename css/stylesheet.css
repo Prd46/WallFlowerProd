@@ -79,7 +79,7 @@
     --BSI: italic 1rem 'DMSans', Arial, Helvetica, sans-serif;
 
     --LL: 1.25rem 'DMSans', Arial, Helvetica, sans-serif;
-    --LM: 1.125rem 'DMSans', Arial, Helvetica, sans-serif;
+    --LM: 1rem 'DMSans', Arial, Helvetica, sans-serif;
 
     /* Shadows */
     --Depth1: 0px 0.54px 1.62px 0.54px rgba(0, 0, 0, 0.15), 0px 0.54px 1.08px 0px rgba(0, 0, 0, 0.30);
@@ -93,7 +93,8 @@
     --iconTouchArea: 3rem;
     /* Spacing */
     --gutter: 2rem;
-
+    /* Rounding */
+    --BR: 12px;
 
     
     /* Header height: 160 px tall, overflow hidden */
@@ -112,17 +113,53 @@
 /* ~~~ */
 /* Initial Setup */
 html{
-    background-color: var(--testColor2);
+    background-color: var(--light);
+}
+.bgImages{
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    width: 100%;
 }
 body{
-    background-image: linear-gradient(var(--primary), var(--secondary));
-    width: 320px;
+    background-color: var(--invis);
+    width: 430px;
+    height: 100vh;
     margin: 0 auto;
+    border: solid black 1px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+div{
+    border: solid 2px black;
+    min-height: 1rem;
+    min-width: 1rem;
+    /* padding: var(--testSpacer); */
 }
 img{
-    height: 100%;
+    /* height: 100%; */
     overflow-x: hidden;
-    border: solid 2px black;
+    /* border: solid 2px black; */
+}
+.backgroundBrick{
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    bottom: 1rem;
+    border: none;
+    margin: none;
+    width: 100%;
+    padding: none;
+    margin: none;
+    opacity: 50%;
+}
+.header_image_box{
+    position: relative;
+    border: none;
+    padding: none;
+    margin: none;
 }
 a{
     text-decoration: none;
@@ -131,12 +168,7 @@ a{
 a:visited{
     color: var(--dark)
 }
-div{
-    border: solid 2px black;
-    min-height: 1rem;
-    min-width: 1rem;
-    padding: var(--testSpacer);
-}
+
 h3{
     padding: none;
     margin: none;
@@ -224,6 +256,8 @@ h3{
 }
 .LM{
     font: var(--LM);
+    padding: 0;
+    margin: .25rem;
 }
 
 /* Sizing */
@@ -231,11 +265,20 @@ h3{
     height: var(--icon);
     width: var(--icon);
 }
+/* Spacing */
+.gutter{
+    padding: 2rem;
+}
 
+/* Rounding */
+.round{
+    border-radius: 100px;
+}
 
-
-
-
+.leafRaduis{
+    border-top-left-radius: var(--BR);
+    border-top-right-radius: var(var(--BR));
+}
 
 
 
@@ -263,3 +306,56 @@ h3{
 /* Header Elements */
 
 /* Main Elements */
+
+/* Footer Elements */
+footer{
+    
+}
+.footer_buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    padding: 0;
+    background-color: var(--dark);
+}
+.footer_button{
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    padding: 0;
+    margin: 0;
+    color: #C6C8B9;
+    border: none;
+}
+.footer_homeButton_oval{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    height: 34px;
+    width: 64px;
+    padding: 0;
+    background-color: #574500;
+    margin-bottom: 4px;
+    border: none;
+}
+.footer_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    height: 34px;
+    width: 64px;
+    padding: 0;
+    margin-bottom: 4px;
+    border: none;
+}
+
+@media screen and (max-width: 430px){
+    body{
+        width: 100%;
+    }
+    
+}
