@@ -19,6 +19,7 @@ $document_title = $page_name . ' | ' . $site_name;
     <script src="https://cdn.tiny.cloud/1/dke3l71uyeaxc8uqffxi64lz3i1u03yw63ifcy05vukljnkm/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <link rel="stylesheet" href= "<?php echo site_url(); ?>/css/normalize.css">
     <link rel="stylesheet" href= "<?php echo site_url(); ?>/css/stylesheet.css?v=<?php echo time();?>">
+    <link rel="stylesheet" href="<?php echo site_url(); ?>/css/puzzleStyles.css">
     <!-- <link rel="icon" href="<?php echo site_url(); ?>/media/favicon.png"> -->
 </head>
 <body>
@@ -34,13 +35,46 @@ $document_title = $page_name . ' | ' . $site_name;
     <title>Affirmations</title>
 </head>
 <body>
-    <header>
-        <div class="header_image_box">
-            <a href="index.html">
-                <div class="header_backButton">
-                    <img class="header_backButtonImage" src="~"/>
+    <div class="header_leavesImage">
+        <img class="leaves_image" src="media/topImage.png"/>
+    </div>
+            <header>
+                <div class="header_box">
+                    
+                    <div class="header_menu_button js-menu-button round">
+                        <img class="icon" src="media/icons/menu.svg"/>
+                    </div>
+                    <div class="hamburger_menu js-menu flex jccenter hidden">
+                        <div class="menu_listings flex column">
+                                <div class="menu_listing_wide">
+                                    <a href="affirmations.php"><h1 class="TL">Positive Affirmations</h1></a>
+                                </div>
+                                <div class="menu_listing_wide">
+                                    <a href="conversationStarters.php"><h1 class="TL">Conversation Starters</h1></a>
+                                </div>
+   
+                
+                                <div class="menu_listing">
+                                    <a href="breathe.php"><h1 class="TL">Breathe</h1></a>
+                                </div>
+                                <div class="menu_listing">
+                                    <a href="listen.php"><h1 class="TL">Listen</h1></a>
+                                </div>
+                                <div class="menu_listing">
+                                    <a href="articles.php"><h1 class="TL">Learn</h1></a>
+                                </div>
+                                <div class="menu_listing">
+                                    <a href="play.php"><h1 class="TL">Play</h1></a>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="header_logo">
+                        <img src="media/logo.png"/>
+                    </div>
+                    <div class="header_saved_switch round">
+                        <div class="header_saved_switch_knob round">
+                            <img class="smallIcon" src="media/icons/bookmark.svg"/>
+                        </div>
+                    </div>
                 </div>
-            </a>
-            <img class="header_image" src="~"/>
-        </div>
-    </header>
+            </header>

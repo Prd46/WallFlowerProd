@@ -130,6 +130,7 @@ body{
     margin: 0 auto;
     border: solid black 1px;
     position: relative;
+    top:-1rem;
     display: flex;
     flex-direction: column;
 }
@@ -155,17 +156,6 @@ img{
     padding: none;
     margin: none;
     opacity: 50%;
-}
-.header_image_box{
-    position: relative;
-    border: none;
-    padding: none;
-    margin: none;
-}
-.leaves_image{
-    width: 100%;
-    position: absolute;
-    z-index: -1;
 }
 a{
     text-decoration: none;
@@ -314,15 +304,11 @@ h3{
 
 
 /* Header Elements */
-header{
-    height: 80px;
-    /* background-color: var(--testColor2); */
-}
 .header_box{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 60px;
     padding: 0 .5rem;
 }
 .header_menu_button{
@@ -332,6 +318,7 @@ header{
     align-items: center;
     justify-content: center;
     background-color: var(--p60);
+    z-index: 10;
 }
 .header_saved_switch{
     width: 44px;
@@ -352,11 +339,75 @@ header{
     align-items: center;
     justify-content: center;
 }
+.header_leavesImage{
+    position: relative;
+    border: none;
+    padding: none;
+    margin: none;
+    top: 1rem;
+}
+.leaves_image{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.header_image_box{
+    position: relative;
+    border: none;
+    padding: none;
+    margin: none;
+}
+
+
+
+/* Hamburger Menu */
+.hamburger_menu{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--p40);
+}
+.menu_listings{
+    padding-top: 80px;
+    justify-content: space-around;
+    height: 50%;
+}
+.menu_listing_wide{
+    width: 100%;
+    border-bottom: solid var(--n70) 2px;
+    text-align: left;
+    h1{
+        color: var(--n70);
+    }
+    
+}
+.menu_listing{
+    width: min-content;
+    border-bottom: solid var(--n70) 2px;
+    text-align: left;
+    h1{
+        color: var(--n70);
+    }
+}
+.menu_section{
+    border-radius: var(--BR);
+    background-color: var(--p40);
+    padding: var(--gutter);
+    margin-bottom: var(--gutter);
+    width: 90%;
+}
 
 /* Main Elements */
-
+main{
+    height: 90vh;
+    overflow-y: scroll;
+}
 /* Footer Elements */
 footer{
+    position: relative;
+    top: 1rem;
     height: 80px;
 }
 .footer_buttons{
@@ -399,6 +450,10 @@ footer{
     padding: 0;
     margin-bottom: 4px;
     border: none;
+}
+
+.hidden{
+    display: none;
 }
 
 @media screen and (max-width: 430px){
