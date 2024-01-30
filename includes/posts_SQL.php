@@ -44,7 +44,7 @@ function get_articles()
 function add_journal($emojiPath, $title, $entryText)
 {
     global $db_connection;
-    $query = 'INSERT INTO journalEntries';
+    $query = 'INSERT INTO JournalEntries';
     $query .= ' (emojiPath, title, entryText)';
     $query .= " VALUES ('$emojiPath', '$title', '$entryText')";
     $result = mysqli_query($db_connection, $query);

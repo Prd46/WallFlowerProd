@@ -11,7 +11,7 @@
                 LIMIT 1; */
                 $query = 'SELECT *';
                 $query .= ' FROM JournalEntries';
-                $query .= " ORDER BY EntryDate";
+                $query .= " ORDER BY EntryDate DESC";
 
                 $entries = mysqli_query($db_connection, $query);
                 if ($entries->num_rows == 0){
@@ -21,9 +21,6 @@
                 // $site_url = site_url();
                 // echo $db_connection;
                 // echo $query;
-                $checkAllReadSql = "SELECT COUNT(*) AS total_rows FROM Affirmations WHERE affirmationRead = TRUE";
-                $checkResult = mysqli_query($db_connection, $checkAllReadSql);
-                $totalRows = mysqli_fetch_assoc($checkResult)["total_rows"];
                 ?>
 
 <?php

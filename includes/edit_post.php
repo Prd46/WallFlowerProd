@@ -21,7 +21,7 @@ $result = mysqli_query($db_connection, $query);
 
 // Check there are no errors with our SQL statement
 if ($result) {
-    redirect_to('/reflectHome.php');
+    redirect_to('/journal.php');
 } else {
     $error_message = 'Sorry there was an error creating the recipe';
     echo $error_message;

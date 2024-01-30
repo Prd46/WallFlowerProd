@@ -11,7 +11,7 @@ $result = delete_journal_by_id($id);
 
 // Check there are no errors with our SQL statement
 if ($result) {
-    redirect_to('/reflectHome.php');
+    redirect_to('/journal.php');
 } else {
     $error_message = 'Could Not Delete Service: ' . mysqli_error($db_connection);
     echo $error_message;
