@@ -47,24 +47,24 @@ $document_title = $page_name . ' | ' . $site_name;
                     <div class="hamburger_menu js-menu flex jccenter hidden">
                         <div class="menu_listings flex column">
                                 <div class="menu_listing_wide">
-                                    <a href="affirmations.php"><h1 class="TL">Positive Affirmations</h1></a>
+                                    <a href="affirmations.php"><h1 class="TL menu_text">Positive Affirmations</h1></a>
                                 </div>
                                 <div class="menu_listing_wide">
-                                    <a href="conversationStarters.php"><h1 class="TL">Conversation Starters</h1></a>
+                                    <a href="conversationStarters.php"><h1 class="TL menu_text">Conversation Starters</h1></a>
                                 </div>
    
                 
                                 <div class="menu_listing">
-                                    <a href="breathe.php"><h1 class="TL">Breathe</h1></a>
+                                    <a href="breathe.php"><h1 class="TL menu_text">Breathe</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="listen.php"><h1 class="TL">Listen</h1></a>
+                                    <a href="listen.php"><h1 class="TL menu_text">Listen</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="articles.php"><h1 class="TL">Learn</h1></a>
+                                    <a href="articles.php"><h1 class="TL menu_text">Learn</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="play.php"><h1 class="TL">Play</h1></a>
+                                    <a href="play.php"><h1 class="TL menu_text">Play</h1></a>
                                 </div>
                         </div>
                     </div>

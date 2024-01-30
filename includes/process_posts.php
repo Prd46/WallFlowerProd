@@ -15,7 +15,7 @@ $result = add_journal($emojiPath, $title, $entryText);
 
 // Check there are no errors with our SQL statement
 if ($result) {
-    redirect_to('/reflectHome.php');
+    redirect_to('/journal.php');
 } else {
     $error_message = 'Sorry there was an error creating the user: ' . mysqli_error($db_connection);
     echo $error_message;

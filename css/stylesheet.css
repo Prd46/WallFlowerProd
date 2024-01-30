@@ -374,22 +374,19 @@ h3{
     justify-content: space-around;
     height: 50%;
 }
+.menu_text{
+    color: var(--n70);
+}
 .menu_listing_wide{
     width: 100%;
     border-bottom: solid var(--n70) 2px;
     text-align: left;
-    h1{
-        color: var(--n70);
-    }
     
 }
 .menu_listing{
     width: min-content;
     border-bottom: solid var(--n70) 2px;
     text-align: left;
-    h1{
-        color: var(--n70);
-    }
 }
 .menu_section{
     border-radius: var(--BR);

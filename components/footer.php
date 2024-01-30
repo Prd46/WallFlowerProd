@@ -16,7 +16,7 @@
                         <p class="footer_button_text LM">Explore</p>
                     </div>
                 </a>
-                <a href="contact.php">
+                <a href="sos.php">
                     <div class="footer_button flex column aicenter">
                         <div class="footer_icon">
                             <img class="icon" src="media/icons/SOS.png"/>

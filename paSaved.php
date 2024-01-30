@@ -1,43 +1,7 @@
 <?php include_once __DIR__ . '/connection.php';
 ?>
 
-<?php
-                /*SELECT QUESTION
-                FROM Questions
-                ORDER BY RAND()  
-                LIMIT 1; */
-                $query = 'SELECT *';
-                $query .= ' FROM Affirmations';
-                $query .= " WHERE affirmationSaved = TRUE";
-                $query .= " ORDER BY RAND()";
-                $query .= " LIMIT 5;";
-
-                $affirmations = mysqli_query($db_connection, $query);
-                if ($affirmations->num_rows == 0){
-                  $affirmations = false;
-                  }
-                
-                // $site_url = site_url();
-                // echo $db_connection;
-                // echo $query;
-                $checkAllReadSql = "SELECT COUNT(*) AS total_rows FROM Affirmations WHERE affirmationRead = TRUE";
-                $checkResult = mysqli_query($db_connection, $checkAllReadSql);
-                $totalRows = mysqli_fetch_assoc($checkResult)["total_rows"];
-                
-                $features = mysqli_query($db_connection, $query);
-                if (mysqli_num_rows($features) > 0) {
-                    $row = mysqli_fetch_assoc($features);
-                    $affirmationText = $row["affirmation"];
-
-                    $updateSql = "UPDATE Affirmations SET affirmationRead = TRUE WHERE id = " . $row["id"];
-                    mysqli_query($db_connection, $updateSql);
-                } else {
-                    $resetReadStatusSql = "UPDATE Affirmations SET affirmationRead = FALSE";
-                    mysqli_query($db_connection, $resetReadStatusSql);
-                    $row = mysqli_fetch_assoc($features);
-                    $affirmationText = "I have value.";
-                }
-                ?>
+ 
 
 <!DOCTYPE html>
 <html lang="en">
