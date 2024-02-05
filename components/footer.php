@@ -3,9 +3,9 @@
                 <a href="journal.php">
                     <div class="footer_button flex column aicenter">
                         <div class="footer_icon">
-                            <img class="icon" src="media/icons/pencil.png"/>
+                            <img class="icon" src="media/icons/saved.svg"/>
                         </div>
-                        <p class="footer_button_text LM">Journal</p>
+                        <p class="footer_button_text LM">Saved</p>
                     </div>
                 </a>
                 <a href="index.php">
@@ -19,7 +19,7 @@
                 <a href="sos.php">
                     <div class="footer_button flex column aicenter">
                         <div class="footer_icon">
-                            <img class="icon" src="media/icons/SOS.png"/>
+                            <img class="icon" src="media/icons/SOS.svg"/>
                         </div>
                         <p class="footer_button_text LM">S.O.S</p>
                     </div>

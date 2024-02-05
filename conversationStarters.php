@@ -39,32 +39,30 @@
   $page_name = 'Conversation Starters'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-    <main>
+    <main class="affirmations_main">
         <div class="affirmations_main_label">
-            <h1 class="affirmations_main_label_header">Conversation Starters</h1>
+            <h1 class="affirmations_main_label_header TL">Conversation Starters</h1>
         </div>
-        <div class="affirmations_main_content">
-            <h2 class="affirmations_main_content_affirmation">
+        <div class="affirmations_main_content FCJA">
+            <h2 class="affirmations_main_content_affirmation TL C">
                 <?php echo $convoText; ?>
             </h2>
-            <div class="affirmations_main_content_buttons">
+            <div class="affirmations_main_content_buttons flex">
+            <div class="affirmations_main_content_button save flex aicenter round">
+                    <img class="icon" src="media/icons/affirmationsSave.svg"/>
+                    <p class="affirmations_main_content_button_label LL">Save</p>
+                </div>
                 <a href="conversationStarters.php">
-                    <div class="affirmations_main_content_button">
-                        <img class="icon" src="~"/>
-                        <p class="affirmations_main_content_button_label">Generate</p>
+                    <div class="affirmations_main_content_button regenerate flex aicenter round">
+                        <img class="icon" src="media/icons/regen.svg"/>
+                        <p class="affirmations_main_content_button_label LL">Regenerate</p>
                     </div>
                 </a>
-                <div class="affirmations_main_content_button">
-                    <img class="icon" src="~"/>
-                    <p class="affirmations_main_content_button_label">Save</p>
-                </div>
-                <div class="affirmations_main_content_button">
-                    <img class="icon" src="~"/>
-                    <p class="affirmations_main_content_button_label">View Saved</p>
-                </div>
             </div>
         </div>
     </main>
+
+    
     <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>

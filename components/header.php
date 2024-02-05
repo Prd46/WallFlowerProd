@@ -20,6 +20,7 @@ $document_title = $page_name . ' | ' . $site_name;
     <link rel="stylesheet" href= "<?php echo site_url(); ?>/css/normalize.css">
     <link rel="stylesheet" href= "<?php echo site_url(); ?>/css/stylesheet.css?v=<?php echo time();?>">
     <link rel="stylesheet" href="<?php echo site_url(); ?>/css/puzzleStyles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- <link rel="icon" href="<?php echo site_url(); ?>/media/favicon.png"> -->
 </head>
 <body>
@@ -39,42 +40,35 @@ $document_title = $page_name . ' | ' . $site_name;
         <img class="leaves_image" src="media/topImage.png"/>
     </div>
             <header>
-                <div class="header_box">
-                    
-                    <div class="header_menu_button js-menu-button round">
-                        <img class="icon" src="media/icons/menu.svg"/>
+            <div class="header_logo">
+                        <img src="media/icons/logo.svg"/>
+                    </div>
+                    <div class="header_menu_button_container">
+                        <div class="header_menu_button js-menu-button round">
+                            <img class="icon" src="media/icons/menu.svg"/>
+                        </div>
                     </div>
                     <div class="hamburger_menu js-menu flex jccenter hidden">
                         <div class="menu_listings flex column">
-                                <div class="menu_listing_wide">
-                                    <a href="affirmations.php"><h1 class="TL menu_text">Positive Affirmations</h1></a>
-                                </div>
-                                <div class="menu_listing_wide">
-                                    <a href="conversationStarters.php"><h1 class="TL menu_text">Conversation Starters</h1></a>
-                                </div>
-   
-                
                                 <div class="menu_listing">
-                                    <a href="breathe.php"><h1 class="TL menu_text">Breathe</h1></a>
+                                    <a href="affirmations.php"><h1 class="BL menu_text">Affirmations</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="listen.php"><h1 class="TL menu_text">Listen</h1></a>
+                                    <a href="conversationStarters.php"><h1 class="BL menu_text">Icebreakers</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="articles.php"><h1 class="TL menu_text">Learn</h1></a>
+                                    <a href="breathe.php"><h1 class="BL menu_text">Breathe</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="play.php"><h1 class="TL menu_text">Play</h1></a>
+                                    <a href="listen.php"><h1 class="BL menu_text">Listen</h1></a>
+                                </div>
+                                <div class="menu_listing">
+                                    <a href="articles.php"><h1 class="BL menu_text">Learn</h1></a>
+                                </div>
+                                <div class="menu_listing">
+                                    <a href="play.php"><h1 class="BL menu_text">Play</h1></a>
                                 </div>
                         </div>
                     </div>
-                    <div class="header_logo">
-                        <img src="media/logo.png"/>
-                    </div>
-                    <div class="header_saved_switch round">
-                        <div class="header_saved_switch_knob round">
-                            <img class="smallIcon" src="media/icons/bookmark.svg"/>
-                        </div>
-                    </div>
-                </div>
+
             </header>

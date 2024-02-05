@@ -2,6 +2,7 @@
 ?>
 
 <?php
+                $litClassToggle = "";
                 /*SELECT QUESTION
                 FROM Questions
                 ORDER BY RAND()  
@@ -9,64 +10,88 @@
                 $query = 'SELECT *';
                 $query .= ' FROM Affirmations';
                 $query .= " WHERE affirmationRead = FALSE";
-                $query .= " ORDER BY RAND()";
+                // $query .= " ORDER BY RAND()";
                 $query .= " LIMIT 1;";
-
-
                 $site_url = site_url();
                 // echo $db_connection;
-                // echo $query;
-                $checkAllReadSql = "SELECT COUNT(*) AS total_rows FROM Affirmations WHERE affirmationRead = TRUE";
-                $checkResult = mysqli_query($db_connection, $checkAllReadSql);
-                $totalRows = mysqli_fetch_assoc($checkResult)["total_rows"];
-                
+                // echo $query;  
                 $features = mysqli_query($db_connection, $query);
-                if (mysqli_num_rows($features) > 0) {
-                    $row = mysqli_fetch_assoc($features);
-                    $affirmationText = $row["affirmation"];
+                $row = mysqli_fetch_assoc($features);
 
-                    $updateSql = "UPDATE Affirmations SET affirmationRead = TRUE WHERE id = " . $row["id"];
-                    mysqli_query($db_connection, $updateSql);
-                } else {
-                    $resetReadStatusSql = "UPDATE Affirmations SET affirmationRead = FALSE";
-                    mysqli_query($db_connection, $resetReadStatusSql);
-                    $row = mysqli_fetch_assoc($features);
-                    $affirmationText = "I have value.";
+                // Handle button click
+                if (isset($_POST['toggle'])) {
+                    // Fetch the current 'saved' value from the database
+                    if (mysqli_num_rows($features) > 0){
+                        $current_value = $row['affirmationSaved'];
+                        
+                        // Toggle the value
+                        if ($current_value == false){
+                            // $litClassToggle = "saveLit";
+                            $updateSql = "UPDATE Affirmations SET affirmationSaved = TRUE WHERE id = " . $row["id"];
+                            mysqli_query($db_connection, $updateSql);
+                        }else{
+                            // $litClassToggle = "saveUnlit";
+                            $updateSql = "UPDATE Affirmations SET affirmationSaved = FALSE WHERE id = " . $row["id"];
+                            mysqli_query($db_connection, $updateSql);
+                        }
+                    }
                 }
+                
+                if (isset($_POST['regenerate'])) {
+                    if (mysqli_num_rows($features) > 0) {
+                        $record_id = $row["id"];
+                        $affirmationText = $row["affirmation"];
+                        $updateSql = "UPDATE Affirmations SET affirmationRead = TRUE WHERE id = " . $row["id"];
+                        mysqli_query($db_connection, $updateSql);
+                    } else {
+                        $resetReadStatusSql = "UPDATE Affirmations SET affirmationRead = FALSE";
+                        mysqli_query($db_connection, $resetReadStatusSql);
+                        $row = mysqli_fetch_assoc($features);
+                        $affirmationText = "I have value.";
+                    }
+            }
+            if ($row){
+                $affirmationText = $row["affirmation"];
+            }
+
+
+
+
+
+
+
                 ?>
 
 <?php 
   $page_name = 'Positive Affirmations'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-    <main>
+    <main class="affirmations_main">
         <div class="affirmations_main_label">
-            <h1 class="affirmations_main_label_header">Affirmations</h1>
+            <img src="media/icons/lightbulb.svg"/>
+            <h1 class="affirmations_main_label_header TL">Affirmations</h1>
         </div>
-        <div class="affirmations_main_content">
-            <h2 class="affirmations_main_content_affirmation">
+        <div class="affirmations_main_content FCJA">
+            <h2 id="affirmation-container" class="affirmations_main_content_affirmation TL C">
                 <?php echo $affirmationText; ?>
             </h2>
-            <div class="affirmations_main_content_buttons">
-                <a href="affirmations.php">
-                    <div class="affirmations_main_content_button">
-                        <img class="icon" src="~"/>
-                        <p class="affirmations_main_content_button_label">Generate</p>
-                    </div>
-                </a>
-                <div class="affirmations_main_content_button">
-                    <img class="icon" src="~"/>
-                    <p class="affirmations_main_content_button_label">Save</p>
-                </div>
-                <a href="paSaved.php">
-                    <div class="affirmations_main_content_button">
-                        <img class="icon" src="~"/>
-                        <p class="affirmations_main_content_button_label">View Saved</p>
-                    </div>
-                </a>
+            <div class="affirmations_main_content_buttons flex">
+            <form id="saveButton" method="post" action="">
+                <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round">
+                        <img class="icon" src="media/icons/affirmationsSave.svg"/>
+                        <p class="affirmations_main_content_button_label LL">Save</p>
+                </button>
+            </form>
+                <form id="regenButton" method="post" action="">
+                    <button name="regenerate" class="affirmations_main_content_button regenerate flex aicenter round">
+                        <img class="icon" src="media/icons/regen.svg"/>
+                        <p class="affirmations_main_content_button_label LL">Regenerate</p>
+            </button>
+                </form>
             </div>
         </div>
     </main>
+
     <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>
