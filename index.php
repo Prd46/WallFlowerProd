@@ -10,6 +10,7 @@
             <div class="index_main_widget_content TS">I am loved and worthy</div>
         </div>
         <div class="index_main_pageButtons">
+    <!-- ONE LEAF CARD -->
         <a href="affirmations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
@@ -27,6 +28,7 @@
                 </div>
             </div>
         </a>
+        <!-- END OF LEAF CARD -->
         <a href="conversationStarters.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
