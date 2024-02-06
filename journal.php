@@ -1,9 +1,18 @@
 <?php 
    include_once __DIR__ . '/connection.php';
-  $page_name = 'Breathe'; // Gives a value if page name is missing
+  $page_name = 'Journal'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
 <main>
+<div class="main_label">
+            <div class="main_label_header">
+                <img class="icon main_label_icon" src="media/icons/edit.svg"/>
+                <h1 class="main_label_header TL">Journal</h1>
+            </div>
+            <p class="BM main_label_caption">
+            Here you can write your thoughts about your day.
+            </p>
+        </div>
 <?php
                 /*SELECT QUESTION
                 FROM Questions

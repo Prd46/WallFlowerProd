@@ -10,7 +10,7 @@
                 $query = 'SELECT *';
                 $query .= ' FROM Affirmations';
                 $query .= " WHERE affirmationRead = FALSE";
-                // $query .= " ORDER BY RAND()";
+                $query .= " ORDER BY RAND()";
                 $query .= " LIMIT 1;";
                 $site_url = site_url();
                 // echo $db_connection;
@@ -19,9 +19,10 @@
                 $row = mysqli_fetch_assoc($features);
 
                 // Handle button click
-                if (isset($_POST['toggle'])) {
+                // if (isset($_POST['toggle'])) {
                     // Fetch the current 'saved' value from the database
                     if (mysqli_num_rows($features) > 0){
+                        $affirmationText = $row["affirmation"];
                         $current_value = $row['affirmationSaved'];
                         
                         // Toggle the value
@@ -35,7 +36,7 @@
                             mysqli_query($db_connection, $updateSql);
                         }
                     }
-                }
+                // }
                 
                 if (isset($_POST['regenerate'])) {
                     if (mysqli_num_rows($features) > 0) {
@@ -50,26 +51,22 @@
                         $affirmationText = "I have value.";
                     }
             }
-            if ($row){
-                $affirmationText = $row["affirmation"];
-            }
-
-
-
-
-
-
 
                 ?>
 
 <?php 
-  $page_name = 'Positive Affirmations'; // Gives a value if page name is missing
+  $page_name = 'Affirmations'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
     <main class="affirmations_main">
-        <div class="affirmations_main_label">
-            <img src="media/icons/lightbulb.svg"/>
-            <h1 class="affirmations_main_label_header TL">Affirmations</h1>
+        <div class="main_label">
+            <div class="main_label_header">
+                <img class="icon main_label_icon" src="media/icons/lightbulb.svg"/>
+                <h1 class="main_label_header TL">Affirmations</h1>
+            </div>
+            <p class="BM main_label_caption">
+                Here are phrases to inspire and uplift.
+            </p>
         </div>
         <div class="affirmations_main_content FCJA">
             <h2 id="affirmation-container" class="affirmations_main_content_affirmation TL C">

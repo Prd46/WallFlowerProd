@@ -1,6 +1,6 @@
 <?php 
    include_once __DIR__ . '/connection.php';
-  $page_name = 'Breathe'; // Gives a value if page name is missing
+  $page_name = 'New Journal'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
 <?php
@@ -9,6 +9,10 @@ $query = 'SELECT * FROM JournalEntries';
 $result = mysqli_query($db_connection, $query);
 
 ?>
+<div class="main_label">
+            <img class="icon main_label_icon" src="media/icons/blackbookmark.svg"/>
+            <h1 class="main_label_header TL">New Journal</h1>
+        </div>
 <main>
     <form action="includes/process_posts.php" method="POST">
 

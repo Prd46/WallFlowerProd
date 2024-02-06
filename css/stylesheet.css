@@ -132,7 +132,7 @@ body{
     width: 430px;
     height: 100vh;
     margin: 0 auto;
-    border: solid black 1px;
+    border: solid rgb(168, 168, 168) 1px;
     position: relative;
     top:-1rem;
     display: flex;
@@ -159,12 +159,12 @@ img{
     width: 100%;
     padding: none;
     margin: none;
-    filter: opacity(50%);
+    filter: opacity(20%);
 }
 .header_menu_vine{
     background-image: url(../media/vineImage.svg);
     background-repeat: repeat-y;
-    height: 83vh;
+    height: 85vh;
     width: 100%;
     position: absolute;
     z-index: -1;
@@ -173,6 +173,8 @@ img{
 }
 a{
     text-decoration: none;
+    padding: none;
+    margin: none;
     color: var(--dark);
 }
 a:visited{
@@ -253,6 +255,7 @@ h3{
 }
 .BM{
     font: var(--BM);
+    line-height: 2rem;
 }
 .BS{
     font: var(--BS);
@@ -430,8 +433,9 @@ header{
 /* Hamburger Menu */
 .hamburger_menu{
     position: absolute;
+    overflow-y: scroll;
     width: 100%;
-    height: 100%;
+    height: 95%;
     top: 0;
     left: 0;
     background-color: var(--dark);
@@ -439,14 +443,14 @@ header{
 }
 .menu_listings{
     padding-top: 80px;
+    width: 80%;
     justify-content: space-around;
-    height: 50%;
+    height: 70%;
 }
 .menu_text{
     color: var(--light);
 }
 .menu_listing{
-    width: 100%;
     /* border-bottom: solid var(--n70) 2px; */
     text-align: left;
 }
@@ -457,8 +461,9 @@ header{
     margin-bottom: var(--gutter);
     width: 90%;
 }
-.menu_grow{
-
+.menu_hr{
+    border-bottom: solid 1px var(--light);
+    
 }
 
 /* Main Elements */
@@ -466,6 +471,20 @@ main{
     height: 90vh;
     padding: 0 var(--gutter);
     overflow-y: scroll;
+    position: relative;
+    top: 1rem;
+}
+.main_label_header{
+    display: flex;
+    align-items: center;
+}
+.main_label_caption{
+    padding: 0;
+    margin: 0;
+}
+.main_label_icon{
+    padding: 0 .5rem;
+    height: 24px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -479,11 +498,22 @@ main::-webkit-scrollbar {
     scrollbar-width: none;  /* Firefox */
   }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hamburger_menu::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hamburger_menu {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 
+  
 /* Footer Elements */
 footer{
-    /* position: relative; */
-    /* top: 1rem; */
+    position: relative;
+    top: 1rem;
     height: 80px;
     z-index: 20;
 }
@@ -502,8 +532,11 @@ footer{
     width: 80px;
     padding: 0;
     margin: 0;
-    color: #C6C8B9;
+    color: var(--light);
     border: none;
+}
+.footer_button_text{
+    color: var(--light);
 }
 .footer_homeButton_oval{
     display: flex;
@@ -511,7 +544,7 @@ footer{
     align-items: center;
     border-radius: 24px;
     height: 34px;
-    width: 64px;
+    width: 80px;
     padding: 0;
     background-color: var(--s40);
     margin-bottom: 4px;
@@ -523,12 +556,13 @@ footer{
     align-items: center;
     border-radius: 24px;
     height: 34px;
-    width: 64px;
-    padding: 0;
+    width: 80px;
     margin-bottom: 4px;
     border: none;
 }
-
+.footer_icon_image{
+    height: 24px;
+}
 /* Index */
 
 .index_main_widget{
@@ -537,7 +571,7 @@ footer{
 /* Affirmations */
 
 .affirmations_main_content{
-    height: 80%;
+    height: 70%;
 }
 .affirmations_main_content_affirmation{
     animation: fadeIn 1s ease-out 1 forwards;
@@ -546,15 +580,13 @@ footer{
     justify-content: space-evenly;
     width: 100%;
     position: absolute;
-    top: 78vh;
+    top: 65vh;
 }
 .affirmations_main_content_button {
     justify-content: space-evenly;
     border: solid 1px var(--n60);
     height: 2.5rem;
     padding: 1.75rem;
-}
-.save{
 }
 .affirmations_main_content_button_label{
     padding: .5rem;
@@ -575,7 +607,12 @@ footer{
 
 @media screen and (max-height: 650px){
     .header_menu_vine{
-        height: 73vh;
+        height: 76vh;
+    }
+}
+@media screen and (max-height: 700px){
+    .affirmations_main_content_buttons{
+        top: 55vh;
     }
     
 }

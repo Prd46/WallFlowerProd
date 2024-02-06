@@ -36,28 +36,36 @@
                 ?>
 
 <?php 
-  $page_name = 'Conversation Starters'; // Gives a value if page name is missing
+  $page_name = 'Icebreakers'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-    <main class="affirmations_main">
-        <div class="affirmations_main_label">
-            <h1 class="affirmations_main_label_header TL">Conversation Starters</h1>
+<main class="affirmations_main">
+        <div class="main_label">
+            <div class="main_label_header">
+                <img class="icon main_label_icon" src="media/icons/forum.svg"/>
+                <h1 class="main_label_header TL">Icebreakers</h1>
+            </div>
+            <p class="BM main_label_caption">
+                Here are some ideas for ways to start a conversation with someone.
+            </p>
         </div>
         <div class="affirmations_main_content FCJA">
-            <h2 class="affirmations_main_content_affirmation TL C">
+            <h2 id="affirmation-container" class="affirmations_main_content_affirmation TL C">
                 <?php echo $convoText; ?>
             </h2>
             <div class="affirmations_main_content_buttons flex">
-            <div class="affirmations_main_content_button save flex aicenter round">
-                    <img class="icon" src="media/icons/affirmationsSave.svg"/>
-                    <p class="affirmations_main_content_button_label LL">Save</p>
-                </div>
-                <a href="conversationStarters.php">
-                    <div class="affirmations_main_content_button regenerate flex aicenter round">
+            <form id="saveButton" method="post" action="">
+                <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round">
+                        <img class="icon" src="media/icons/affirmationsSave.svg"/>
+                        <p class="affirmations_main_content_button_label LL">Save</p>
+                </button>
+            </form>
+                <form id="regenButton" method="post" action="">
+                    <button name="regenerate" class="affirmations_main_content_button regenerate flex aicenter round">
                         <img class="icon" src="media/icons/regen.svg"/>
                         <p class="affirmations_main_content_button_label LL">Regenerate</p>
-                    </div>
-                </a>
+            </button>
+                </form>
             </div>
         </div>
     </main>

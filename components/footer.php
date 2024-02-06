@@ -1,17 +1,17 @@
 <footer>
             <div class="footer_buttons">
-                <a href="journal.php">
+                <a href="favorites.php">
                     <div class="footer_button flex column aicenter">
                         <div class="footer_icon">
-                            <img class="icon" src="media/icons/saved.svg"/>
+                            <img class="icon footer_icon_image" src="media/icons/saved.svg"/>
                         </div>
                         <p class="footer_button_text LM">Saved</p>
                     </div>
                 </a>
                 <a href="index.php">
                     <div class="footer_button flex column aicenter">
-                        <div class="footer_homeButton_oval">
-                            <img class="icon" src="media/icons/House.png"/>
+                        <div class="footer_homeButton_oval ">
+                            <img class="icon footer_icon_image" src="media/icons/home.svg"/>
                         </div>
                         <p class="footer_button_text LM">Explore</p>
                     </div>
@@ -19,7 +19,7 @@
                 <a href="sos.php">
                     <div class="footer_button flex column aicenter">
                         <div class="footer_icon">
-                            <img class="icon" src="media/icons/SOS.svg"/>
+                            <img class="icon footer_icon_image" src="media/icons/phone.svg"/>
                         </div>
                         <p class="footer_button_text LM">S.O.S</p>
                     </div>

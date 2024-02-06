@@ -45,28 +45,41 @@ $document_title = $page_name . ' | ' . $site_name;
                     </div>
                     <div class="header_menu_button_container">
                         <div class="header_menu_button js-menu-button round">
-                            <img class="icon" src="media/icons/menu.svg"/>
+                            <img class="js-menu_icon icon" src="media/icons/menu.svg"/>
+                            <img class="js-x_icon icon hidden" src="media/icons/x.svg"/>
                         </div>
                     </div>
                     <div class="hamburger_menu js-menu flex jccenter hidden">
                         <div class="menu_listings flex column">
                                 <div class="menu_listing">
-                                    <a href="affirmations.php"><h1 class="BL menu_text">Affirmations</h1></a>
+                                    <a href="affirmations.php"><h1 class="BM menu_text">Affirmations</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="conversationStarters.php"><h1 class="BL menu_text">Icebreakers</h1></a>
+                                    <a href="conversationStarters.php"><h1 class="BM menu_text">Icebreakers</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="breathe.php"><h1 class="BL menu_text">Breathe</h1></a>
+                                    <a href="listen.php"><h1 class="BM menu_text">Sounds</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="listen.php"><h1 class="BL menu_text">Listen</h1></a>
+                                    <a href="breathe.php"><h1 class="BM menu_text">Meditations</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="articles.php"><h1 class="BL menu_text">Learn</h1></a>
+                                    <a href="articles.php"><h1 class="BM menu_text">Articles</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="play.php"><h1 class="BL menu_text">Play</h1></a>
+                                    <a href="play.php"><h1 class="BM menu_text">Puzzles</h1></a>
+                                </div>
+                                <div class="menu_listing">
+                                    <a href="journal.php"><h1 class="BM menu_text">Journal</h1></a>
+                                </div>
+                                <div class="menu_hr">
+
+                                </div>
+                                <div class="menu_listing">
+                                    <a href="favorites.php"><h1 class="BM menu_text">Saved</h1></a>
+                                </div>
+                                <div class="menu_listing">
+                                    <a href="sos.php"><h1 class="BM menu_text">S.O.S</h1></a>
                                 </div>
                         </div>
                     </div>
