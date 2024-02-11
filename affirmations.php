@@ -7,51 +7,98 @@
                 FROM Questions
                 ORDER BY RAND()  
                 LIMIT 1; */
-                $query = 'SELECT *';
-                $query .= ' FROM Affirmations';
-                $query .= " WHERE affirmationRead = FALSE";
-                $query .= " ORDER BY RAND()";
-                $query .= " LIMIT 1;";
-                $site_url = site_url();
-                // echo $db_connection;
-                // echo $query;  
-                $features = mysqli_query($db_connection, $query);
-                $row = mysqli_fetch_assoc($features);
+                $affirmationText = "I have value.";
+
+
+                if (!$_POST) {
+                    $query = 'SELECT *';
+                    $query .= ' FROM Affirmations';
+                    $query .= " WHERE affirmationRead = FALSE";
+                    // $query .= " ORDER BY RAND()";
+                    $query .= " LIMIT 1;";
+                    $site_url = site_url();
+                    // echo $db_connection;
+                    // echo $query;  
+                    $features = mysqli_query($db_connection, $query);
+                    $row = mysqli_fetch_assoc($features);
+
+
+                    if (mysqli_num_rows($features) > 0) {
+
+
+
+
+
+                        $current_value = $row['affirmationSaved'];
+                        if ($current_value == false){
+                            $litClassToggle = "saveUnlit";
+                        }else{
+                            $litClassToggle = "saveLit";
+                        }
+
+                        $updateSql = "UPDATE Affirmations SET affirmationRead = TRUE WHERE id = " . $row["id"];
+                        mysqli_query($db_connection, $updateSql);
+                        $affirmationText = $row["affirmation"];
+                    } else {
+                        $resetReadStatusSql = "UPDATE Affirmations SET affirmationRead = FALSE";
+                        mysqli_query($db_connection, $resetReadStatusSql);
+
+                        
+                    }
+         }
+
+
+
 
                 // Handle button click
-                // if (isset($_POST['toggle'])) {
+                if (isset($_POST['toggle'])) {
+
+                    $query = 'SELECT *';
+                    $query .= ' FROM Affirmations';
+                    $query .= " WHERE affirmationRead = TRUE";
+                    $query .= " ORDER BY id DESC";
+                    $query .= " LIMIT 1;";
+                    $site_url = site_url();
+                    // echo $db_connection;
+                    // echo $query;  
+                    $features = mysqli_query($db_connection, $query);
+                    $row = mysqli_fetch_assoc($features);
+
+
                     // Fetch the current 'saved' value from the database
                     if (mysqli_num_rows($features) > 0){
-                        $affirmationText = $row["affirmation"];
+
+
+
+
                         $current_value = $row['affirmationSaved'];
                         
+                        if ($current_value == false){
+                            $litClassToggle = "saveLit";
+                        }else{
+                            $litClassToggle = "saveUnlit";
+                        }
+
                         // Toggle the value
                         if ($current_value == false){
                             // $litClassToggle = "saveLit";
                             $updateSql = "UPDATE Affirmations SET affirmationSaved = TRUE WHERE id = " . $row["id"];
+
                             mysqli_query($db_connection, $updateSql);
+                            $affirmationText = $row["affirmation"];
                         }else{
                             // $litClassToggle = "saveUnlit";
                             $updateSql = "UPDATE Affirmations SET affirmationSaved = FALSE WHERE id = " . $row["id"];
                             mysqli_query($db_connection, $updateSql);
+                            $affirmationText = $row["affirmation"];
                         }
                     }
-                // }
+ 
                 
-                if (isset($_POST['regenerate'])) {
-                    if (mysqli_num_rows($features) > 0) {
-                        $record_id = $row["id"];
-                        $affirmationText = $row["affirmation"];
-                        $updateSql = "UPDATE Affirmations SET affirmationRead = TRUE WHERE id = " . $row["id"];
-                        mysqli_query($db_connection, $updateSql);
-                    } else {
-                        $resetReadStatusSql = "UPDATE Affirmations SET affirmationRead = FALSE";
-                        mysqli_query($db_connection, $resetReadStatusSql);
-                        $row = mysqli_fetch_assoc($features);
-                        $affirmationText = "I have value.";
-                    }
-            }
-
+                }
+                if (!$affirmationText){
+                    $affirmationText = "I have value.";
+                }
                 ?>
 
 <?php 
@@ -74,17 +121,16 @@
             </h2>
             <div class="affirmations_main_content_buttons flex">
             <form id="saveButton" method="post" action="">
-                <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round">
+                <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round <?php echo $litClassToggle; ?>">
                         <img class="icon" src="media/icons/affirmationsSave.svg"/>
                         <p class="affirmations_main_content_button_label LL">Save</p>
                 </button>
             </form>
-                <form id="regenButton" method="post" action="">
-                    <button name="regenerate" class="affirmations_main_content_button regenerate flex aicenter round">
+                <a class="flex aicenter" href="">
+                    <button class="affirmations_main_content_button regenerate flex aicenter round">
                         <img class="icon" src="media/icons/regen.svg"/>
-                        <p class="affirmations_main_content_button_label LL">Regenerate</p>
-            </button>
-                </form>
+                        <p class="affirmations_main_content_button_label LL regen_label">Regenerate</p>
+                </a>
             </div>
         </div>
     </main>
