@@ -4,6 +4,8 @@
   include_once __DIR__ . '/components/header.php'
 ?>
 <main>
+
+
 <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/blackPhone.svg"/>
@@ -13,7 +15,9 @@
             PUT CAPTION HERE
             </p>
         </div>
+
 </main>
+
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>
