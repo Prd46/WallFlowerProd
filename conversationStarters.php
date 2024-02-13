@@ -14,10 +14,6 @@
 
 <?php
                 $litClassToggle = "";
-                /*SELECT QUESTION
-                FROM Questions
-                ORDER BY RAND()  
-                LIMIT 1; */
                 $convoText = "How was your day today?";
 
 
