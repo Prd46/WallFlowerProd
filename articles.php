@@ -60,7 +60,7 @@
                   "
                   
                   <a href='{$site_url}/article.php?id={$article['id']}' class='{$article['Category']} js-dbResult'>
-                    <div class='leaf_card flex aicenter'>
+                    <div class='large_leaf_card flex aicenter'>
                       <div class='leaf_card_image'>
                         <img class='icon leaf_icon' src='media/icons/newsmode.svg'/>
                       </div>
@@ -69,7 +69,7 @@
                           <h3 class='TS articleTitle'>{$article['Title']}</h1>
                           </div>
                             <div class='leaf_card_caption'>
-                            <p class='LM'>$category</p>
+                            <p class='LM'>- {$article['Source']}</p>
                           </div>
                         </div>
                     </div>

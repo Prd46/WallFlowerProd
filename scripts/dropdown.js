@@ -23,6 +23,8 @@ filterButtons.forEach((button) => {
     let fixedCategory = category.split(" ").join("_");
     console.log(fixedCategory);
     const cards = document.querySelectorAll(".js-dbResult");
+    
+
     cards.forEach((card) => {
       if (!card.classList.contains(fixedCategory)) {
         card.classList.add("hidden");
