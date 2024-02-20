@@ -22,7 +22,7 @@
                             <h3 class="TS">Affirmations</h3>
                         </div>
                         <div class="leaf_card_caption">
-                            <p class="BS">For when you need inspiration.</p>
+                            <p class="BM"></p>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                             <h3 class="TS">Icebreakers</h3>
                         </div>
                         <div class="leaf_card_caption">
-                            <p class="BS">For when you're feeling chatty.</p>
+                            <p class="BM"></p>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                             <h3 class="TS">Sounds</h3>
                         </div>
                         <div class="leaf_card_caption">
-                            <p class="BS">For when you need to relax.</p>
+                            <p class="BM"></p>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                             <h3 class="TS">Meditations</h3>
                         </div>
                         <div class="leaf_card_caption">
-                            <p class="BS">For when you need to breathe.</p>
+                            <p class="BM"></p>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                             <h3 class="TS">Articles</h3>
                         </div>
                         <div class="leaf_card_caption">
-                            <p class="BS">For when you need guidance.</p>
+                            <p class="BM"></p>
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                             <h3 class="TS">Puzzles</h3>
                         </div>
                         <div class="leaf_card_caption">
-                            <p class="BS">For when you're feeling playful.</p>
+                            <p class="BM"></p>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                             <h3 class="TS">Journal</h3>
                         </div>
                         <div class="leaf_card_caption">
-                            <p class="BS">For when you're self-reflecting.</p>
+                            <p class="BM"></p>
                         </div>
                     </div>
                 </div>
