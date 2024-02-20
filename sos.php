@@ -19,9 +19,6 @@
         <div class="main_label_header">
                 <h1 class="main_label_header TL quo">Hotlines</h1>
             </div>
-
-            <p class="C BS">If you are experiencing a medical or psychiatric emergency, please dial 911.</p>
-
             <div class="freeblock">
             <h3 class="font_center">Hotline One</h3>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="phone">911</a>
@@ -42,25 +39,48 @@
             
 
  <!-- ONE LEAF CARD -->
-        <!-- ONE LEAF CARD -->
-        <a href="breathe.php">
+ <a href="affirmations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/air.svg"/>
+                    <img class="icon leaf_icon_2" src="media/icons/air.svg"/>
                 </div>
 
                     <div class="leaf_card_text">
                         <div class="leaf_card_title">
-                            <h3 class="TS">Meditations</h3>
+                            <h3 class="TS">Lofi Beats</h3>
                         </div>
                         <div class="leaf_card_caption">
-                            <p class="BS">For when you need to breathe.</p>
+                            <p class="BM"></p>
+                            <img class="icon-4" src="media/icons/edit.svg">
                         </div>
                     </div>
                 </div>
             </div>
         </a>
 
+        <!-- END OF LEAF CARD -->
+
+        <!-- ONE LEAF CARD -->
+ <a href="affirmations.php">
+            <div class="leaf_card flex aicenter">
+                <div class="leaf_card_image">
+                    <img class="icon leaf_icon_1" src="media/sound_img/lofi-beats.jpg"/>
+                </div>
+
+                    <div class="leaf_card_text">
+                        <div class="leaf_card_title">
+                            <h3 class="TS">Lofi Beats</h3>
+                        </div>
+                        <div class="leaf_card_caption">
+                            <p class="BM"></p>
+                            <img class="icon-4" src="media/icons/edit.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- END OF LEAF CARD -->
 
 <!-- ONE LEAF CARD -->
 <a href="affirmations.php">
@@ -82,23 +102,7 @@
         </a>
 
         <!-- END OF LEAF CARD -->
-        <a href="affirmations.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/lightbulb.svg"/>
-                </div>
 
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Affirmations</h3>
-                        </div>
-                        <div class="leaf_card_caption">
-                            <p class="BS">For when you need inspiration.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
 
 </main>
 
