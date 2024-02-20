@@ -74,10 +74,10 @@
   --TM: 1.5rem "Lora", Arial, Helvetica, sans-serif;
   --TS: 1.25rem "Lora", Arial, Helvetica, sans-serif;
 
-  --BL: 1.5rem "DMSans", Arial, Helvetica, sans-serif;
-  --BM: 1.25rem "DMSans", Arial, Helvetica, sans-serif;
-  --BS: 1rem "DMSans", Arial, Helvetica, sans-serif;
-  --BSI: italic 1rem "DMSans", Arial, Helvetica, sans-serif;
+  --BL: 1.5rem "Lora", Arial, Helvetica, sans-serif;
+  --BM: 1.25rem "Lora", Arial, Helvetica, sans-serif;
+  --BS: 1rem "lora", Arial, Helvetica, sans-serif;
+  --BSI: italic 1rem "Lora", Arial, Helvetica, sans-serif;
 
   --LL: 1.25rem "DMSans", Arial, Helvetica, sans-serif;
   --LM: 1rem "DMSans", Arial, Helvetica, sans-serif;
@@ -159,7 +159,7 @@ img {
   width: 100%;
   padding: none;
   margin: none;
-  filter: opacity(20%);
+  filter: opacity(30%);
 }
 .header_menu_vine {
   background-image: url(../media/vineImage.svg);
@@ -514,6 +514,7 @@ main::-webkit-scrollbar {
 main {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  padding-bottom: 3em;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -541,8 +542,9 @@ footer {
   height: 80px;
   padding: 0;
   background-color: var(--dark);
+  
 }
-.footer_button {
+/* .footer_button {
   justify-content: center;
   align-items: center;
   height: 80px;
@@ -551,7 +553,8 @@ footer {
   margin: 0;
   color: var(--light);
   border: none;
-}
+} */
+
 .footer_button_text {
   color: var(--light);
 }
@@ -563,7 +566,7 @@ footer {
   height: 34px;
   width: 80px;
   padding: 0;
-  background-color: var(--s40);
+  background-color: #B6D085;
   margin-bottom: 4px;
   border: none;
 }
