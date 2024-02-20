@@ -1,6 +1,6 @@
 #board {
-    width: 90%;
-    height: 40%;
+    width: 95%;
+    height: 95%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -8,8 +8,8 @@
 }
 
 #board img {
-    width: 18%;
-    height: 20%;
+    width: 19%;
+    height: 19%;
     border: 0.5px solid rgb(34, 102, 58);
 }
 
@@ -17,18 +17,16 @@
 #pieces {
     width: 100%; /* Use 100% width for better responsiveness */
     height: auto; /* Adjust height to be flexible based on content */
-    /* border: 2px solid; */
+    border: 2px solid rgb(34, 102, 58);
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Center the flex items horizontally */
-    padding: 15px; /* Add some padding to the container */
+    padding: 10px; /* Add some padding to the container */
     box-sizing: border-box; /* Include padding and border in the total width and height */
 }
 
 #pieces img {
-    width: 17%;
+    width: 19%;
     height: 19%;
-    border: 0.5px solid;
-    margin: 3px;
-    border-radius: 15px;
+    border: 0.5px solid rgb(34, 102, 58);
 }

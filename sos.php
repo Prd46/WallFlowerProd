@@ -51,7 +51,7 @@
                         </div>
                         <div class="leaf_card_caption">
                             <p class="BM"></p>
-                            <img class="icon-4" src="media/icons/bookmark.svg">
+                            <img class="icon-4" src="media/icons/edit.svg">
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="leaf_card_caption">
                             <p class="BM"></p>
-                            <img class="icon-4" src="media/icons/bookmark.svg">
+                            <img class="icon-4" src="media/icons/edit.svg">
                         </div>
                     </div>
                 </div>
@@ -162,6 +162,5 @@ font-weight: 600;
   color: #FF0000;
   font-size: 18px;
 }
-
 
 </style>

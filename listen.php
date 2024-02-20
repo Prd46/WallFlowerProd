@@ -19,7 +19,7 @@
  
             <br><br>
              <!-- ONE LEAF CARD -->
-        <a href="coffeesound.php">
+        <a href="affirmations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
                     <img class="icon leaf_icon_1" src="media/sound_img/coffe_shop.jpg"/>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="leaf_card_caption">
                             <p class="BM"></p>
-                            <img class="icon-1" src="media/icons/bookmark.svg">
+                            <img class="icon-1" src="media/icons/edit.svg">
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
 
         <!-- END OF LEAF CARD -->
  <!-- ONE LEAF CARD -->
- <a href="coffeesound.php">
+ <a href="affirmations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
                     <img class="icon leaf_icon_1" src="media/sound_img/sittinginpark.jpg"/>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="leaf_card_caption">
                             <p class="BM"></p>
-                            <img class="icon-2" src="media/icons/bookmark.svg">
+                            <img class="icon-2" src="media/icons/edit.svg">
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
 
         <!-- END OF LEAF CARD -->
  <!-- ONE LEAF CARD -->
- <a href="coffeesound.php">
+ <a href="affirmations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
                     <img class="icon leaf_icon_1" src="media/sound_img/rainyday.jpg"/>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="leaf_card_caption">
                             <p class="BM"></p>
-                            <img class="icon-3" src="media/icons/bookmark.svg">
+                            <img class="icon-3" src="media/icons/edit.svg">
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
 
         <!-- END OF LEAF CARD -->
  <!-- ONE LEAF CARD -->
- <a href="coffeesound.php">
+ <a href="affirmations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
                     <img class="icon leaf_icon_1" src="media/sound_img/lofi-beats.jpg"/>
@@ -94,7 +94,7 @@
                         </div>
                         <div class="leaf_card_caption">
                             <p class="BM"></p>
-                            <img class="icon-4" src="media/icons/bookmark.svg">
+                            <img class="icon-4" src="media/icons/edit.svg">
                         </div>
                     </div>
                 </div>
