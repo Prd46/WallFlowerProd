@@ -30,7 +30,10 @@
         <div class="droplet" id="no10"></div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br>
         <h3 class="font_center">Breathe in...</h3>
+        <div class="animate"></div>
         </div>
+        
+
 
 
 
@@ -41,6 +44,40 @@
 ?>
 
 <style>
+   .animate {
+       display: inline;
+       margin: 0;
+       padding: 0;
+       border: 0;
+       font-size: 16px;
+   }
+   
+   .animate:before {
+       content: 'Breath In ...';
+       -webkit-animation-name: animate;
+       -webkit-animation-duration: 19s;
+       animation-name: animate;
+       animation-duration: 19s;
+       animation-delay: 11s;
+       animation-iteration-count: infinite;
+   }
+   
+   @keyframes animate {
+       0% {
+           content: 'Breath In ...';
+       }
+       21% {
+           content: 'Hold ...'; /* Adjusted timing for hold */
+       }
+       58% {
+           content: 'Exhale ...'; /* Adjusted timing for exhale */
+       }
+       100% {
+           content: '';
+       }
+   }
+
+
 .font_center {
   align-items: center;
   font-size: 1.2em;
@@ -78,70 +115,70 @@ body {
   
   #no1 {
     background: #89BB1E;
-    animation: spin 5s ease-out infinite;
+    animation: spin 4s ease-out infinite;
     animation-fill-mode: forwards;
     animation-delay: 0s;
   }
   
   #no2 {
     background: #FFD449;
-    animation: spin2 5s ease-out infinite;
+    animation: spin2 4s ease-out infinite;
     animation-fill-mode: forwards;
     animation-delay: 0.05s;
   }
   
   #no3 {
     background: #89BB1E;
-    animation: spin3 5s ease-out infinite;
+    animation: spin3 4s ease-out infinite;
     animation-fill-mode: forwards;
     animation-delay: 0.1s;
   }
   
   #no4 {
     background: #FFD449;
-    animation: spin4 5s ease-out infinite;
+    animation: spin4 4s ease-out infinite;
     animation-fill-mode: forwards;
     animation-delay: 0.15s;
   }
   
   #no5 {
     background: #89BB1E;
-    animation: spin5 5s ease-out infinite;
+    animation: spin5 4s ease-out infinite;
     animation-fill-mode: forwards;
     animation-delay: 0.2s;
   }
   
   #no6 {
     background: #FFD449;
-    animation: spin6 5s ease-out infinite;
+    animation: spin6 4s ease-out infinite;
     animation-fill-mode: forwards;
     animation-delay: 0.25s;
   }
   
   #no7 {
     background: #89BB1E;
-    animation: spin7 5s ease-out infinite;
+    animation: spin7 4s ease-out infinite;
     animation-fill-mode: forwards;
     animation-delay: 0.30s;
   }
   
   #no8 {
     background: #FFD449;
-    animation: spin8 5s ease-out infinite;
+    animation: spin8 4s ease-out infinite;
     animation-fill-mode: forwards;
     animation-delay: 0.35s;
   }
   
   #no9 {
     background: #89BB1E;
-    animation: spin9 5s ease-out infinite;
+    animation: spin9 4s ease-out infinite;
     animation-fill-mode: forwards;
     animation-delay: 0.40s;
   }
   
   #no10 {
     background: #FFD449;
-    animation: spin10 5s ease-out infinite;
+    animation: spin10 4s ease-out infinite;
     animation-fill-mode: forwards;
     animation-delay: 0.45s;
   }
