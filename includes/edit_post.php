@@ -12,12 +12,9 @@ $emojiPath_value = sanitize_value($_POST['emojiPath']);
 $title_value = sanitize_value($_POST['title']);
 $entryText_value = sanitize_value($_POST['entryText']);
 $id_value = sanitize_value($_POST['id']);
-$id_value = sanitize_value($_POST['id']);
-
-$now = sanitize_value(date('Y-m-d H:i:s'));
 
 // edits the database value for each item
-$query = "UPDATE JournalEntries SET EntryDate = '{$now}', emojiPath = '{$emojiPath_value}', title = '{$title_value}', entryText = '{$entryText_value}' WHERE id = {$id_value}";
+$query = "UPDATE JournalEntries SET emojiPath = '{$emojiPath_value}', title = '{$title_value}', entryText = '{$entryText_value}' WHERE id = {$id_value}";
 
 // Run the SQL statement
 $result = mysqli_query($db_connection, $query);

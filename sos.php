@@ -47,7 +47,7 @@
 
                     <div class="leaf_card_text">
                         <div class="leaf_card_title">
-                            <h3 class="TS">Meditations</h3>
+                            <h3 class="TS">Lofi Beats</h3>
                         </div>
                         <div class="leaf_card_caption">
                             <p class="BM"></p>
