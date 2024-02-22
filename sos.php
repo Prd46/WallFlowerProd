@@ -39,7 +39,7 @@
             
 
  <!-- ONE LEAF CARD -->
- <a href="affirmations.php">
+ <a href="breathe.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
                     <img class="icon leaf_icon_2" src="media/icons/air.svg"/>
@@ -61,7 +61,7 @@
         <!-- END OF LEAF CARD -->
 
         <!-- ONE LEAF CARD -->
- <a href="affirmations.php">
+ <a href="listen.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
                     <img class="icon leaf_icon_1" src="media/sound_img/lofi-beats.jpg"/>
@@ -69,7 +69,7 @@
 
                     <div class="leaf_card_text">
                         <div class="leaf_card_title">
-                            <h3 class="TS">Lofi Beats</h3>
+                            <h3 class="TS">Sounds</h3>
                         </div>
                         <div class="leaf_card_caption">
                             <p class="BM"></p>
@@ -91,7 +91,7 @@
 
                     <div class="leaf_card_text">
                         <div class="leaf_card_title">
-                            <h3 class="TS">Lofi Beats</h3>
+                            <h3 class="TS">Affirmations</h3>
                         </div>
                         <div class="leaf_card_caption">
                             <p class="BM"></p>
