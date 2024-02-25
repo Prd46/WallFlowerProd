@@ -3,8 +3,8 @@
   $page_name = 'Home'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-<div class="header_menu_vine">
-</div>
+<!-- <div class="header_menu_vine">
+</div> -->
 <main>
         <div class="index_main_widget flex jccenter">
             <div class="index_main_widget_content TS">I am loved and worthy</div>

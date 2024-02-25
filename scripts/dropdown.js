@@ -15,20 +15,35 @@
 
 const filterButtons = document.querySelectorAll(".filterButton");
 let category = "";
+let categories = [];
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", function () {
-    // console.log(button.innerHTML)
     category = button.innerHTML;
-    let fixedCategory = category.split(" ").join("_");
-    console.log(fixedCategory);
+    if (!button.classList.contains("filterButton_lit")) {
+      button.classList.add("filterButton_lit");
+      categories.push(category)
+    } else {
+      button.classList.remove("filterButton_lit");
+      const index = categories.indexOf(category);
+      if (index > -1) { // only splice array when item is found
+        categories.splice(index, 1); // 2nd parameter means remove one item only
+      }
+    }
     const cards = document.querySelectorAll(".js-dbResult");
     cards.forEach((card) => {
-      if (!card.classList.contains(fixedCategory)) {
-        card.classList.add("hidden");
-      } else {
+      let match = 0;
+      categories.forEach((cg) =>{
+        let fixedCategory = cg.split(" ").join("_");
+
+      if (card.classList.contains(fixedCategory)) {
+        match = 1;
         card.classList.remove("hidden");
+      } else if (match == 0){
+        card.classList.add("hidden");
       }
+
+    });
     });
   });
 });

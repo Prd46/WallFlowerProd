@@ -64,7 +64,7 @@
                       <div class='leaf_card_image'>
                         <img class='icon leaf_icon' src='media/icons/newsmode.svg'/>
                       </div>
-                      <div class='leaf_card_text'>
+                      <div class='leaf_card_text_non_index'>
                         <div class='leaf_card_title'>
                           <h3 class='TS articleTitle'>{$article['Title']}</h1>
                           </div>
@@ -72,6 +72,17 @@
                             <p class='LM'>- {$article['Source']}</p>
                           </div>
                         </div>
+                        <form class ='save_button_container' id='saveButton' method='post' action='/includes/saveFunction.php'>
+                            <input type='hidden' name='id' value='{$article['id']}'>
+
+                            <input type='hidden' name='dbName' value='Articles'>
+                            <input type='hidden' name='colName' value='articleSaved'>
+                            <input type='hidden' name='redirect' value='/articles.php'>
+                                <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
+                                        <img style='opacity:{$article['articleSaved']};' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                </button>
+                            </form>
                     </div>
                   </a>
 

@@ -1,72 +1,173 @@
 <?php include_once __DIR__ . '/connection.php';
 ?>
 
- 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <title>Favorites</title>
-</head>
-<body>
-    <header>
-        <div class="header_image_box">
-            <a href="index.html">
-                <div class="header_backButton">
-                    <img class="header_backButtonImage" src="~"/>
-                </div>
-            </a>
-            <img class="header_image" src="~"/>
-        </div>
-    </header>
-    <main>
-        <div class="affirmations_main_label">
-            <h1 class="affirmations_main_label_header">Affirmations</h1>
-        </div>
-        <div class="affirmations_main_content">
-            
 <?php
-                  if (!$affirmations) {
-                    echo '<p>No results found</p>';
-                }
+                $litClassToggle = "1";
+                $litClassToggle2 = "0";
+                $litClassToggle3 = "0";
+                $litClassToggle4 = "0";
+                $affirmationText = "I have value.";
 
-        if ($affirmations){
-                    while ($affirmation = mysqli_fetch_array($affirmations)) {
-                        echo "
-                        <div class='saved_listing'>
-                        <p class=''>{$affirmation['affirmation']}</p>
-                        </div>";
-                      } 
-                }
 
+                if (!$_POST) {
+                    $query = 'SELECT *';
+                    $query .= ' FROM Affirmations';
+                    $query .= " WHERE affirmationRead = FALSE";
+                    $query .= " AND affirmationSaved = TRUE";
+                    // $query .= " ORDER BY RAND()";
+                    $query .= " LIMIT 1;";
+                    $site_url = site_url();
+                    // echo $db_connection;
+                    // echo $query;  
+                    $features = mysqli_query($db_connection, $query);
+                    $row = mysqli_fetch_assoc($features);
+
+
+                    if (mysqli_num_rows($features) > 0) {
+
+
+
+
+
+                        $current_value = $row['affirmationSaved'];
+                        if ($current_value == false){
+                            $litClassToggle = "1";
+                            $litClassToggle2 = "0";
+                        }else{
+                            $litClassToggle = "0";
+                            $litClassToggle2 = "1";
+                        }
+
+                        $updateSql = "UPDATE Affirmations SET affirmationRead = TRUE WHERE id = " . $row["id"];
+                        mysqli_query($db_connection, $updateSql);
+                        $affirmationText = $row["affirmation"];
+                    } else {
+                        $resetReadStatusSql = "UPDATE Affirmations SET affirmationRead = FALSE";
+                        mysqli_query($db_connection, $resetReadStatusSql);
+
+                        
+                    }
+         }
+
+
+
+
+                // Handle button click
+                if (isset($_POST['toggle'])) {
+                    $query = 'SELECT *';
+                    $query .= ' FROM Affirmations';
+                    $query .= " WHERE affirmationRead = TRUE";
+                    $query .= " ORDER BY id DESC";
+                    $query .= " LIMIT 1;";
+                    $site_url = site_url();
+                    // echo $db_connection;
+                    // echo $query;  
+                    $features = mysqli_query($db_connection, $query);
+                    $row = mysqli_fetch_assoc($features);
+
+
+                    // Fetch the current 'saved' value from the database
+                    if (mysqli_num_rows($features) > 0){
+
+
+
+
+                        $current_value = $row['affirmationSaved'];
+
+
+                        // Toggle the value
+                        if ($current_value == false){
+                            // $litClassToggle = "saveLit";
+                            $updateSql = "UPDATE Affirmations SET affirmationSaved = TRUE WHERE id = " . $row["id"];
+                            $litClassToggle3 = "1";
+                            $litClassToggle = "0";
+                            $litClassToggle2 = "1";
+                            mysqli_query($db_connection, $updateSql);
+                            $affirmationText = $row["affirmation"];
+                        }else{
+                            $litClassToggle4 = "1";
+                            $litClassToggle = "1";
+                            $litClassToggle2 = "0";
+                            // $litClassToggle = "saveUnlit";
+                            $updateSql = "UPDATE Affirmations SET affirmationSaved = FALSE WHERE id = " . $row["id"];
+                            mysqli_query($db_connection, $updateSql);
+                            $affirmationText = $row["affirmation"];
+                        }
+
+                        
+                        // if ($current_value == false){
+                            
+                        // }else{
+                         
+                        // }
+                    }
+ 
+                
+                }
+                if (!$affirmationText){
+                    $affirmationText = "I have value.";
+                    header("Refresh:0");
+                    
+                }
+                ?>
+
+<?php 
+  $page_name = 'Saved Affirmations'; // Gives a value if page name is missing
+  include_once __DIR__ . '/components/header.php'
 ?>
+    <main class="affirmations_main">
+        <div class="main_label">
+            <div class="main_label_header">
+                <img class="icon main_label_icon" src="media/icons/lightbulb.svg"/>
+                <h1 class="main_label_header TL">Affirmations</h1>
+            </div>
+            <p class="BM main_label_caption bookmark">
+                Here are phrases to inspire and uplift.
+            </p>
+        </div>
+        <div class="affirmations_main_content FCJA">
+            <h2 id="affirmation-container" class="affirmations_main_content_affirmation TL C">
+                <?php echo $affirmationText; ?>
+            </h2>
+            <div class="affirmations_main_content_buttons flex">
+
+            <a class="flex aicenter" href="">
+                    <button class="affirmations_main_content_button regenerate flex aicenter round">
+                        <img class="icon" src="media/icons/regen.svg"/>
+                        
+                </a>
+
+            <form id="saveButton" method="post" action="">
+                <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round <?php echo $litClassToggle; ?>">
+                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon saveUnlit bookmark" src="media/icons/affirmationsSave.svg"/>
+                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon saveLit" src="media/icons/savedLit.svg"/>
+                </button>
+            </form>
+ 
+            </div>
+            <div class="saved_notification">
+                <p class="BM saved_notification_text" style="opacity:<?php echo $litClassToggle3?>;">Affirmation saved!</p>
+                <p class="BM saved_notification_text" style="opacity:<?php echo $litClassToggle4?>;">Removed from saved.</p>
+            </div>
+        </div>
+
+        
+
+        <div class="affirmations_saved_switch">
+        <a href="affirmations.php" class="saved_switch_left">
+            
+            
+                <h3 class="LM">All</h3>
+
+            </a>
+
+            <div class="saved_switch_right saved_switch_lit">
+                <img class="check" src="media/icons/check.svg">
+                <h3 class="LM">Saved</h3>
+                </div>
         </div>
     </main>
-    <footer>
-        <div class="footer_buttons">
-            <a href="settings.html">
-                <div class="footer_button">
-                    <img class="icon" src="~"/>
-                    <p class="footer_button_text">Settings</p>
-                </div>
-            </a>
-            <a href="index.html">
-                <div class="footer_button">
-                    <img class="icon" src="~"/>
-                    <p class="footer_button_text">Home</p>
-                </div>
-            </a>
-            <a href="contact.html">
-                <div class="footer_button">
-                    <img class="icon" src="~"/>
-                    <p class="footer_button_text">Contact</p>
-                </div>
-            </a>   
-        </div>
-    </footer>
-</body>
-</html>
+
+    <?php 
+  include_once __DIR__ . '/components/footer.php'
+?>

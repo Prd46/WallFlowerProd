@@ -3,11 +3,26 @@
   $page_name = 'Sounds'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
+<?php
+                $litClassToggle = "100%";
+                $litClassToggle2 = "0";
+                // $affirmationText = "I have value.";
+                $query = 'SELECT *';
+                $query .= ' FROM Audio';
+                // $query .= " ORDER BY RAND()";
+                // $query .= " LIMIT 1;";
+                $site_url = site_url();
+                // echo $db_connection;
+                // echo $query;  
+                $features = mysqli_query($db_connection, $query);
 
-<div class="header_menu_vine">
-</div>
+?>
+<!-- <div class="header_menu_vine">
+</div> -->
 
 <main>
+
+
 <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/headphones.svg"/>
@@ -19,92 +34,52 @@
  
             <br><br>
              <!-- ONE LEAF CARD -->
-        <a href="coffeesound.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_1" src="media/sound_img/coffe_shop.jpg"/>
-                </div>
 
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Coffee Shop</h3>
+             <div class="articleListings">
+              <?php
+            while ($article = mysqli_fetch_array($features)) {
+
+              $category = str_replace('_', ' ', $article['category']);
+
+              $fileTitle = $article['file'];
+                list($f, $e) = explode('.', $fileTitle);
+                  echo
+                  "
+                  <a href='{$site_url}/sound.php?id={$article['id']}' class='{$article['category']} js-dbResult'>
+                    <div class='leaf_card flex aicenter'>
+                      <div class='leaf_card_image'>
+                        <img class='icon leaf_icon_1' src='media/AudioThumbnails/{$f}.jpg'/>
+                      </div>
+                      <div class='leaf_card_text_non_index'>
+                        <div class='leaf_card_title'>
+                          <h3 class='TS articleTitle'>{$article['title']}</h1>
+                          </div>
+
+                          <div class='leaf_card_caption'>
+                                <p class='LM'>{$category}</p>
+                            </div> 
+
+                            
                         </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-1" src="media/icons/bookmark.svg">
-                        </div>
+                        <form class='save_button_container'  id='saveButton' method='post' action='/includes/saveFunction.php'>
+                            <input type='hidden' name='id' value='{$article['id']}'>
+
+                            <input type='hidden' name='dbName' value='Audio'>
+                            <input type='hidden' name='colName' value='audioSaved'>
+                            <input type='hidden' name='redirect' value='/listen.php'>
+                                <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
+                                        <img style='opacity:{$article['audioSaved']};' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                </button>
+                            </form>
                     </div>
-                </div>
+                  </a>
+
+                  
+                  ";
+                } 
+                ?>
             </div>
-        </a>
-
-        <!-- END OF LEAF CARD -->
- <!-- ONE LEAF CARD -->
- <a href="coffeesound.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_1" src="media/sound_img/sittinginpark.jpg"/>
-                </div>
-
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Sitting in Park</h3>
-                        </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-2" src="media/icons/bookmark.svg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <!-- END OF LEAF CARD -->
- <!-- ONE LEAF CARD -->
- <a href="coffeesound.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_1" src="media/sound_img/rainyday.jpg"/>
-                </div>
-
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Rainy Day</h3>
-                        </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-3" src="media/icons/bookmark.svg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <!-- END OF LEAF CARD -->
- <!-- ONE LEAF CARD -->
- <a href="coffeesound.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_1" src="media/sound_img/lofi-beats.jpg"/>
-                </div>
-
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Lofi Beats</h3>
-                        </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-4" src="media/icons/bookmark.svg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <!-- END OF LEAF CARD -->
-
-
-        
         </div>
 </main>
 <?php 
