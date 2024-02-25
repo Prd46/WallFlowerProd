@@ -8,7 +8,7 @@
 <script src="scripts/puzzle.js"></script>
 <br>
     <div id="board"></div>
-        <h2 class="HS flex jccenter">Turns: <span id="turns">0</span></h2>
+        <h2 class="BS flex jccenter">Turns: <span id="turns">0</span></h2>
         <div id="pieces"></div>
     </main>
 <?php 

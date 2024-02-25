@@ -63,7 +63,7 @@
                 </div>
             </div>
         </a>
-        <a href="breathe.php">
+        <a href="meditations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
                     <img class="icon leaf_icon" src="media/icons/air.svg"/>
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </a>
-        <a href="play.php">
+        <a href="puzzlelist.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
                     <img class="icon leaf_icon" src="media/icons/extension.svg"/>
