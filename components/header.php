@@ -21,7 +21,7 @@ $document_title = $page_name . ' | ' . $site_name;
     <link rel="stylesheet" href= "<?php echo site_url(); ?>/css/stylesheet.css?v=<?php echo time();?>">
     <link rel="stylesheet" href="<?php echo site_url(); ?>/css/puzzleStyles.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <!-- <link rel="icon" href="<?php echo site_url(); ?>/media/favicon.png"> -->
+    <link rel="icon" href="<?php echo site_url(); ?>/media/icons/wf_icon.ico">
 </head>
 <body>
 
