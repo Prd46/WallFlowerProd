@@ -13,6 +13,7 @@
                     $query = 'SELECT *';
                     $query .= ' FROM ConversationStarters';
                     $query .= " WHERE starterRead = FALSE";
+                    $query .= " AND starterSaved = TRUE";
                     // $query .= " ORDER BY RAND()";
                     $query .= " LIMIT 1;";
                     $site_url = site_url();
@@ -153,13 +154,13 @@
 
         <div class="affirmations_saved_switch">
             
-            <div class="saved_switch_left saved_switch_lit">
-            <img class="check" src="media/icons/check.svg">
+            <a href="conversationStarters.php" class="saved_switch_left ">
                 <h3 class="LM">All</h3>
-            </div>
-            <a href="csSaved.php" class="saved_switch_right">
-                <h3 class="LM">Saved</h3>
             </a>
+            <div class="saved_switch_right saved_switch_lit">
+                <img class="check" src="media/icons/check.svg">
+                <h3 class="LM">Saved</h3>
+            </div>
         </div>
     </main>
 

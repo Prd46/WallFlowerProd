@@ -20,18 +20,21 @@
                 <h1 class="main_label_header TL quo">Hotlines</h1>
             </div>
             <div class="freeblock">
-            <h3 class="font_center">Hotline One</h3>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="phone">911</a>
+            <h3 class="font_center">Crisis Text Line</h3>
+            <p class="BS">A live, trained Crisis Counselor receives the text and responds, all from a secure online platform. The Counselor will help you move from a hot moment to a cool moment.</p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="phone">Text HOME to 741741</a>
             </div>
 
             <div class="freeblock">
-            <h3 class="font_center">Hotline Two</h3>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="phone">911</a>
+            <h3 class="font_center">Need2Text</h3>
+            <p class="BS">Immediately be put into contact with a master’s-level counselor. Divulge optional personal info, then chat about what's going on.</p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="phone">Text TALK to 38255</a>
             </div>
 
             <div class="freeblock">
-            <h3 class="font_center">Hotline Three</h3>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="phone">911</a>
+            <h3 class="font_center">SAMHSA's National Helpline</h3>
+            <p class="BS"> A confidential, free, 24/7 information service in English and Spanish for individuals and family members facing mental and/or substance use disorders. </p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="phone">1-800-662-4357</a>
             </div>
 
             <br>
