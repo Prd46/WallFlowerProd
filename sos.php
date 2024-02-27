@@ -1,6 +1,6 @@
 <?php 
    include_once __DIR__ . '/connection.php';
-  $page_name = 'Breathe'; // Gives a value if page name is missing
+  $page_name = 'SOS'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
 

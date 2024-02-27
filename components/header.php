@@ -43,12 +43,12 @@ $document_title = $page_name . ' | ' . $site_name;
             <div class="header_logo">
                         <img src="media/icons/logo.svg"/>
                     </div>
-                    <div class="header_menu_button_container">
+                    <!-- <div class="header_menu_button_container">
                         <div class="header_menu_button js-menu-button round">
                             <img class="js-menu_icon icon" src="media/icons/menu.svg"/>
                             <img class="js-x_icon icon hidden" src="media/icons/x.svg"/>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="hamburger_menu js-menu flex jccenter hidden">
                         <div class="menu_listings flex column">
                                 <div class="menu_listing">
@@ -67,7 +67,7 @@ $document_title = $page_name . ' | ' . $site_name;
                                     <a href="articles.php"><h1 class="BM menu_text">Articles</h1></a>
                                 </div>
                                 <div class="menu_listing">
-                                    <a href="play.php"><h1 class="BM menu_text">Puzzles</h1></a>
+                                    <a href="puzzlelist.php"><h1 class="BM menu_text">Puzzles</h1></a>
                                 </div>
                                 <div class="menu_listing">
                                     <a href="journal.php"><h1 class="BM menu_text">Journal</h1></a>

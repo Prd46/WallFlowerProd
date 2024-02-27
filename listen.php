@@ -31,8 +31,14 @@
             <p class="BM main_label_caption">
             Here are some soothing sounds, music samples, and audio tracks that can help create a nice and calming atmosphere.
             </p>
- 
-            <br><br>
+            <div class="filterButtons">
+              <div class="filterButton LM">Binaural</div>
+              <div class="filterButton LM">Classical</div>
+              <div class="filterButton LM">Guided Imagery</div>
+              <div class="filterButton LM">Guided Meditation</div>
+              <div class="filterButton LM">Lo fi</div>
+              <div class="filterButton LM">Color Noise</div>
+            </div>
              <!-- ONE LEAF CARD -->
 
              <div class="articleListings">
@@ -52,7 +58,7 @@
                       </div>
                       <div class='leaf_card_text_non_index'>
                         <div class='leaf_card_title'>
-                          <h3 class='TS articleTitle'>{$article['title']}</h1>
+                          <h3 class='TS articleTitle'>{$article['title']}</h3>
                           </div>
 
                           <div class='leaf_card_caption'>
@@ -61,7 +67,7 @@
 
                             
                         </div>
-                        <form class='save_button_container'  id='saveButton' method='post' action='/includes/saveFunction.php'>
+                        <form class='save_button_container'  id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
                             <input type='hidden' name='id' value='{$article['id']}'>
 
                             <input type='hidden' name='dbName' value='Audio'>
@@ -82,6 +88,7 @@
             </div>
         </div>
 </main>
+<script src="scripts/dropdown.js"></script>
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>

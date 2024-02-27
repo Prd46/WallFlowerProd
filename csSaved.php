@@ -111,7 +111,7 @@
                 ?>
 
 <?php 
-  $page_name = 'Icebreakers'; // Gives a value if page name is missing
+  $page_name = 'Saved Icebreakers'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
     <main class="affirmations_main">

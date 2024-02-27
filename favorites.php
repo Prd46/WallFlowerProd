@@ -17,6 +17,19 @@ $convoQuery = 'SELECT * FROM ConversationStarters WHERE starterSaved = TRUE ORDE
 $convoPull = mysqli_query($db_connection, $convoQuery);
 $convo = mysqli_fetch_assoc($convoPull);
 
+
+$soundQuery = 'SELECT * FROM Audio WHERE audioSaved = TRUE ORDER BY RAND() LIMIT 1;';
+$soundPull = mysqli_query($db_connection, $soundQuery);
+$sound = mysqli_fetch_assoc($soundPull);
+
+$articleQuery = 'SELECT * FROM Articles WHERE articleSaved = TRUE ORDER BY RAND() LIMIT 1;';
+$articlePull = mysqli_query($db_connection, $articleQuery);
+$article = mysqli_fetch_assoc($articlePull);
+
+$puzzleQuery = 'SELECT * FROM Puzzles WHERE puzzleSaved = TRUE ORDER BY RAND() LIMIT 1;';
+$puzzlePull = mysqli_query($db_connection, $puzzleQuery);
+$puzzle = mysqli_fetch_assoc($puzzlePull);
+
 ?>
 <main>
 <div class="main_label">
@@ -29,6 +42,7 @@ $convo = mysqli_fetch_assoc($convoPull);
             </p>
         </div>
  <!-- ONE LEAF CARD -->
+ <div class="favorite_results">
  <?php if (mysqli_num_rows($affirmationPull) > 0){
 echo 
 "
@@ -73,24 +87,35 @@ echo
         ";
  };
  ?>
-        <a href="listen.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/headphones.svg"/>
-                </div>
 
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Sounds</h3>
+<?php if (mysqli_num_rows($soundPull) > 0){
+                   $soundCategory = str_replace('_', ' ', $sound['category']);
+
+                   $fileTitle = $sound['file'];
+                     list($f, $e) = explode('.', $fileTitle);
+echo 
+"
+<a href='sound.php?id={$sound['id']}'>
+            <div class='leaf_card flex aicenter'>
+            <div class='leaf_card_image'>
+                <img class='icon leaf_icon_1' src='media/AudioThumbnails/{$f}.jpg'/>
+            </div>
+
+                        <div class='leaf_card_text'>
+                        <div class='leaf_card_title'>
+                            <h3 class='TS'>{$sound['title']}</h3>
                         </div>
-                        <div class="leaf_card_caption">
-                            <p class="BS">For when you need to relax.</p>
+                        <div class='leaf_card_caption'>
+                            <p class='BS'>Sounds</p>
                         </div>
                     </div>
                 </div>
             </div>
         </a>
-        <a href="breathe.php">
+        ";
+ };
+ ?>
+        <!-- <a href="breathe.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
                     <img class="icon leaf_icon" src="media/icons/air.svg"/>
@@ -106,43 +131,57 @@ echo
                     </div>
                 </div>
             </div>
-        </a>
-        <a href="articles.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/newsmode.svg"/>
-                </div>
+        </a> -->
 
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Articles</h3>
+        <?php if (mysqli_num_rows($articlePull) > 0){
+echo 
+"
+
+        <a href='{$site_url}/article.php?id={$article['id']}' class='{$article['Category']} js-dbResult'>
+                    <div class='large_leaf_card flex aicenter'>
+                      <div class='leaf_card_image'>
+                        <img class='icon leaf_icon' src='media/icons/newsmode.svg'/>
+                      </div>
+                      <div class='leaf_card_text_non_index'>
+                        <div class='leaf_card_title'>
+                          <h3 class='TS articleTitle'>{$article['Title']}</h1>
+                          </div>
+                            <div class='leaf_card_caption'>
+                            <p class='LM'>- {$article['Source']}</p>
+                          </div>
                         </div>
-                        <div class="leaf_card_caption">
-                            <p class="BS">For when you need guidance.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </a>
-        <a href="play.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/extension.svg"/>
-                </div>
+            </a>
+";
+};
+?>
+<?php if (mysqli_num_rows($puzzlePull) > 0){
+$category = str_replace('_', ' ', $puzzle['category']);
+                  echo
+                  "
+                  <a href='{$site_url}/play.php?id={$puzzle['id']}' class='{$puzzle['category']} js-dbResult'>
+                    <div class='leaf_card flex aicenter'>
+                      <div class='leaf_card_image'>
+                        <img class='icon leaf_icon_1' src='media/puzzle_thumbnails/{$puzzle['link']}.jpg'/>
+                      </div>
+                      <div class='leaf_card_text_non_index'>
+                        <div class='leaf_card_title'>
+                          <h3 class='TS articleTitle'>{$puzzle['title']}</h1>
+                          </div>
 
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Puzzles</h3>
-                        </div>
-                        <div class="leaf_card_caption">
-                            <p class="BS">For when you're feeling playful.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
+                          <div class='leaf_card_caption'>
+                                <p class='LM'>Puzzles</p>
+                            </div> 
 
-        
+                            
+                        </div>
+                        </div>
+                        </a>
+                        ";
+};
+
+                        ?>
+</div>
 </main>
 <?php 
   include_once __DIR__ . '/components/footer.php'

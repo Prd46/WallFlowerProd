@@ -22,28 +22,38 @@ filterButtons.forEach((button) => {
     category = button.innerHTML;
     if (!button.classList.contains("filterButton_lit")) {
       button.classList.add("filterButton_lit");
-      categories.push(category)
+      categories.push(category);
     } else {
       button.classList.remove("filterButton_lit");
       const index = categories.indexOf(category);
-      if (index > -1) { // only splice array when item is found
+      if (index > -1) {
+        // only splice array when item is found
         categories.splice(index, 1); // 2nd parameter means remove one item only
       }
     }
     const cards = document.querySelectorAll(".js-dbResult");
     cards.forEach((card) => {
       let match = 0;
-      categories.forEach((cg) =>{
+
+      if (categories.length == 0) {
+        card.classList.remove("hidden");
+        console.log("Array is empty");
+      }
+      
+      categories.forEach((cg) => {
+
+
         let fixedCategory = cg.split(" ").join("_");
 
-      if (card.classList.contains(fixedCategory)) {
-        match = 1;
-        card.classList.remove("hidden");
-      } else if (match == 0){
-        card.classList.add("hidden");
-      }
-
+        if (card.classList.contains(fixedCategory)) {
+          match = 1;
+          card.classList.remove("hidden");
+        } else if (match == 0) {
+          card.classList.add("hidden");
+        }
+        
+      });
     });
-    });
+    console.log(categories);
   });
 });
