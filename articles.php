@@ -72,7 +72,7 @@
                             <p class='LM'>- {$article['Source']}</p>
                           </div>
                         </div>
-                        <form class ='save_button_container' id='saveButton' method='post' action='/includes/saveFunction.php'>
+                        <form class ='save_button_container' id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
                             <input type='hidden' name='id' value='{$article['id']}'>
 
                             <input type='hidden' name='dbName' value='Articles'>

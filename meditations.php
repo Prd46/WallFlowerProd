@@ -67,12 +67,12 @@
    }
    80% {
        content: 'Exhale ..'; /* Adjusted timing for the end of exhale */
-   }
+   /* }
    100% {
        content: 'Breath In ...'; /* Delay before starting over */
-   }
+   /* } */
        
-   }
+   /* } */ 
 
    .animate {
   align-items: center;

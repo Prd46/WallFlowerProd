@@ -405,7 +405,7 @@ h3 {
 
 .large_leaf_card {
   width: 100%;
-  height: 120px;
+  height: 160px;
   background-color: var(--light);
   border: solid 1px var(--p50);
   border-top-left-radius: 12px;
@@ -413,7 +413,12 @@ h3 {
   /* filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25)); */
   margin-bottom: 1rem;
 }
-
+.leaf_icon_1 {
+  width: 80px;
+  height: 80px;
+  border-top-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
 .filterButtons {
   width: 100%;
   margin-bottom: 1rem;
@@ -621,9 +626,12 @@ footer {
   height: 34px;
   width: 80px;
   padding: 0;
-  background-color: #b6d085;
+  
   margin-bottom: 4px;
   border: none;
+}
+.oval_lit{
+  background-color: #b6d085;
 }
 .footer_icon {
   display: flex;

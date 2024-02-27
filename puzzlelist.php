@@ -5,13 +5,27 @@
   
 ?>
 
+<?php
+                $litClassToggle = "100%";
+                $litClassToggle2 = "0";
+                // $affirmationText = "I have value.";
+                $query = 'SELECT *';
+                $query .= ' FROM Puzzles';
+                // $query .= " ORDER BY RAND()";
+                // $query .= " LIMIT 1;";
+                $site_url = site_url();
+                // echo $db_connection;
+                // echo $query;  
+                $features = mysqli_query($db_connection, $query);
+
+?>
 
 <main>
 
 
 <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/puzzles.svg"/>
+                <img class="icon main_label_icon" src="media/icons/extension.svg"/>
                 <h1 class="main_label_header TL">Puzzles</h1>
             </div>
             <p class="BM main_label_caption">
@@ -20,210 +34,61 @@
         </div>
 
 
-<button id="animal-button" class="toggle-button"><img src="media/checkmark.svg" alt="Unchecked" class="icon1 hide">
-        Animal
-    </button>
-    <button id="art-button" class="toggle-button"><img src="media/checkmark.svg" alt="Unchecked" class="icon1 hide">
-        Art
-    </button>
-    <button id="nature-button" class="toggle-button"><img src="media/checkmark.svg" alt="Unchecked" class="icon1 hide">
-        Nature
-    </button>
-
-<br><br>
-             <!-- ONE LEAF CARD -->
-             <a href="play.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_1" src="media/puzzle_thumbnail/Animal4.jpg"/>
-                </div>
-
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Kittens</h3>
-                        </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-1" src="media/icons/bookmark.svg">
-                        </div>
-                    </div>
-                </div>
+        <div class="filterButtons">
+              <div class="filterButton LM">Animals</div>
+              <div class="filterButton LM">Art</div>
+              <div class="filterButton LM">Nature</div>
             </div>
-        </a>
 
-        <!-- END OF LEAF CARD -->
- <!-- ONE LEAF CARD -->
- <a href="play.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_1" src="media/puzzle_thumbnail/Animal7.jpg"/>
-                </div>
 
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Hedgehog</h3>
+
+            <div class="articleListings">
+              <?php
+            while ($article = mysqli_fetch_array($features)) {
+
+              $category = str_replace('_', ' ', $article['category']);
+                  echo
+                  "
+                  <a href='{$site_url}/play.php?id={$article['id']}' class='{$article['category']} js-dbResult'>
+                    <div class='leaf_card flex aicenter'>
+                      <div class='leaf_card_image'>
+                        <img class='icon leaf_icon_1' src='media/puzzle_thumbnails/{$article['link']}.jpg'/>
+                      </div>
+                      <div class='leaf_card_text_non_index'>
+                        <div class='leaf_card_title'>
+                          <h3 class='TS articleTitle'>{$article['title']}</h1>
+                          </div>
+
+                          <div class='leaf_card_caption'>
+                                <p class='LM'>{$category}</p>
+                            </div> 
+
+                            
                         </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-2" src="media/icons/bookmark.svg">
-                        </div>
+                        <form class='save_button_container'  id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                            <input type='hidden' name='id' value='{$article['id']}'>
+
+                            <input type='hidden' name='dbName' value='Puzzles'>
+                            <input type='hidden' name='colName' value='puzzleSaved'>
+                            <input type='hidden' name='redirect' value='/puzzlelist.php'>
+                                <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
+                                        <img style='opacity:{$article['puzzleSaved']};' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                </button>
+                            </form>
                     </div>
-                </div>
+                  </a>
+
+                  
+                  ";
+                } 
+                ?>
             </div>
-        </a>
-
-        <!-- END OF LEAF CARD -->
- <!-- ONE LEAF CARD -->
- <a href="play.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_1" src="media/puzzle_thumbnail/Animal1.jpg"/>
-                </div>
-
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Butterfly</h3>
-                        </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-3" src="media/icons/bookmark.svg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <!-- END OF LEAF CARD -->
-         <!-- ONE LEAF CARD -->
-         <a href="play.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_1" src="media/puzzle_thumbnail/Art2.jpg"/>
-                </div>
-
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Sunflower</h3>
-                        </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-4" src="media/icons/bookmark.svg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <!-- END OF LEAF CARD -->
- <!-- ONE LEAF CARD -->
- <a href="play.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_1" src="media/puzzle_thumbnail/Art4.jpg"/>
-                </div>
-
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Great Wave</h3>
-                        </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-5" src="media/icons/bookmark.svg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <!-- END OF LEAF CARD -->
-         <!-- ONE LEAF CARD -->
-         <a href="play.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_1" src="media/puzzle_thumbnail/Art1.jpg"/>
-                </div>
-
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Starry Night</h3>
-                        </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-6" src="media/icons/bookmark.svg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <!-- END OF LEAF CARD -->
-<br><br>
 </main>
-
+<script src="scripts/dropdown.js"></script>
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>
-
-<script>
-const animalButton = document.getElementById('animal-button');
-    const artButton = document.getElementById('art-button');
-    const natureButton = document.getElementById('nature-button');
-
-    const animalIcon = animalButton.querySelector('.icon1');
-    const artIcon = artButton.querySelector('.icon1');
-    const natureIcon = natureButton.querySelector('.icon1');
-
-    const animalText = animalButton.querySelector('.toggle-text');
-    const artText = artButton.querySelector('.toggle-text');
-    const natureText = natureButton.querySelector('.toggle-text');
-
-    animalButton.addEventListener('click', () => {
-        if (animalIcon.classList.contains('hide')) {
-            animalIcon.classList.remove('hide');
-            animalText.innerText = 'Animal (Selected)';
-            animalButton.style.backgroundColor = 'white';
-            animalButton.style.color = '#D2EC9F';
-        } else {
-            animalIcon.classList.add('hide');
-            animalText.innerText = 'Animal';
-            animalButton.style.backgroundColor = '#D2EC9F';
-            animalButton.style.color = '#D2EC9F';
-        }
-    });
-
-    artButton.addEventListener('click', () => {
-        if (artIcon.classList.contains('hide')) {
-            artIcon.classList.remove('hide');
-            artText.innerText = 'Art (Selected)';
-            artButton.style.backgroundColor = '#D2EC9F';
-            artButton.style.color = '#D2EC9F';
-        } else {
-            artIcon.classList.add('hide');
-            artText.innerText = 'Art';
-            artButton.style.backgroundColor = '#D2EC9F';
-            artButton.style.color = '#D2EC9F';
-        }
-    });
-
-    natureButton.addEventListener('click', () => {
-        if (natureIcon.classList.contains('hide')) {
-            natureIcon.classList.remove('hide');
-            natureText.innerText = 'Nature (Selected)';
-            natureButton.style.backgroundColor = '#D2EC9F';
-            natureButton.style.color = '#D2EC9F';
-        } else {
-            natureIcon.classList.add('hide');
-            natureText.innerText = 'Nature';
-            natureButton.style.backgroundColor = '#D2EC9F';
-            natureButton.style.color = '#D2EC9F';
-        }
-    });
-
-
-
-
-    
-</script>
 
 <style>
 

@@ -1,6 +1,6 @@
 <?php 
    include_once __DIR__ .'/connection.php'; 
-  $page_name = 'Article Details'; // Gives a value if page name is missing
+  $page_name = 'Edit Journal'; // Gives a value if page name is missing
   include "components/header.php" 
 ?>
 <?php
@@ -14,6 +14,7 @@ if ($result->num_rows > 0) {
     $error_message = 'User does not exist';
     // redirect_to('/admin/users?error=' . $error_message);
 }
+$site_url = site_url();
 
 ?>
 <main>
@@ -39,7 +40,7 @@ if ($result->num_rows > 0) {
 
     <div class="delete_confirmation js-confirm hidden">
       <h3 class="TS">Are you sure you want to delete your entry: <?php echo $entry['title']?> ?</h3>
-      <a href="/includes/deleteJournal.php?id=<?php echo $entry['id']?>">
+      <a href="<?php echo $site_url?>/includes/deleteJournal.php?id=<?php echo $entry['id']?>">
         <h3 class="TS">Yes</h3>
       </a>
       <div class="confirmation_button_no js-cancel">

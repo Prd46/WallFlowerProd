@@ -54,7 +54,7 @@ function add_journal($emojiPath, $title, $entryText)
 function get_journal_by_id($id)
 {
     global $db_connection;
-    $query = "SELECT * FROM journalEntries WHERE id = $id";
+    $query = "SELECT * FROM JournalEntries WHERE id = $id";
     $result = mysqli_query($db_connection, $query);
     if ($result->num_rows > 0) {
         $journalEntry = mysqli_fetch_assoc($result);
@@ -64,10 +64,10 @@ function get_journal_by_id($id)
     }
 }
 
-function edit_journal($emojiPath, $title, $entryText)
+function edit_journal($id, $emojiPath, $title, $entryText)
 {
     global $db_connection;
-    $query = 'UPDATE journalEntries';
+    $query = 'UPDATE JournalEntries';
     $query .= " SET emojiPath = '{$emojiPath}', title = '{$title}', entryText = '{$entryText}'";
     $query .= " WHERE id = $id";
     $result = mysqli_query($db_connection, $query);
@@ -77,7 +77,7 @@ function edit_journal($emojiPath, $title, $entryText)
 function delete_journal_by_id($id)
 {
     global $db_connection;
-    $query = "DELETE FROM journalEntries WHERE id = $id";
+    $query = "DELETE FROM JournalEntries WHERE id = $id";
     $result = mysqli_query($db_connection, $query);
     return $result;
 }
