@@ -1,7 +1,7 @@
 <?php 
    include_once __DIR__ .'/connection.php'; 
   $page_name = 'Article Details'; // Gives a value if page name is missing
-  include "components/header.php" 
+  include "components/header.php";
 ?>
 <?php
 // get users data from database
@@ -14,32 +14,45 @@ if ($result->num_rows > 0) {
     $error_message = 'User does not exist';
     // redirect_to('/admin/users?error=' . $error_message);
 }
-
+$site_url = site_url();
 ?>
 <main>
 <!-- THIS IS THE RETURN HTML -->
-<div class="con">
-  <a href="articles.php" class="link">
-    <img class="icon main_label_icon" src="media/icons/arrow_back.svg" alt="Back Arrow"/>
-    <p class="flexis">Articles</p>
-  </a>
-</div>
-  <br> <br>
+<div class="main_label">
+            <div class="main_label_header">
+                <img class="icon main_label_icon" src="media/icons/newsmode.svg"/>
+                <h1 class="main_label_header TL">Articles</h1>
 
-<!-- THIS IS THE TITLE AND ICON  -->
-  <div class="con1">
-  <img class="icon main_label_icon" src="media/icons/newsmode.svg" alt="News Mode Icon"/>
-  <div class="title"><?php echo $article['Title']?></div>
-</div>
- 
+
+                <form class='save_button_container'  id='saveButton' method='post' action='<?php echo $site_url?>/includes/saveFunction.php'>
+                            <input type='hidden' name='id' value='<?php echo $article['id'];?>'>
+
+                            <input type='hidden' name='dbName' value='Articles'>
+                            <input type='hidden' name='colName' value='aricleSaved'>
+                            <input type='hidden' name='redirect' value='/article.php?id=<?php echo $article['id'];?>'>
+                                <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
+                                        <img style='opacity:<?php echo $article['articleSaved'];?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                </button>
+                            </form>
+
+
+            </div>
+            <p class="BM main_label_caption"><?php echo $article['Title']?></p>
+        </div>
 <!-- THIS IS THE ARTICLE TEXT PARAGRAPHS -->
-  <div class="source"><?php echo $article['Source']?></div>
-  <div class="breakdown"><?php echo $article['Breakdown']?></div>
+<a class="TS" href="<?php echo $article['Link']?>" target="_blank">
+  <div class="source LM"><p class="TS"><?php echo $article['Source']?></p>
+</div>
+</a>
 
-  <a href="<?php echo $article['Link']?>" target="_blank">
-  View Original Article
-  </a>
+  <div class="breakdown">
+    <p class="BS" style="line-height:1.75rem;">
+    <?php echo $article['Breakdown']?>
+    </p>
+  </div>
 
+<br></br>
   </main>
 
 <?php include "components/footer.php" ?>
@@ -54,6 +67,10 @@ if ($result->num_rows > 0) {
   font-weight: 400; /* Example font weight */
   line-height: 24px; /* Example line height */
   letter-spacing: 0.5px; /* Example letter spacing */
+}
+.source{
+  color: var(--t40);
+  text-decoration: underline;
 }
 .breakdown {
   margin: 25px;

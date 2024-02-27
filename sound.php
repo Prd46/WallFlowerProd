@@ -12,7 +12,7 @@ if ($result->num_rows > 0) {
     $error_message = 'Audio does not exist';
     // redirect_to('/admin/users?error=' . $error_message);
 }
-
+$site_url = site_url();
 $fileTitle = $article['file'];
 list($f, $e) = explode('.', $fileTitle);
 $category = str_replace('_', ' ', $article['category']);
@@ -25,6 +25,21 @@ $category = str_replace('_', ' ', $article['category']);
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/headphones.svg"/>
                 <h1 class="main_label_header TL">Sounds</h1>
+
+
+                <form class='save_button_container'  id='saveButton' method='post' action='<?php echo $site_url?>/includes/saveFunction.php'>
+                            <input type='hidden' name='id' value='<?php echo $article['id'];?>'>
+
+                            <input type='hidden' name='dbName' value='Audio'>
+                            <input type='hidden' name='colName' value='audioSaved'>
+                            <input type='hidden' name='redirect' value='/sound.php?id=<?php echo $article['id'];?>'>
+                                <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
+                                        <img style='opacity:<?php echo $article['audioSaved'];?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                </button>
+                            </form>
+
+
             </div>
             <p class="BM main_label_caption"><?php echo $article['title']?></p>
         </div>
