@@ -3,6 +3,17 @@
   $page_name = 'SOS'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
+<?php 
+$affirmationQuery = 'SELECT * FROM Affirmations WHERE affirmationSaved = TRUE ORDER BY RAND() LIMIT 1;';
+$affirmationPull = mysqli_query($db_connection, $affirmationQuery);
+$affirmation = mysqli_fetch_assoc($affirmationPull);
+
+$soundQuery = 'SELECT * FROM Audio WHERE audioSaved = TRUE ORDER BY RAND() LIMIT 1;';
+$soundPull = mysqli_query($db_connection, $soundQuery);
+$sound = mysqli_fetch_assoc($soundPull);
+
+?>
+
 
 <main>
 
@@ -42,19 +53,18 @@
             
 
  <!-- ONE LEAF CARD -->
- <a href="breathe.php">
+ <a href="meditations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon_2" src="media/icons/air.svg"/>
+                    <img class="icon leaf_icon" src="media/icons/air.svg"/>
                 </div>
 
                     <div class="leaf_card_text">
                         <div class="leaf_card_title">
-                            <h3 class="TS">Lofi Beats</h3>
+                            <h3 class="TS">Meditations</h3>
                         </div>
                         <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-4" src="media/icons/bookmark.svg">
+                            <p class="BS">For when you need to breathe.</p>
                         </div>
                     </div>
                 </div>
@@ -64,45 +74,102 @@
         <!-- END OF LEAF CARD -->
 
         <!-- ONE LEAF CARD -->
- <a href="listen.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_1" src="media/sound_img/lofi-beats.jpg"/>
-                </div>
+        <?php if (mysqli_num_rows($soundPull) > 0){
+                   $soundCategory = str_replace('_', ' ', $sound['category']);
 
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Sounds</h3>
+                   $fileTitle = $sound['file'];
+                     list($f, $e) = explode('.', $fileTitle);
+echo 
+"
+<a href='sound.php?id={$sound['id']}'>
+            <div class='leaf_card flex aicenter'>
+            <div class='leaf_card_image'>
+                <img class='icon leaf_icon_1' src='media/AudioThumbnails/{$f}.jpg'/>
+            </div>
+
+                        <div class='leaf_card_text'>
+                        <div class='leaf_card_title'>
+                            <h3 class='TS'>{$sound['title']}</h3>
                         </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
-                            <img class="icon-4" src="media/icons/bookmark.svg">
+                        <div class='leaf_card_caption'>
+                            <p class='BS'>Sounds</p>
                         </div>
                     </div>
                 </div>
             </div>
         </a>
+        ";
+ }else{
+    echo "
+    <a href='listen.php'>
+            <div class='leaf_card flex aicenter'>
+                <div class='leaf_card_image'>
+                    <img class='icon leaf_icon' src='media/icons/headphones.svg'/>
+                </div>
+
+                    <div class='leaf_card_text'>
+                        <div class='leaf_card_title'>
+                            <h3 class='TS'>Sounds</h3>
+                        </div>
+                        <div class='leaf_card_caption'>
+                            <p class='BS'>For when you need to relax.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    ";
+ };
+ ?>
 
         <!-- END OF LEAF CARD -->
 
 <!-- ONE LEAF CARD -->
-<a href="affirmations.php">
-            <div class="leaf_card flex aicenter">
-                <div class="leaf_card_image">
-                    <img class="icon leaf_icon_2" src="media/icons/lightbulb.svg"/>
+<?php if (mysqli_num_rows($affirmationPull) > 0){
+echo 
+"
+<a href='paSaved.php'>
+            <div class='leaf_card flex aicenter'>
+                <div class='leaf_card_image'>
+                    <img class='icon leaf_icon' src='media/icons/lightbulb.svg'/>
                 </div>
 
-                    <div class="leaf_card_text">
-                        <div class="leaf_card_title">
-                            <h3 class="TS">Affirmations</h3>
+                    <div class='leaf_card_text'>
+                      <h3 class='BS'>{$affirmation['affirmation']}</h3>
+                        <!-- <div class='leaf_card_title'>
+                            <h3 class='TS'>Affirmations</h3>
                         </div>
-                        <div class="leaf_card_caption">
-                            <p class="BM"></p>
+                        <div class='leaf_card_caption'>
+                            <p class='BS'>For when you need inspiration.</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </a>
+        ";
+ }else{
+    echo"
+    <a href='affirmations.php'>
+            <div class='leaf_card flex aicenter'>
+                <div class='leaf_card_image'>
+                    <img class='icon leaf_icon' src='media/icons/lightbulb.svg'/>
+                </div>
+
+                    <div class='leaf_card_text'>
+                        <div class='leaf_card_title'>
+                            <h3 class='TS'>Affirmations</h3>
+                        </div>
+                        <div class='leaf_card_caption'>
+                            <p class='BS'>For when you need inspiration.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </a>
+    ";
+
+ };
+ ?>
 
         <!-- END OF LEAF CARD -->
 
@@ -150,11 +217,6 @@
     height: 40px;
     border-top-left-radius: 12px;
     border-bottom-right-radius: 12px;
-}
-h3 {
-text-align: center;
-font-size:  16px;
-font-weight: 600;
 }
 
 .freeblock {

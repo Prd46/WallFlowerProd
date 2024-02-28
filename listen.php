@@ -22,7 +22,10 @@
 
 <main>
 
-
+<a href="index.php" class="label_back">
+        <img class="label_back_arrow" src="media/icons/back.svg">
+        <p class=" BS label_back_text">Explore</p>
+        </a>
 <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/headphones.svg"/>
@@ -32,12 +35,12 @@
             Here are some soothing sounds, music samples, and audio tracks that can help create a nice and calming atmosphere.
             </p>
             <div class="filterButtons">
-              <div class="filterButton LM">Binaural</div>
-              <div class="filterButton LM">Classical</div>
-              <div class="filterButton LM">Guided Imagery</div>
-              <div class="filterButton LM">Guided Meditation</div>
-              <div class="filterButton LM">Lo fi</div>
-              <div class="filterButton LM">Color Noise</div>
+              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Binaural</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Classical</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Guided Imagery</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Guided Meditation</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Lo fi</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Color Noise</div></div>
             </div>
              <!-- ONE LEAF CARD -->
 

@@ -21,7 +21,10 @@
 ?>
 
 <main>
-
+<a href="index.php" class="label_back">
+        <img class="label_back_arrow" src="media/icons/back.svg">
+        <p class=" BS label_back_text">Explore</p>
+        </a>
 
 <div class="main_label">
             <div class="main_label_header">
@@ -35,9 +38,9 @@
 
 
         <div class="filterButtons">
-              <div class="filterButton LM">Animals</div>
-              <div class="filterButton LM">Art</div>
-              <div class="filterButton LM">Nature</div>
+        <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Animals</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Art</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Nature</div></div>
             </div>
 
 
