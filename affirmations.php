@@ -6,6 +6,7 @@
                 $litClassToggle2 = "0";
                 $litClassToggle3 = "0";
                 $litClassToggle4 = "0";
+                $spinToggle = "";
                 $affirmationText = "I have value.";
 
 
@@ -21,7 +22,7 @@
                     $features = mysqli_query($db_connection, $query);
                     $row = mysqli_fetch_assoc($features);
 
-
+                    $spinToggle = "spin";
                     if (mysqli_num_rows($features) > 0) {
 
 
@@ -137,7 +138,7 @@
 
             <a class="flex aicenter" href="">
                     <button class="affirmations_main_content_button regenerate flex aicenter round">
-                        <img class="icon" src="media/icons/regen.svg"/>
+                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg"/>
                         
                 </a>
 

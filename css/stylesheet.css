@@ -489,6 +489,7 @@ h3 {
     transform: rotate(-359.9deg);
   }
 }
+
 /* Header Elements */
 header {
   height: 64px;
@@ -735,6 +736,8 @@ footer {
 }
 .regenerate {
   color: var(--white);
+}
+.spin {
   animation: spin 0.7s ease-out forwards;
 }
 .affirmations_saved_switch {
