@@ -1,4 +1,11 @@
-
+        <div class="header_image_box">
+            <div class="backgroundBrick">
+            </div>
+        </div>
+        <div class="footer_grass_box">
+            <div class="footer_grass">
+            </div>
+        </div>
 <footer>
             <div class="footer_buttons">
                 <a href="favorites.php">
@@ -32,11 +39,7 @@
             </div>
         </footer>
 
-        <div class="header_image_box">
-            <div class="backgroundBrick">
-                <img src="media/brick_bg.webp"/>
-            </div>
-        </div>
+
         <!-- <script src="scripts/functions.js"></script> -->
 </body>
 <script>
@@ -94,7 +97,7 @@ if (document.title =="Saved | Wallflower"){
   z-index: 1; /* Set z-index to ensure footer content is above grass layer */
 }
 
-.footer_buttons::before {
+/* .footer_buttons::before {
   content: "";
   display: flex;
   justify-content: center;
@@ -109,5 +112,18 @@ if (document.title =="Saved | Wallflower"){
   background-position: center;
   background-repeat: repeat-x;
   z-index: 0; 
+} */
+.footer_grass{
+    display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100.4%;
+  bottom: 60px;
+  height: 50px; 
+  margin: 0 auto;
+  background-image: url('/media/grassy_border.svg'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: repeat-x;
 }
 </style>

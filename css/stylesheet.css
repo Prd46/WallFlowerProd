@@ -154,10 +154,13 @@ img {
   overflow: hidden;
   position: absolute;
   mix-blend-mode: multiply;
-  bottom: 1rem;
+  background: url("../media/brick_bg.webp");
+  background-repeat: repeat;
+  bottom: -1rem;
   border: none;
   margin: none;
   width: 100%;
+  height: 100vh;
   padding: none;
   margin: none;
   filter: opacity(20%);
@@ -430,7 +433,8 @@ h3 {
   transition: height 0.5s ease-out;
 }
 .filterButton {
-  border: solid 1px var(--n60);
+  border: solid 1px var(--n70);
+  /* border-style: inset; */
   /* background-color: var(--n80); */
   height: 32px;
   width: max-content;
@@ -441,11 +445,33 @@ h3 {
   border-radius: 8px;
   padding: 0 1rem;
   margin: 0.25rem 0.5rem 0.25rem 0;
+  transition: all 0.3s ease-out;
 }
 .filterButton_lit {
-  border: none;
+  border: solid 1px var(--invis);
   background-color: #b6d085;
+  /* padding: 0.07rem 1.07rem; */
+  /* margin: 0.25rem 0.5rem 0.25rem 0; */
+  transition: all 0.3s ease-out;
 }
+
+.check {
+  padding: 0 0.5rem 0 0;
+}
+
+.label_back {
+  display: flex;
+  align-items: center;
+  height: 1.5rem;
+  padding-top: 1rem;
+}
+.label_back_arrow {
+  filter: brightness(0);
+}
+.label_back_text {
+  padding-left: 0.5rem;
+}
+
 /* Reusable animations */
 @keyframes fadeIn {
   0% {
@@ -455,7 +481,14 @@ h3 {
     opacity: 100%;
   }
 }
-
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-359.9deg);
+  }
+}
 /* Header Elements */
 header {
   height: 64px;
@@ -549,7 +582,7 @@ header {
 
 /* Main Elements */
 main {
-  height: 90vh;
+  height: 95vh;
   padding: 0 var(--gutter) var(--gutter) var(--gutter);
   overflow-y: scroll;
   position: relative;
@@ -626,11 +659,11 @@ footer {
   height: 34px;
   width: 80px;
   padding: 0;
-  
+
   margin-bottom: 4px;
   border: none;
 }
-.oval_lit{
+.oval_lit {
   background-color: #b6d085;
 }
 .footer_icon {
@@ -702,6 +735,7 @@ footer {
 }
 .regenerate {
   color: var(--white);
+  animation: spin 0.7s ease-out forwards;
 }
 .affirmations_saved_switch {
   display: flex;
@@ -731,14 +765,12 @@ footer {
 .saved_switch_lit {
   background-color: #b6d085;
 }
-.check {
-  padding: 0.5rem;
-}
 
 .saveLit {
   width: 30px;
   height: 30px;
   z-index: 10;
+  transition: all 0.3s ease-out;
 }
 .saveUnlit {
   width: 40px;
@@ -777,6 +809,10 @@ footer {
 .journal_box::-webkit-scrollbar {
   display: none;
 }
+.new_journal {
+  margin-top: 0.5rem;
+  background-color: #ebffc6;
+}
 
 /* Audio page */
 @media screen and (max-width: 430px) {
@@ -801,6 +837,6 @@ footer {
 
 @media screen and (max-height: 900px) {
   .affirmations_saved_switch {
-    margin-top: 0vh;
+    margin-top: 3vh;
   }
 }

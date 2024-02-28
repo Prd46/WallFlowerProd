@@ -22,6 +22,10 @@ $category = str_replace('_', ' ', $article['category']);
 
 
 <div class="main_label">
+<a href="listen.php" class="label_back">
+        <img class="label_back_arrow" src="media/icons/back.svg">
+        <p class=" BS label_back_text">Sounds</p>
+        </a>
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/headphones.svg"/>
                 <h1 class="main_label_header TL">Sounds</h1>

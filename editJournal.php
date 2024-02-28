@@ -18,6 +18,10 @@ $site_url = site_url();
 
 ?>
 <main>
+<a href="journal.php" class="label_back">
+        <img class="label_back_arrow" src="media/icons/back.svg">
+        <p class=" BS label_back_text">Journal</p>
+        </a>
 <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/edit.svg"/>

@@ -19,12 +19,19 @@ let categories = [];
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", function () {
-    category = button.innerHTML;
+    const textDiv = button.querySelector(".js-filter");
+    const check = button.querySelector("img");
+    category = textDiv.innerHTML;
     if (!button.classList.contains("filterButton_lit")) {
       button.classList.add("filterButton_lit");
+      check.classList.remove("hidden");
+      // console.log(button.img)
+      // button.img.classList.remove("hidden");
       categories.push(category);
     } else {
       button.classList.remove("filterButton_lit");
+      // button.img.classList.add("hidden");
+      check.classList.add("hidden");
       const index = categories.indexOf(category);
       if (index > -1) {
         // only splice array when item is found
@@ -39,10 +46,8 @@ filterButtons.forEach((button) => {
         card.classList.remove("hidden");
         console.log("Array is empty");
       }
-      
+
       categories.forEach((cg) => {
-
-
         let fixedCategory = cg.split(" ").join("_");
 
         if (card.classList.contains(fixedCategory)) {
@@ -51,7 +56,6 @@ filterButtons.forEach((button) => {
         } else if (match == 0) {
           card.classList.add("hidden");
         }
-        
       });
     });
     console.log(categories);
