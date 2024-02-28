@@ -46,7 +46,7 @@ $puzzle = mysqli_fetch_assoc($puzzlePull);
  <?php if (mysqli_num_rows($affirmationPull) > 0){
 echo 
 "
-<a href='affirmations.php'>
+<a href='paSaved.php'>
             <div class='leaf_card flex aicenter'>
                 <div class='leaf_card_image'>
                     <img class='icon leaf_icon' src='media/icons/lightbulb.svg'/>
@@ -72,7 +72,7 @@ echo
  <?php if (mysqli_num_rows($convoPull) > 0){
 echo 
 "
-<a href='conversationStarters.php'>
+<a href='csSaved.php'>
             <div class='leaf_card flex aicenter'>
                 <div class='leaf_card_image'>
                     <img class='icon leaf_icon' src='media/icons/forum.svg'/>
