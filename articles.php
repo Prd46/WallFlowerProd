@@ -43,9 +43,9 @@
             Here are some advice articles to help better understand and manage feelings of social anxiety.
             </p>
             <div class="filterButtons">
-            <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Meditation</div></div>
-            <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Causes of Social Anxiety</div></div>
-            <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Social Improvement</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Meditation</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Causes of Social Anxiety</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Social Improvement</div></div>
             </div>
             <!-- <div class="categoryDropdown js-dropdown .js-dropdown_closed">
               <div class="LM dropdownButton js-categoryButton">Category</div>

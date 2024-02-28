@@ -38,9 +38,9 @@
 
 
         <div class="filterButtons">
-        <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Animals</div></div>
-        <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Art</div></div>
-        <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Nature</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Animals</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Art</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Nature</div></div>
             </div>
 
 

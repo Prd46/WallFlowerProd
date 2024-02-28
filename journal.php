@@ -20,7 +20,7 @@
           
                     <div class='leaf_card new_journal flex aicenter'>
                       <div class='journal_card_date'>
-                        <img src="/media/icons/edit.svg">
+                      <img class="icon main_label_icon" src="media/icons/edit.svg"/>
                       </div>
                       <div class='journal_card_text'>
                         <div class='leaf_card_title'>

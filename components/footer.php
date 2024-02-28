@@ -121,7 +121,7 @@ if (document.title =="Saved | Wallflower"){
   bottom: 60px;
   height: 50px; 
   margin: 0 auto;
-  background-image: url('/media/grassy_border.svg'); 
+  background-image: url('media/grassy_border.svg'); 
   background-size: cover; 
   background-position: center;
   background-repeat: repeat-x;

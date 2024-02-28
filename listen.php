@@ -35,12 +35,12 @@
             Here are some soothing sounds, music samples, and audio tracks that can help create a nice and calming atmosphere.
             </p>
             <div class="filterButtons">
-              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Binaural</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Classical</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Guided Imagery</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Guided Meditation</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Lo fi</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Color Noise</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Binaural</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Classical</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Guided Imagery</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Guided Meditation</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Lo fi</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Color Noise</div></div>
             </div>
              <!-- ONE LEAF CARD -->
 
