@@ -4,6 +4,10 @@
   include_once __DIR__ . '/components/header.php'
 ?>
 <main>
+<a href="index.php" class="label_back">
+        <img class="label_back_arrow" src="media/icons/back.svg">
+        <p class=" BS label_back_text">Explore</p>
+        </a>
 <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/edit.svg"/>
@@ -13,9 +17,20 @@
             Here you can write your thoughts about your day.
             </p>
             <a href="newJournal.php">
-              <div class="newJournalButton">
-                  <h3>+ New Journal</h3>
-              </div>
+          
+                    <div class='leaf_card new_journal flex aicenter'>
+                      <div class='journal_card_date'>
+                        <img src="/media/icons/edit.svg">
+                      </div>
+                      <div class='journal_card_text'>
+                        <div class='leaf_card_title'>
+                          <h3 class='TS articleTitle'>New Journal</h1>
+                          </div>
+                            <div class='leaf_card_caption'>
+                            <p class='LM long_caption'>Write how you feel today.</p>
+                          </div>
+                        </div>
+                    </div>
             </a>
         </div>
 <?php

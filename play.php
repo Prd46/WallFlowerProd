@@ -17,6 +17,10 @@ $site_url = site_url();
 ?>
 <main>
 <div class="main_label">
+    <a href="puzzlelist.php" class="label_back">
+        <img class="label_back_arrow" src="media/icons/back.svg">
+        <p class=" BS label_back_text">Puzzles</p>
+        </a>
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/extension.svg"/>
                 <h1 class="main_label_header TL">Puzzles</h1>
@@ -40,7 +44,10 @@ $site_url = site_url();
         </div>
 
 <br>
-    <div id="board"></div>
+    <div class="template_image_box">
+        <img class="template_image" src="media/puzzle_thumbnails/<?php echo $article['link']?>.jpg">
+        </div>
+        <div id="board"></div>
         <h2 class="BS flex jccenter">Turns: <span id="turns">0</span></h2>
         <div id="pieces"></div>
     </main>
@@ -141,6 +148,37 @@ function dragEnd() {
 
 
     </script>
+<style>
+#board{
+    width: 310px;
+    height: 290px;
+    padding-bottom: 1rem;
+    /* background: url('media/puzzle_thumbnails/<?php echo $article['link']?>.jpg'); */
+}
+#pieces{
+    width: 310px;
+    height: 290px;
+   margin: 0 auto;
+}
+.template_image_box{
+    width: 100%;
+    height: 290px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    pointer-events: none;
+}
+.template_image{
+    opacity: 20%;
+   
+    margin: 0 auto;
+    left: 20%;
+    width: 290px;
+    height: 300px;
+    pointer-events: none;
+}
+</style>
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>

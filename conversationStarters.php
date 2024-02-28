@@ -115,6 +115,10 @@
 ?>
     <main class="affirmations_main">
         <div class="main_label">
+        <a href="index.php" class="label_back">
+        <img class="label_back_arrow" src="media/icons/back.svg">
+        <p class=" BS label_back_text">Explore</p>
+        </a>
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/forum.svg"/>
                 <h1 class="main_label_header TL">Icebreakers</h1>
@@ -143,10 +147,10 @@
             </form>
  
             </div>
-            <div class="saved_notification">
+            <!-- <div class="saved_notification">
                 <p class="BM saved_notification_text" style="opacity:<?php echo $litClassToggle3?>;">Icebreaker saved!</p>
                 <p class="BM saved_notification_text" style="opacity:<?php echo $litClassToggle4?>;">Removed from saved.</p>
-            </div>
+            </div> -->
         </div>
 
         

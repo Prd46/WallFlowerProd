@@ -19,6 +19,10 @@ $site_url = site_url();
 <main>
 <!-- THIS IS THE RETURN HTML -->
 <div class="main_label">
+<a href="articles.php" class="label_back">
+        <img class="label_back_arrow" src="media/icons/back.svg">
+        <p class=" BS label_back_text">Articles</p>
+        </a>
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/newsmode.svg"/>
                 <h1 class="main_label_header TL">Articles</h1>
@@ -38,6 +42,7 @@ $site_url = site_url();
 
 
             </div>
+</div>
             <p class="BM main_label_caption"><?php echo $article['Title']?></p>
         </div>
 <!-- THIS IS THE ARTICLE TEXT PARAGRAPHS -->
@@ -83,9 +88,6 @@ $site_url = site_url();
   margin-bottom: 13px;
 }
 
-.icon {
-  margin-right: 5px; /* Adjust spacing between icon and title */
-}
 
 .con {
   display: inline-block; /* Ensures container size fits its content */
