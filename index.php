@@ -14,7 +14,7 @@
         <a href="affirmations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/lightbulb.svg"/>
+                    <img class="icon leaf_icon" src="media/icons/affirmationNew.svg"/>
                 </div>
 
                     <div class="leaf_card_text">
@@ -66,7 +66,7 @@
         <a href="meditations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/air.svg"/>
+                    <img class="icon leaf_icon" src="media/icons/meditation.svg"/>
                 </div>
 
                     <div class="leaf_card_text">

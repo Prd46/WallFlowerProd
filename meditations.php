@@ -3,6 +3,19 @@
   $page_name = 'Meditations'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
+
+<?php
+                // $affirmationText = "I have value.";
+                $query = "SELECT Meditations.id, Meditations.meditationName, Meditations.type, users.user_id, users.item_id, users.saved_status FROM Meditations LEFT JOIN users ON Meditations.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Meditations'";
+                // $query .= " ORDER BY RAND()";
+                // $query .= " LIMIT 1;";
+                $site_url = site_url();
+                // echo $db_connection;
+                // echo $query;  
+                $features = mysqli_query($db_connection, $query);
+
+?>
+
 <main>
 <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
@@ -11,29 +24,75 @@
 
 <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/air.svg"/>
-                <h1 class="main_label_header TL">Calm Breathing</h1>
+                <img class="icon main_label_icon" src="media/icons/meditation.svg"/>
+                <h1 class="main_label_header TL">Meditations</h1>
             </div>
             <p class="BM main_label_caption">
-            Here are some rhythmic breathing exercises to help you calm down and clear your mind.
+            Here are some calming exercises to put your mind at ease.
             </p>
         </div>
-        <br>
-        <div class="container">
-        <img src="media/breathing.gif" alt="Wallflower" class="imagecoffee">
-</div>
 
-<!-- <div class="animate"> -->
-<div class="container1">
-<div class="anitext">
-<img src="media/Breath-in-out.gif" alt="Wallflower">
-</div></div>
-        
+
+        <div class="filterButtons">
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Grounding</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Breathing</div></div>
+            </div>
 
 
 
+            <div class="articleListings">
+              <?php
+            while ($article = mysqli_fetch_array($features)) {
+                $aid = $article['user_id'];
+              $gid = $user_data['user_id'];
+              // echo $aid;
+              // echo $gid;
+
+              if (($aid ==  $gid)&&($article['saved_status'])){
+                $lit = 1;
+              }else{
+                $lit = 0;
+              }
+
+              $category = str_replace('_', ' ', $article['type']);
+                  echo
+                  "
+                  <a href='{$site_url}/meditation.php?id={$article['id']}' class='{$article['type']} js-dbResult'>
+                    <div class='leaf_card flex aicenter'>
+                      <div class='leaf_card_image'>
+                        <img class='icon leaf_icon' src='media/icons/meditation.svg'/>
+                      </div>
+                      <div class='leaf_card_text_non_index'>
+                        <div class='leaf_card_title'>
+                          <h3 class='TS articleTitle'>{$article['meditationName']}</h1>
+                          </div>
+
+                          <div class='leaf_card_caption'>
+                                <p class='LM'>{$category}</p>
+                            </div> 
+
+                            
+                        </div>
+                        <form class='save_button_container'  id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                            <input type='hidden' name='id' value='{$article['id']}'>
+
+                            <input type='hidden' name='dbName' value='Meditations'>
+                            <input type='hidden' name='redirect' value='/meditations.php'>
+                                <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
+                                        <img style='opacity:{$lit};' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                </button>
+                            </form>
+                    </div>
+                  </a>
+
+                  
+                  ";
+                } 
+                ?>
+            </div>
 </main>
-
+<script src="scripts/dropdown.js"></script>
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>

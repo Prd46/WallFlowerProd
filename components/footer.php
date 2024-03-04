@@ -2,11 +2,12 @@
             <div class="backgroundBrick">
             </div>
         </div>
-        <div class="footer_grass_box">
+
+<footer>
+<div class="footer_grass_box">
             <div class="footer_grass">
             </div>
         </div>
-<footer>
             <div class="footer_buttons">
                 <a href="favorites.php">
                     <div class="footer_button flex column aicenter">

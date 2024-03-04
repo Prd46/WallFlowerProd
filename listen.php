@@ -136,6 +136,7 @@
 .leaf_icon_1{
     width: 80px;
     height: 80px;
+    object-fit: cover;
     border-top-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }

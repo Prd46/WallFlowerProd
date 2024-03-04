@@ -9,7 +9,7 @@
 $site_url = site_url();
 
 
-$affirmationQuery = 'SELECT * FROM Affirmations WHERE affirmationSaved = TRUE ORDER BY RAND() LIMIT 1;';
+$affirmationQuery = 'SELECT * FROM Affirmations WHERE affirmationSaved = TRUE ORDER BY RAND()';
 $affirmationPull = mysqli_query($db_connection, $affirmationQuery);
 $affirmation = mysqli_fetch_assoc($affirmationPull);
 
@@ -18,15 +18,19 @@ $convoPull = mysqli_query($db_connection, $convoQuery);
 $convo = mysqli_fetch_assoc($convoPull);
 
 
-$soundQuery = 'SELECT * FROM Audio WHERE audioSaved = TRUE ORDER BY RAND() LIMIT 1;';
+$soundQuery = "SELECT Audio.id, Audio.title, Audio.file, Audio.category, users.user_id, users.item_id, users.saved_status FROM Audio INNER JOIN users ON Audio.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Audio' AND saved_status = TRUE ORDER BY RAND()";
 $soundPull = mysqli_query($db_connection, $soundQuery);
 $sound = mysqli_fetch_assoc($soundPull);
 
-$articleQuery = 'SELECT * FROM Articles WHERE articleSaved = TRUE ORDER BY RAND() LIMIT 1;';
+$medQuery = "SELECT Meditations.id, Meditations.meditationName, Meditations.type, users.user_id, users.item_id, users.saved_status FROM Meditations INNER JOIN users ON Meditations.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Meditations' AND saved_status = TRUE ORDER BY RAND()";
+$medPull = mysqli_query($db_connection, $medQuery);
+$med = mysqli_fetch_assoc($medPull);
+
+$articleQuery = "SELECT Articles.id, Articles.Title, Articles.Source, Articles.Category, users.user_id, users.item_id, users.saved_status FROM Articles INNER JOIN users ON Articles.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Articles' AND saved_status = TRUE ORDER BY RAND()";
 $articlePull = mysqli_query($db_connection, $articleQuery);
 $article = mysqli_fetch_assoc($articlePull);
 
-$puzzleQuery = 'SELECT * FROM Puzzles WHERE puzzleSaved = TRUE ORDER BY RAND() LIMIT 1;';
+$puzzleQuery = "SELECT Puzzles.id, Puzzles.title, Puzzles.link, Puzzles.category, users.user_id, users.item_id, users.saved_status FROM Puzzles INNER JOIN users ON Puzzles.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Puzzles' AND saved_status = TRUE ORDER BY RAND()";
 $puzzlePull = mysqli_query($db_connection, $puzzleQuery);
 $puzzle = mysqli_fetch_assoc($puzzlePull);
 
@@ -49,7 +53,7 @@ echo
 <a href='paSaved.php'>
             <div class='leaf_card flex aicenter'>
                 <div class='leaf_card_image'>
-                    <img class='icon leaf_icon' src='media/icons/lightbulb.svg'/>
+                    <img class='icon leaf_icon' src='media/icons/affirmationNew.svg'/>
                 </div>
 
                     <div class='leaf_card_text'>
@@ -107,6 +111,30 @@ echo
                         </div>
                         <div class='leaf_card_caption'>
                             <p class='BS'>Sounds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        ";
+ };
+ ?>
+
+<?php if (mysqli_num_rows($medPull) > 0){
+echo 
+"
+<a href='sound.php?id={$med['id']}'>
+            <div class='leaf_card flex aicenter'>
+            <div class='leaf_card_image'>
+                <img class='icon leaf_icon' src='media/icons/meditation.svg'/>
+            </div>
+
+                        <div class='leaf_card_text'>
+                        <div class='leaf_card_title'>
+                            <h3 class='TS'>{$med['meditationName']}</h3>
+                        </div>
+                        <div class='leaf_card_caption'>
+                            <p class='BS'>{$med['type']}</p>
                         </div>
                     </div>
                 </div>

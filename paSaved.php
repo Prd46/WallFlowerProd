@@ -124,7 +124,7 @@
         </a>
         <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/lightbulb.svg"/>
+                <img class="icon main_label_icon" src="media/icons/affirmationNew.svg"/>
                 <h1 class="main_label_header TL">Affirmations</h1>
             </div>
             <p class="BM main_label_caption bookmark">

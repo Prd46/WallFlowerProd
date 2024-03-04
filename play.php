@@ -7,7 +7,7 @@
   $result = mysqli_query($db_connection, $query);
 
 
-  $query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = {$user_data['user_id']}";
+  $query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = {$user_data['user_id']} AND item_category='Puzzles'";
   $result2 = mysqli_query($db_connection, $query2);
   $row = "0";
   

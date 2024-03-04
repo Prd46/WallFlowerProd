@@ -6,7 +6,7 @@
 $query = "SELECT * FROM Audio WHERE id = {$_GET['id']}";
 $result = mysqli_query($db_connection, $query);
 
-$query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = {$user_data['user_id']}";
+$query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = {$user_data['user_id']} AND item_category='Audio'";
 $result2 = mysqli_query($db_connection, $query2);
 $row = "0";
 
@@ -67,7 +67,7 @@ $category = str_replace('_', ' ', $article['category']);
 <?php $firstCycle = 1?>
 <div class="container">
         <img src="media/AudioThumbnails/<?php echo $f?>.jpg" alt="Wallflower" class="imagecoffee">
-        <div class="buttons" src="path/to/icon.png" class="play1">
+        <div class="buttons" src="path/to/icon.png">
     <button class="musicstart" id="play"><img id="play_icon"  alt=""></button>
     <input type="range" id="range" class="level" value="0" min="0">  
 </div>
@@ -84,7 +84,7 @@ $category = str_replace('_', ' ', $article['category']);
             <p class="description BM"><?php echo $article['description']?></p>
             
         
-            <a href="affirmations.php"> 
+            <a href="<?php echo $article['learn_more']?>" target="_blank"> 
             <button class="learn-more-button">Learn More</button></a>
         </div>
     </div>
@@ -105,23 +105,17 @@ $category = str_replace('_', ' ', $article['category']);
 
 <!-- This is the CSS for Sound img -->
 <style>
-.musicstart {
-  width: 5em;
-  height: 4em;
-  border-width: thin;
-  border-radius: 25px;
-}
 
 
-.play1 {
-   border-radius: 20px;
-}
 
 
 input[type="range"] {
   accent-color: #506527;
 }
-
+#play_icon{
+  height: 30px;
+  width: 30px;
+}
 .wrapper {
   position: relative;
 }
@@ -129,8 +123,9 @@ input[type="range"] {
   display: flex;
   width: 100%;
   padding: 25px;
-  margin: 35px;
+  margin: 0 35px;
   text-align: center;
+  align-items: center;
 }
 .buttons button #play1 {
   position: relative;
@@ -155,7 +150,6 @@ input[type="range"] {
   
   /* appearance: none; */
   background: #506527;
-  box-shadow: 2px 2px 5px #506527, -2px -2px 11px #fff;
   border-radius: 50px;
   margin: 28px;
 }
@@ -165,6 +159,7 @@ input[type="range"] {
   width: 15px;
   height: 15px;
   border-radius: 90px;
+
 }
 .level::-moz-range-thumb {
   width: 50px;
@@ -176,9 +171,9 @@ input[type="range"] {
 
 
 .guide {
-    width: 23px; /* Adjust the width of the icon as needed */
+    width: 25px; /* Adjust the width of the icon as needed */
     height: auto; /* Maintain aspect ratio */
-    margin-right: 6px; /* Adjust the spacing between the icon and text as needed */
+    /* margin-right: 6px; */
 }
 
 .container {
@@ -190,8 +185,9 @@ input[type="range"] {
 }
 
 .imagecoffee {
-    width: 100%;
-    height: 329px;
+    width: 315px;
+    height: 315px;
+    object-fit: cover;
     margin-bottom: 20px;
     border-radius: 12px;
 
@@ -213,26 +209,33 @@ input[type="range"] {
 /* GUIDED IMAGERY CSS HERE */
 .text-container {
     display: flex;
-    width: 355px;
+    width: auto;
     min-width: 280px;
     max-width: 560px;
     flex-direction: column;
-    align-items: flex-end;
+    /* align-items: flex-end; */
     border: 1px solid var(--Schemes-Primary, #506527);
     border-radius:12px;
-    height: 280px;
+    /* height: 280px; */
     margin-bottom: 6em;
+}
+
+.Lontainer{
+margin-left: 228px;
+margin-bottom: 30px;
 }
 
 .title {
     text-align: left;
-    margin-right: 1.8em;
+    margin-left: 28px;
+    margin-right: 20px;
     margin-top: 40px;
 }
 
 .description {
-    margin-bottom: 20px;
-    margin: 30px;
+    margin-bottom: 15px;
+    margin-right: 35px;
+    margin-left: 35px;
 }
 
 .learn-more-button {
@@ -241,11 +244,34 @@ input[type="range"] {
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    font: var(--LM);
+    display: flex;
     font-size: 16px;
     cursor: pointer;
     margin-right: 20px;
+    align-items: flex-end;
+    background-color: var(--invis);
+
 }
+.return-text {
+    margin: 5px;
+}
+
+.icon {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+.musicstart {
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: thin;
+  border-radius: 60px;
+  background-color: var(--n80);
+  border: none;
+}
+
 </style>
 
 <script>

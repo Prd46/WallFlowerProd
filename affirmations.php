@@ -23,15 +23,11 @@
 // INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 
 
-                    $query = 'SELECT Affirmations.affirmation, Affirmations.id, affirmation_actions.affirmation_id, affirmation_actions.user_id, affirmation_actions.affirmationRead, affirmation_actions.affirmationSaved';
+                    $query = 'SELECT *';
                     $query .= ' FROM Affirmations';
-                    $query .= " INNER JOIN affirmation_actions ON Affirmations.id=affirmation_actions.affirmation_id";
-
-                    // $query = 'SELECT *';
-                    // $query .= ' FROM Affirmations';
-                    // $query .= " WHERE affirmationRead = FALSE";
-                    // $query .= " ORDER BY RAND()";
-                    // $query .= " LIMIT 1;";
+                    $query .= " WHERE affirmationRead = FALSE";
+                    $query .= " ORDER BY RAND()";
+                    $query .= " LIMIT 1;";
                     $site_url = site_url();
                     // echo $db_connection;
                     // echo $query;  
@@ -40,7 +36,7 @@
 
                     $spinToggle = "spin";
                     if (mysqli_num_rows($features) > 0) {
-                        echo "Yes";
+                        // echo "Yes";
 
 
 
@@ -143,7 +139,7 @@
         <p class=" BS label_back_text">Explore</p>
         </a>
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/lightbulb.svg"/>
+                <img class="icon main_label_icon" src="media/icons/affirmationNew.svg"/>
                 <h1 class="main_label_header TL">Affirmations</h1>
             </div>
             <p class="BM main_label_caption bookmark">

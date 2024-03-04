@@ -630,7 +630,7 @@ main {
 /* Footer Elements */
 footer {
   position: relative;
-  top: 1rem;
+  top: -1rem;
   height: 80px;
   z-index: 20;
 }
