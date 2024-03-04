@@ -3,11 +3,26 @@
   $page_name = 'Audio'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php';
 
-  $query = "SELECT * FROM Audio WHERE id = {$_GET['id']}";
+$query = "SELECT * FROM Audio WHERE id = {$_GET['id']}";
 $result = mysqli_query($db_connection, $query);
+
+$query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = {$user_data['user_id']}";
+$result2 = mysqli_query($db_connection, $query2);
+$row = "0";
+
+if ($result2->num_rows > 0) {
+  // Get row from results and assign to $user variable;
+  $row = mysqli_fetch_assoc($result2);
+  $seen = true;
+}else{
+  // echo "not seen";
+  $seen = false;
+}
+
 if ($result->num_rows > 0) {
     // Get row from results and assign to $user variable;
     $article = mysqli_fetch_assoc($result);
+
 } else {
     $error_message = 'Audio does not exist';
     // redirect_to('/admin/users?error=' . $error_message);
@@ -35,11 +50,10 @@ $category = str_replace('_', ' ', $article['category']);
                             <input type='hidden' name='id' value='<?php echo $article['id'];?>'>
 
                             <input type='hidden' name='dbName' value='Audio'>
-                            <input type='hidden' name='colName' value='audioSaved'>
                             <input type='hidden' name='redirect' value='/sound.php?id=<?php echo $article['id'];?>'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                         <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:<?php echo $article['audioSaved'];?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
                                 </button>
                             </form>
 
@@ -50,7 +64,7 @@ $category = str_replace('_', ' ', $article['category']);
 
 <br><br>
 
-
+<?php $firstCycle = 1?>
 <div class="container">
         <img src="media/AudioThumbnails/<?php echo $f?>.jpg" alt="Wallflower" class="imagecoffee">
         <div class="buttons" src="path/to/icon.png" class="play1">

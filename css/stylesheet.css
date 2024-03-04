@@ -1,16 +1,15 @@
 /* Font Log */
 @font-face {
   font-family: "DMSans";
-  src: url("../fonts/dmsans-variablefont_opszwght-webfont.woff2")
-      format("woff2"),
-    url("../fonts/dmsans-variablefont_opszwght-webfont.woff") format("woff");
+  src: url("../fonts/DMSans-Medium.woff2") format("woff2"),
+    url("../fonts/DMSans-Medium.woff") format("woff");
   font-weight: 100 1000;
   font-style: normal;
 }
 @font-face {
   font-family: "Lora";
-  src: url("../fonts/lora-variablefont_wght-webfont.woff2") format("woff2"),
-    url("../fonts/lora-variablefont_wght-webfont.woff") format("woff");
+  src: url("../fonts/Lora-Medium.woff2") format("woff2"),
+    url("../fonts/Lora-Medium.woff") format("woff");
   font-weight: 100 1000;
   font-style: normal;
 }
@@ -328,7 +327,11 @@ h3 {
   justify-content: center;
   align-items: center;
 }
-
+.winMessage {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
 .hidden {
   display: none;
 }
@@ -801,14 +804,24 @@ footer {
 .journal_box {
   height: 60vh;
   width: 100%;
-  background-color: var(--light);
-  border: solid 1px var(--n50);
-  border-radius: 12px;
+  /* background-color: var(--light); */
+  border: none;
+
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
+label {
+  font: var(--BS);
+  color: var(--n50);
+  border-radius: 4px;
+  background-color: var(--light);
+  width: min-content;
+  position: relative;
+  left: 20px;
+  top: 10px;
+}
 .journal_box::-webkit-scrollbar {
   display: none;
 }
@@ -816,7 +829,33 @@ footer {
   margin-top: 0.5rem;
   background-color: #ebffc6;
 }
-
+input {
+  width: 90%;
+  font: var(--BS);
+  height: 56px;
+  padding: 0 1rem;
+  background-color: var(--light);
+  border: solid 1px var(--n50);
+  border-radius: 4px;
+}
+textarea {
+  width: 80%;
+  min-height: 300px;
+  font: var(--BS);
+  background-color: var(--light);
+  border: solid 1px var(--n50);
+  border-radius: 4px;
+  padding: 1rem;
+  resize: none;
+}
+.input_container {
+  width: 100%;
+  margin: 0 auto;
+}
+.submit_button {
+  margin-top: 1rem;
+  padding: 1rem;
+}
 /* Audio page */
 @media screen and (max-width: 430px) {
   body {

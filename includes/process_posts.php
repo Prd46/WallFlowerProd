@@ -7,11 +7,10 @@ if (!$_POST) {
 }
 
 // Store $_POST data to variables for readability
-$emojiPath= sanitize_value($_POST['emojiPath']);
 $title = sanitize_value($_POST['title']);
 $entryText = sanitize_value($_POST['entryText']);
 
-$result = add_journal($emojiPath, $title, $entryText);
+$result = add_journal($user_data['user_id'], $title, $entryText);
 
 // Check there are no errors with our SQL statement
 if ($result) {

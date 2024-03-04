@@ -139,7 +139,7 @@
             <a class="flex aicenter" href="">
                     <button class="affirmations_main_content_button regenerate flex aicenter round">
                         <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg"/>
-                        
+                        </button>
                 </a>
 
             <form id="saveButton" method="post" action="">
@@ -150,10 +150,10 @@
             </form>
  
             </div>
-            <div class="saved_notification">
+            <!-- <div class="saved_notification">
                 <p class="BM saved_notification_text" style="opacity:<?php echo $litClassToggle3?>;">Icebreaker saved!</p>
                 <p class="BM saved_notification_text" style="opacity:<?php echo $litClassToggle4?>;">Removed from saved.</p>
-            </div>
+            </div> -->
         </div>
 
         

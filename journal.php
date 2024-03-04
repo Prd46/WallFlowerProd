@@ -38,9 +38,7 @@
                 FROM Questions
                 ORDER BY RAND()  
                 LIMIT 1; */
-                $query = 'SELECT *';
-                $query .= ' FROM JournalEntries';
-                $query .= " ORDER BY EntryDate DESC";
+                $query = "SELECT * FROM JournalEntries WHERE user_id = {$user_data['user_id']} ORDER BY EntryDate DESC";
                 $site_url = site_url();
                 $entries = mysqli_query($db_connection, $query);
                 if ($entries->num_rows == 0){

@@ -11,11 +11,27 @@
 
 
                 if (!$_POST) {
-                    $query = 'SELECT *';
+                    
+                    //JOIN TABLE 
+                    //ON LOAD, go to the table and parse the information
+                    //Look into SQL JOIN. 
+                    //Look at the affirmation ID, then look at the other table with a USER and AFFIRMATION ID. 
+                    //Grab affirmation table, then new table, join them together, where affirmation.id = affirmation_actions.affirmation_id, ALSO where user_ID = affirmation_actions_user_ID
+
+//                     SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+// FROM Orders
+// INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+
+                    $query = 'SELECT Affirmations.affirmation, Affirmations.id, affirmation_actions.affirmation_id, affirmation_actions.user_id, affirmation_actions.affirmationRead, affirmation_actions.affirmationSaved';
                     $query .= ' FROM Affirmations';
-                    $query .= " WHERE affirmationRead = FALSE";
+                    $query .= " INNER JOIN affirmation_actions ON Affirmations.id=affirmation_actions.affirmation_id";
+
+                    // $query = 'SELECT *';
+                    // $query .= ' FROM Affirmations';
+                    // $query .= " WHERE affirmationRead = FALSE";
                     // $query .= " ORDER BY RAND()";
-                    $query .= " LIMIT 1;";
+                    // $query .= " LIMIT 1;";
                     $site_url = site_url();
                     // echo $db_connection;
                     // echo $query;  
@@ -24,7 +40,7 @@
 
                     $spinToggle = "spin";
                     if (mysqli_num_rows($features) > 0) {
-
+                        echo "Yes";
 
 
 
@@ -37,11 +53,15 @@
                             $litClassToggle = "0";
                             $litClassToggle2 = "1";
                         }
+                        //FOR USER
+                        //go into the row to see if you have an existing user / affirmation ID. 
+                        //If there isn't one, create one, if there is, update it. 
 
                         $updateSql = "UPDATE Affirmations SET affirmationRead = TRUE WHERE id = " . $row["id"];
                         mysqli_query($db_connection, $updateSql);
                         $affirmationText = $row["affirmation"];
                     } else {
+                        // echo "No results";
                         $resetReadStatusSql = "UPDATE Affirmations SET affirmationRead = FALSE";
                         mysqli_query($db_connection, $resetReadStatusSql);
 
@@ -139,7 +159,7 @@
             <a class="flex aicenter" href="">
                     <button class="affirmations_main_content_button regenerate flex aicenter round">
                         <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg"/>
-                        
+                    </button>
                 </a>
 
             <form id="saveButton" method="post" action="">

@@ -24,12 +24,14 @@ $result = mysqli_query($db_connection, $query);
             Write how you feel.
             </p>
         </div>
+
     <form class="journal_box" action="includes/process_posts.php" method="POST">
-    <label for="emojiPath">Emoji</label>
-    <input class="journal_emoji" type="text" id="emojiPath" name="emojiPath">
+    <!-- <label for="emojiPath">Emoji</label>
+    <input class="journal_emoji" type="text" id="emojiPath" name="emojiPath"> -->
     <label for="title">Title</label>
     <input class="journal_title" type="text" id="title" name="title"> 
-    <textarea class="journal_text" type="text" id="entryText" name="entryText"></textarea><label for="title">Text</label> 
+    <label for="title">Text</label> 
+    <textarea class="journal_text" type="text" id="entryText" name="entryText"></textarea>
     <input type="submit" value="submit" class="editSubmit">
     </form>
 </main>

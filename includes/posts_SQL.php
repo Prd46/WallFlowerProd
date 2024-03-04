@@ -41,12 +41,12 @@ function get_articles()
  * @param  string $price - service price of the service
  * @return object - mysqli_result
  */
-function add_journal($emojiPath, $title, $entryText)
+function add_journal($journalUID, $title, $entryText)
 {
     global $db_connection;
     $query = 'INSERT INTO JournalEntries';
-    $query .= ' (emojiPath, title, entryText)';
-    $query .= " VALUES ('$emojiPath', '$title', '$entryText')";
+    $query .= ' (user_id, title, entryText)';
+    $query .= " VALUES ('$journalUID', '$title', '$entryText')";
     $result = mysqli_query($db_connection, $query);
     return $result;
 }
