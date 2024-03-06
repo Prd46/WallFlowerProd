@@ -20,13 +20,13 @@
 ?>
 <!-- <div class="header_menu_vine">
 </div> -->
-
-<main>
-
 <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+<main>
+
+
 <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/headphones.svg"/>
@@ -36,12 +36,13 @@
             Here are some soothing sounds, music samples, and audio tracks that can help create a nice and calming atmosphere.
             </p>
             <div class="filterButtons">
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Binaural</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Classical</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Guided Imagery</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Guided Meditation</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Lo fi</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Color Noise</div></div>
+            <div class="filterButton js-all LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">All</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Binaural</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Classical</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Guided Imagery</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Guided Meditation</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Lo fi</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Color Noise</div></div>
             </div>
              <!-- ONE LEAF CARD -->
 
@@ -88,8 +89,8 @@
                             <input type='hidden' name='dbName' value='Audio'>
                             <input type='hidden' name='redirect' value='/listen.php'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:{$lit};' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg'/>
+                                        <img style='opacity:{$lit};' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg'/>
                                 </button>
                             </form>
                     </div>

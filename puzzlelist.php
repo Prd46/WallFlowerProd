@@ -9,6 +9,7 @@
                 $litClassToggle = "100%";
                 $litClassToggle2 = "0";
                 // $affirmationText = "I have value.";
+
                 $query = "SELECT Puzzles.id, Puzzles.title, Puzzles.link, Puzzles.category, users.user_id, users.item_id, users.saved_status FROM Puzzles LEFT JOIN users ON Puzzles.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Puzzles'";
                 // $query .= " ORDER BY RAND()";
                 // $query .= " LIMIT 1;";
@@ -18,12 +19,11 @@
                 $features = mysqli_query($db_connection, $query);
 
 ?>
-
-<main>
 <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+<main>
 
 <div class="main_label">
             <div class="main_label_header">
@@ -37,9 +37,10 @@
 
 
         <div class="filterButtons">
-        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Animals</div></div>
-        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Art</div></div>
-        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Nature</div></div>
+        <div class="filterButton js-all LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">All</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Animals</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Art</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Nature</div></div>
             </div>
 
 

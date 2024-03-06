@@ -9,12 +9,12 @@ $query = 'SELECT * FROM JournalEntries';
 $result = mysqli_query($db_connection, $query);
 
 ?>
-
-<main>
 <a href="journal.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Journal</p>
         </a>
+<main>
+
 <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/edit.svg"/>
@@ -32,8 +32,8 @@ $result = mysqli_query($db_connection, $query);
     <input class="journal_title" type="text" id="title" name="title"> 
     <label for="title">Text</label> 
     <textarea class="journal_text" type="text" id="entryText" name="entryText"></textarea>
-    <input type="submit" value="submit" class="editSubmit">
+    <input type="submit" value="Submit" class="TS editSubmit">
     </form>
 </main>
 <script src="scripts/app.js"></script>
-<?php include "components/footer.php" ?>
+<?php include "components/footer.php" ?>  

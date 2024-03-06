@@ -117,11 +117,12 @@
   $page_name = 'Saved Affirmations'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-    <main class="affirmations_main">
     <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+    <main class="affirmations_main">
+
         <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/affirmationNew.svg"/>
@@ -168,7 +169,7 @@
             </a>
 
             <div class="saved_switch_right saved_switch_lit">
-                <img class="check" src="media/icons/check.svg">
+                <img class="check" src="media/icons/oldCheck.svg">
                 <h3 class="LM">Saved</h3>
                 </div>
         </div>

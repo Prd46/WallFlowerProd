@@ -32,14 +32,14 @@ $site_url = site_url();
 
 <main>
 
-
-<div class="main_label">
 <a href="meditations.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Meditations</p>
         </a>
+<div class="main_label">
+
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/headphones.svg"/>
+                <img class="icon main_label_icon" src="media/icons/meditation.svg"/>
                 <h1 class="main_label_header TL">Meditations</h1>
 
 
@@ -62,7 +62,7 @@ $site_url = site_url();
 <br><br>
 
 <?php $firstCycle = 1?>
-<div>
+<div class="iframe_div">
 <?php 
 $url = $article['link'];
 echo"
@@ -89,7 +89,12 @@ allowfullscreen></iframe>"
   include_once __DIR__ . '/components/footer.php'
 ?>
 
-<!-- This is the play music JS script -->
-<script>
- 
-</script>
+<style>
+  .iframe_div{
+    border-radius: 16px;
+    width: 100%;
+    height: 300px;
+    padding: 0;
+    overflow: hidden;
+  }
+  </style>

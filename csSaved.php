@@ -116,11 +116,12 @@
   $page_name = 'Saved Icebreakers'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-    <main class="affirmations_main">
     <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+    <main class="affirmations_main">
+
         <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/forum.svg"/>
@@ -144,8 +145,8 @@
 
             <form id="saveButton" method="post" action="">
                 <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round <?php echo $litClassToggle; ?>">
-                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon saveUnlit bookmark" src="media/icons/affirmationsSave.svg"/>
-                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon saveLit" src="media/icons/savedLit.svg"/>
+                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon AffSaveUnlit bookmark" src="media/icons/affirmationsSave.svg"/>
+                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon AffSaveLit" src="media/icons/savedLit.svg"/>
                 </button>
             </form>
  
@@ -164,7 +165,7 @@
                 <h3 class="LM">All</h3>
             </a>
             <div class="saved_switch_right saved_switch_lit">
-                <img class="check" src="media/icons/check.svg">
+                <img class="check" src="media/icons/oldCheck.svg">
                 <h3 class="LM">Saved</h3>
             </div>
         </div>

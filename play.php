@@ -31,12 +31,13 @@
 $site_url = site_url();
 
 ?>
-<main>
-<div class="main_label">
     <a href="puzzlelist.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Puzzles</p>
         </a>
+<main>
+<div class="main_label">
+
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/extension.svg"/>
                 <h1 class="main_label_header TL">Puzzles</h1>
@@ -229,8 +230,8 @@ function dragEnd() {
     opacity: 20%;
     margin: 0 auto;
     left: 20%;
-    width: 290px;
-    height: 300px;
+    width: 285px;
+    height: 295px;
     pointer-events: none;
 }
 .regen_icon{

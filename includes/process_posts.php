@@ -16,6 +16,6 @@ $result = add_journal($user_data['user_id'], $title, $entryText);
 if ($result) {
     redirect_to('/journal.php');
 } else {
-    $error_message = 'Sorry there was an error creating the user: ' . mysqli_error($db_connection);
+    $error_message = 'Sorry there was an error creating your journal: ' . mysqli_error($db_connection);
     echo $error_message;
 }

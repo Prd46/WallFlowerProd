@@ -28,11 +28,11 @@
   $page_name = 'Articles'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-<main>
 <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+<main>
 <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/newsmode.svg"/>
@@ -42,9 +42,10 @@
             Here are some advice articles to help better understand and manage feelings of social anxiety.
             </p>
             <div class="filterButtons">
-            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Meditation</div></div>
-            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Causes of Social Anxiety</div></div>
-            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><div class="js-filter">Social Improvement</div></div>
+            <div class="filterButton js-all LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">All</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Meditation</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Causes of Social Anxiety</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Social Improvement</div></div>
             </div>
             <!-- <div class="categoryDropdown js-dropdown .js-dropdown_closed">
               <div class="LM dropdownButton js-categoryButton">Category</div>

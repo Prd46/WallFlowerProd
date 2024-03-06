@@ -32,13 +32,14 @@ if ($result->num_rows > 0) {
 }
 $site_url = site_url();
 ?>
-<main>
-<!-- THIS IS THE RETURN HTML -->
-<div class="main_label">
 <a href="articles.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Articles</p>
         </a>
+<main>
+<!-- THIS IS THE RETURN HTML -->
+<div class="main_label">
+
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/newsmode.svg"/>
                 <h1 class="main_label_header TL">Articles</h1>
@@ -93,7 +94,9 @@ $site_url = site_url();
   text-decoration: underline;
 }
 .breakdown {
-  margin: 25px;
+  background-color: var(--OffWhite);
+  border-radius: 16px;
+  padding: .5rem 1rem;
 }
 
 

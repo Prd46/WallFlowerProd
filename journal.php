@@ -3,11 +3,12 @@
   $page_name = 'Journal'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-<main>
 <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+<main>
+
 <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/edit.svg"/>
@@ -95,7 +96,7 @@
                       echo
                       "
                   
-                  <a href='{$site_url}/editJournal.php?id={$entry['id']}'>
+                  <a href='{$site_url}/journalEntry.php?id={$entry['id']}'>
                     <div class='leaf_card flex aicenter'>
                       <div class='journal_card_date'>
                         <h3 class='TL'>{$Ad}</h3>

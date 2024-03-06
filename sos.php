@@ -18,12 +18,25 @@
         <div class="main_label_header">
                 <h1 class="main_label_header TL">Hotlines</h1>
             </div>
-            <p class="emergency BS">If you believe you are experiencing a medical emergency please call 911 (or your local medical emergency number).</p>
+            <p class="phone BS">If you believe you are experiencing a medical emergency please call 911 (or your local medical emergency number).</p>
             <div class="freeblock">
             <h3 class="font_center TM">Crisis Text Line</h3>
             <p class="BS">A live, trained Crisis Counselor receives the text and responds, all from a secure online platform. The Counselor will help you move from a hot moment to a cool moment.</p>
             <p class="phone BS">Text HOME to 741741</p>
             </div>
+           
+            <div class="freeblock">
+            <h3 class="font_center TM">Need2Text</h3>
+            <p class="BS">Immediately be put into contact with a master’s-level counselor. Divulge optional personal info, then chat about what's going on.</p>
+            <p class="phone BS">Text TALK to 38255</p>
+            </div>
+        
+            <div class="freeblock">
+            <h3 class="font_center TM">SAMHSA's National Helpline</h3>
+            <p class="BS"> A confidential, free, 24/7 information service in English and Spanish for individuals and family members facing mental and/or substance use disorders. </p>
+            <p class="phone BS">1-800-662-4357</p>
+            </div>
+
             <a href="meditations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
@@ -41,12 +54,8 @@
                 </div>
             </div>
         </a>
-            <div class="freeblock">
-            <h3 class="font_center TM">Need2Text</h3>
-            <p class="BS">Immediately be put into contact with a master’s-level counselor. Divulge optional personal info, then chat about what's going on.</p>
-            <p class="phone BS">Text TALK to 38255</p>
-            </div>
-            <a href='listen.php'>
+
+        <a href='listen.php'>
             <div class='leaf_card flex aicenter'>
                 <div class='leaf_card_image'>
                     <img class='icon leaf_icon' src='media/icons/headphones.svg'/>
@@ -63,11 +72,7 @@
                 </div>
             </div>
         </a>
-            <div class="freeblock">
-            <h3 class="font_center TM">SAMHSA's National Helpline</h3>
-            <p class="BS"> A confidential, free, 24/7 information service in English and Spanish for individuals and family members facing mental and/or substance use disorders. </p>
-            <p class="phone BS">1-800-662-4357</p>
-            </div>
+
             <a href='affirmations.php'>
             <div class='leaf_card flex aicenter'>
                 <div class='leaf_card_image'>
@@ -144,7 +149,10 @@ font-weight: 600;
 
 .freeblock {
     margin: 0;
-    margin-bottom: 5px;
+    margin-bottom: 16px;
+    background-color: var(--OffWhite);
+  border-radius: 16px;
+  padding: 1rem;
 }
 
 p.phone {
