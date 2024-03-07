@@ -6,7 +6,7 @@
 $query = "SELECT * FROM Audio WHERE id = {$_GET['id']}";
 $result = mysqli_query($db_connection, $query);
 
-$query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = {$user_data['user_id']} AND item_category='Audio'";
+$query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = '{$user['user_id']}' AND item_category='Audio'";
 $result2 = mysqli_query($db_connection, $query2);
 $row = "0";
 

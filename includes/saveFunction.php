@@ -58,7 +58,7 @@ if (($dbName == "Affirmations") ||($dbName == "ConversationStarters")){
                 // $litClassToggle4 = "0";
                 // Handle button click
                 if (isset($_POST['toggle'])) {
-                    $query = "SELECT * FROM users WHERE item_id = '{$id}' AND item_category = '{$dbName}' AND user_id = '{$user_data['user_id']}'" ;
+                    $query = "SELECT * FROM users WHERE item_id = '{$id}' AND item_category = '{$dbName}' AND user_id = '{$user['user_id']}'" ;
                     $site_url = site_url();
                     // echo $db_connection;
                     // echo $query;  
@@ -68,7 +68,7 @@ if (($dbName == "Affirmations") ||($dbName == "ConversationStarters")){
                     if (!$row){
                             $query2 = 'INSERT INTO users';
                             $query2 .= ' (user_id, item_category, item_id, saved_status)';
-                            $query2 .= " VALUES ('{$user_data['user_id']}', '$dbName', '$id', TRUE)";
+                            $query2 .= " VALUES ('{$user['user_id']}', '$dbName', '$id', TRUE)";
                             $result = mysqli_query($db_connection, $query2);
                             if ($result){
                                 $newRow = 'TRUE';

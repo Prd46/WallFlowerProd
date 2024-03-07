@@ -4,7 +4,7 @@
 <?php
                 $litClassToggle = "";
                 // $affirmationText = "I have value.";
-                $query = "SELECT Articles.id, Articles.Title, Articles.Link, Articles.Category, Articles.Source, users.user_id, users.item_id, users.saved_status FROM Articles LEFT JOIN users ON Articles.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Articles'";
+                $query = "SELECT Articles.id, Articles.Title, Articles.Link, Articles.Category, Articles.Source, users.user_id, users.item_id, users.saved_status FROM Articles LEFT JOIN users ON Articles.id=users.item_id AND users.user_id='{$user['user_id']}' AND item_category='Articles'";
                 // $query .= " ORDER BY RAND()";
                 // $query .= " LIMIT 1;";
                 $site_url = site_url();
@@ -59,7 +59,7 @@
               <?php
             while ($article = mysqli_fetch_array($features)) {
               $aid = $article['user_id'];
-              $gid = $user_data['user_id'];
+              $gid = $user['user_id'];
               // echo $aid;
               // echo $gid;
 

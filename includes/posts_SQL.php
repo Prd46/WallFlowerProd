@@ -3,6 +3,7 @@
  * 
  */
 // THIS IS WHERE WE WRITE THE SQL FUNCTIONS TO GET DATABASE INFORMATION.
+setcookie('inside', 'inside', time() + (86400 * 30), "/", ".pauldigerolamo.com"); // 86400 = 1 day
 function get_journals()
 {
     global $db_connection;

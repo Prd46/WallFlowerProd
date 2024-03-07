@@ -978,6 +978,56 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+
+
+
+
+.footer_button.active {
+  background-color: #B6D085;
+}
+
+.footer_buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  padding: 0;
+  position: relative; /* Ensure the footer has a relative position */
+  z-index: 1; /* Set z-index to ensure footer content is above grass layer */
+}
+
+/* .footer_buttons::before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -48px; 
+  left: -1px;
+  width: 100.5%;
+  height: 50px; 
+  margin: 0 auto;
+  background-image: url('/media/grassy_border.svg'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: repeat-x;
+  z-index: 0; 
+} */
+.footer_grass{
+    display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100.4%;
+  bottom: 60px;
+  height: 50px; 
+  margin: 0 auto;
+  background-image: url('../media/grassy_border.svg'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: repeat-x;
+}
+
+
 /* Audio page */
 @media screen and (max-width: 430px) {
   body {

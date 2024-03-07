@@ -1,10 +1,8 @@
 <?php 
-   include_once __DIR__ . '/connection.php';
-  $page_name = 'Home'; // Gives a value if page name is missing
-  include_once __DIR__ . '/components/header.php'
+    include_once __DIR__ . '/connection.php';
+    $page_name = 'Home'; // Gives a value if page name is missing
+    include_once __DIR__ . '/components/header.php'
 ?>
-<!-- <div class="header_menu_vine">
-</div> -->
 <main>
         <div class="index_main_widget flex jccenter">
             <div class="index_main_widget_content TS">I am loved and worthy</div>
@@ -114,7 +112,6 @@
                 </div>
             </div>
         </a>
-        <?php if($save_enabled == 1){ echo"
         <a href='journal.php'>
             <div class='leaf_card flex aicenter'>
                 <div class='leaf_card_image'>
@@ -132,8 +129,6 @@
                 </div>
             </div>
         </a>
-        "; }
-        ?>
     </main>
 
 <?php 

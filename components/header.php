@@ -1,6 +1,4 @@
-
 <?php 
-
 if (!isset($page_name)) {
   $page_name = 'Missing Title'; // Gives a value if page name is missing
 }
@@ -8,7 +6,6 @@ if (!isset($page_name)) {
 $site_name = 'Wallflower';
 $document_title = $page_name . ' | ' . $site_name;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,18 +18,6 @@ $document_title = $page_name . ' | ' . $site_name;
     <link rel="stylesheet" href="<?php echo site_url(); ?>/css/puzzleStyles.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="icon" href="<?php echo site_url(); ?>/media/icons/wf_icon.ico">
-</head>
-<body>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <title>Affirmations</title>
 </head>
 <body>
     <div class="header_leavesImage">

@@ -1,5 +1,3 @@
-
-
 <?php
 /**
  * This file will hold all the functions for your project.
