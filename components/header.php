@@ -82,5 +82,4 @@ $document_title = $page_name . ' | ' . $site_name;
                                 </div>
                         </div>
                     </div>
-
             </header>

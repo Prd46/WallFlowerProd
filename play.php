@@ -215,7 +215,10 @@ function dragEnd() {
 #pieces{
     width: 310px;
     height: 290px;
-   margin: 0 auto;
+   margin: 0 auto 2rem auto;
+}
+img{
+    cursor: pointer;
 }
 .template_image_box{
     width: 100%;
@@ -231,7 +234,7 @@ function dragEnd() {
     margin: 0 auto;
     left: 20%;
     width: 285px;
-    height: 295px;
+    height: 298px;
     pointer-events: none;
 }
 .regen_icon{
