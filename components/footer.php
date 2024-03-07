@@ -2,11 +2,12 @@
             <div class="backgroundBrick">
             </div>
         </div>
-        <div class="footer_grass_box">
+
+<footer>
+<div class="footer_grass_box">
             <div class="footer_grass">
             </div>
         </div>
-<footer>
             <div class="footer_buttons">
                 <a href="favorites.php">
                     <div class="footer_button flex column aicenter">
@@ -121,7 +122,7 @@ if (document.title =="Saved | Wallflower"){
   bottom: 60px;
   height: 50px; 
   margin: 0 auto;
-  background-image: url('/media/grassy_border.svg'); 
+  background-image: url('media/grassy_border.svg'); 
   background-size: cover; 
   background-position: center;
   background-repeat: repeat-x;

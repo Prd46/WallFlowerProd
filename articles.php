@@ -4,8 +4,7 @@
 <?php
                 $litClassToggle = "";
                 // $affirmationText = "I have value.";
-                $query = 'SELECT *';
-                $query .= ' FROM Articles';
+                $query = "SELECT Articles.id, Articles.Title, Articles.Link, Articles.Category, Articles.Source, users.user_id, users.item_id, users.saved_status FROM Articles LEFT JOIN users ON Articles.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Articles'";
                 // $query .= " ORDER BY RAND()";
                 // $query .= " LIMIT 1;";
                 $site_url = site_url();
@@ -29,11 +28,11 @@
   $page_name = 'Articles'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-<main>
 <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+<main>
 <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/newsmode.svg"/>
@@ -43,9 +42,10 @@
             Here are some advice articles to help better understand and manage feelings of social anxiety.
             </p>
             <div class="filterButtons">
-            <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Meditation</div></div>
-            <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Causes of Social Anxiety</div></div>
-            <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Social Improvement</div></div>
+            <div class="filterButton js-all LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">All</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Meditation</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Causes of Social Anxiety</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Social Improvement</div></div>
             </div>
             <!-- <div class="categoryDropdown js-dropdown .js-dropdown_closed">
               <div class="LM dropdownButton js-categoryButton">Category</div>
@@ -58,6 +58,16 @@
             <div class="articleListings">
               <?php
             while ($article = mysqli_fetch_array($features)) {
+              $aid = $article['user_id'];
+              $gid = $user_data['user_id'];
+              // echo $aid;
+              // echo $gid;
+
+              if (($aid ==  $gid)&&($article['saved_status'])){
+                $lit = 1;
+              }else{
+                $lit = 0;
+              }
 
               $category = str_replace('_', ' ', $article['Category']);
                   echo
@@ -80,11 +90,10 @@
                             <input type='hidden' name='id' value='{$article['id']}'>
 
                             <input type='hidden' name='dbName' value='Articles'>
-                            <input type='hidden' name='colName' value='articleSaved'>
                             <input type='hidden' name='redirect' value='/articles.php'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                         <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:{$article['articleSaved']};' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img style='opacity:{$lit};' class='icon saveLit' src='media/icons/savedLit.svg'/>
                                 </button>
                             </form>
                     </div>

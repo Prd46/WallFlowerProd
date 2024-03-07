@@ -7,6 +7,22 @@
 // get users data from database
 $query = "SELECT * FROM Articles WHERE id = {$_GET['id']}";
 $result = mysqli_query($db_connection, $query);
+
+
+$query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = {$user_data['user_id']} AND item_category='Articles'";
+$result2 = mysqli_query($db_connection, $query2);
+$row = "0";
+
+if ($result2->num_rows > 0) {
+  // Get row from results and assign to $user variable;
+  $row = mysqli_fetch_assoc($result2);
+  $seen = true;
+}else{
+  // echo "not seen";
+  $seen = false;
+}
+
+
 if ($result->num_rows > 0) {
     // Get row from results and assign to $user variable;
     $article = mysqli_fetch_assoc($result);
@@ -16,13 +32,14 @@ if ($result->num_rows > 0) {
 }
 $site_url = site_url();
 ?>
-<main>
-<!-- THIS IS THE RETURN HTML -->
-<div class="main_label">
 <a href="articles.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Articles</p>
         </a>
+<main>
+<!-- THIS IS THE RETURN HTML -->
+<div class="main_label">
+
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/newsmode.svg"/>
                 <h1 class="main_label_header TL">Articles</h1>
@@ -32,11 +49,10 @@ $site_url = site_url();
                             <input type='hidden' name='id' value='<?php echo $article['id'];?>'>
 
                             <input type='hidden' name='dbName' value='Articles'>
-                            <input type='hidden' name='colName' value='aricleSaved'>
                             <input type='hidden' name='redirect' value='/article.php?id=<?php echo $article['id'];?>'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                         <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:<?php echo $article['articleSaved'];?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
                                 </button>
                             </form>
 
@@ -78,7 +94,9 @@ $site_url = site_url();
   text-decoration: underline;
 }
 .breakdown {
-  margin: 25px;
+  background-color: var(--OffWhite);
+  border-radius: 16px;
+  padding: .5rem 1rem;
 }
 
 
