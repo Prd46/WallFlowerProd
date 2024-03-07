@@ -7,7 +7,7 @@
                 $litClassToggle = "100%";
                 $litClassToggle2 = "0";
                 // $affirmationText = "I have value.";
-                $query = "SELECT Audio.id, Audio.title, Audio.file, Audio.category, users.user_id, users.item_id, users.saved_status FROM Audio LEFT JOIN users ON Audio.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Audio'";
+                $query = "SELECT Audio.id, Audio.title, Audio.file, Audio.category, users.user_id, users.item_id, users.saved_status FROM Audio LEFT JOIN users ON Audio.id=users.item_id AND users.user_id='{$user['user_id']}' AND item_category='Audio'";
                 // $query .= " ORDER BY RAND()";
                 // $query .= " LIMIT 1;";
                 $site_url = site_url();
@@ -40,9 +40,10 @@
               <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Binaural</div></div>
               <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Classical</div></div>
               <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Guided Imagery</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Color Noise</div></div>
               <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Guided Meditation</div></div>
               <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Lo fi</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Color Noise</div></div>
+              
             </div>
              <!-- ONE LEAF CARD -->
 
@@ -50,7 +51,7 @@
               <?php
             while ($article = mysqli_fetch_array($features)) {
               $aid = $article['user_id'];
-              $gid = $user_data['user_id'];
+              $gid = $user['user_id'];
               // echo $aid;
               // echo $gid;
 

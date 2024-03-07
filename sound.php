@@ -6,7 +6,7 @@
 $query = "SELECT * FROM Audio WHERE id = {$_GET['id']}";
 $result = mysqli_query($db_connection, $query);
 
-$query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = {$user_data['user_id']} AND item_category='Audio'";
+$query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = '{$user['user_id']}' AND item_category='Audio'";
 $result2 = mysqli_query($db_connection, $query2);
 $row = "0";
 
@@ -86,7 +86,9 @@ $category = str_replace('_', ' ', $article['category']);
             
         
             <a href="<?php echo $article['learn_more']?>" target="_blank"> 
-            <button class="learn-more-button">Learn More</button></a>
+            <div class="LMContainer">
+              <button class="learn-more-button">Learn More</button></a>
+          </div>
         </div>
     </div>
 
@@ -150,7 +152,7 @@ input[type="range"] {
   width: 100%;
   
   /* appearance: none; */
-  background: #506527;
+  background-color: var(--OffWhite);
   border-radius: 50px;
   margin: 28px;
 }
@@ -195,7 +197,7 @@ input[type="range"] {
 }
 
 .play-button {
-    background-color: #4CAF50;
+    background-color: var(--OffWhite);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -216,6 +218,7 @@ input[type="range"] {
     flex-direction: column;
     /* align-items: flex-end; */
     border: 1px solid var(--Schemes-Primary, #506527);
+    background-color: var(--OffWhite);
     border-radius:12px;
     /* height: 280px; */
     margin-bottom: 6em;
@@ -246,13 +249,16 @@ margin-bottom: 30px;
     text-align: center;
     text-decoration: none;
     font: var(--LM);
-    display: flex;
     font-size: 16px;
     cursor: pointer;
     margin-right: 20px;
-    align-items: flex-end;
     background-color: var(--invis);
 
+}
+.LMContainer{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
 .return-text {
     margin: 5px;
@@ -269,7 +275,7 @@ margin-bottom: 30px;
   align-items: center;
   border-width: thin;
   border-radius: 60px;
-  background-color: var(--n80);
+  background-color: #e3e3d8;
   border: none;
 }
 

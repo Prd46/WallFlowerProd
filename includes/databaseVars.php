@@ -1,4 +1,3 @@
-
 <?php
 //DO NOT TOUCH
 // Credentials for the database connection coming from our .env file

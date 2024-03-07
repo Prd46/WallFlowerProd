@@ -7,7 +7,7 @@
   $result = mysqli_query($db_connection, $query);
 
 
-  $query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = {$user_data['user_id']} AND item_category='Puzzles'";
+  $query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = '{$user['user_id']}' AND item_category='Puzzles'";
   $result2 = mysqli_query($db_connection, $query2);
   $row = "0";
   
@@ -215,7 +215,10 @@ function dragEnd() {
 #pieces{
     width: 310px;
     height: 290px;
-   margin: 0 auto;
+   margin: 0 auto 2rem auto;
+}
+img{
+    cursor: pointer;
 }
 .template_image_box{
     width: 100%;
@@ -231,7 +234,7 @@ function dragEnd() {
     margin: 0 auto;
     left: 20%;
     width: 285px;
-    height: 295px;
+    height: 298px;
     pointer-events: none;
 }
 .regen_icon{
