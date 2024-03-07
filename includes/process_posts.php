@@ -7,16 +7,15 @@ if (!$_POST) {
 }
 
 // Store $_POST data to variables for readability
-$emojiPath= sanitize_value($_POST['emojiPath']);
 $title = sanitize_value($_POST['title']);
 $entryText = sanitize_value($_POST['entryText']);
 
-$result = add_journal($emojiPath, $title, $entryText);
+$result = add_journal($user_data['user_id'], $title, $entryText);
 
 // Check there are no errors with our SQL statement
 if ($result) {
     redirect_to('/journal.php');
 } else {
-    $error_message = 'Sorry there was an error creating the user: ' . mysqli_error($db_connection);
+    $error_message = 'Sorry there was an error creating your journal: ' . mysqli_error($db_connection);
     echo $error_message;
 }

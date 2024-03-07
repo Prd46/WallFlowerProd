@@ -6,6 +6,7 @@
                 $litClassToggle2 = "0";
                 $litClassToggle3 = "0";
                 $litClassToggle4 = "0";
+                $spinToggle = "";
                 $affirmationText = "How was your day today?";
 
 
@@ -20,7 +21,7 @@
                     // echo $query;  
                     $features = mysqli_query($db_connection, $query);
                     $row = mysqli_fetch_assoc($features);
-
+                    $spinToggle = "spin";
 
                     if (mysqli_num_rows($features) > 0) {
 
@@ -113,12 +114,13 @@
   $page_name = 'Icebreakers'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-    <main class="affirmations_main">
-        <div class="main_label">
         <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+    <main class="affirmations_main">
+        <div class="main_label">
+
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/forum.svg"/>
                 <h1 class="main_label_header TL">Icebreakers</h1>
@@ -135,14 +137,14 @@
 
             <a class="flex aicenter" href="">
                     <button class="affirmations_main_content_button regenerate flex aicenter round">
-                        <img class="icon" src="media/icons/regen.svg"/>
-                        
+                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg"/>
+                        </button>
                 </a>
 
             <form id="saveButton" method="post" action="">
                 <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round <?php echo $litClassToggle; ?>">
-                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon saveUnlit bookmark" src="media/icons/affirmationsSave.svg"/>
-                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon saveLit" src="media/icons/savedLit.svg"/>
+                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon AffSaveUnlit bookmark" src="media/icons/affirmationsSave.svg"/>
+                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon AffSaveLit" src="media/icons/savedLit.svg"/>
                 </button>
             </form>
  
@@ -158,7 +160,7 @@
         <div class="affirmations_saved_switch">
             
             <div class="saved_switch_left saved_switch_lit">
-            <img class="check" src="media/icons/check.svg">
+            <img class="check" src="media/icons/oldCheck.svg">
                 <h3 class="LM">All</h3>
             </div>
             <a href="csSaved.php" class="saved_switch_right">

@@ -3,18 +3,6 @@
   $page_name = 'SOS'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-<?php 
-$affirmationQuery = 'SELECT * FROM Affirmations WHERE affirmationSaved = TRUE ORDER BY RAND() LIMIT 1;';
-$affirmationPull = mysqli_query($db_connection, $affirmationQuery);
-$affirmation = mysqli_fetch_assoc($affirmationPull);
-
-$soundQuery = 'SELECT * FROM Audio WHERE audioSaved = TRUE ORDER BY RAND() LIMIT 1;';
-$soundPull = mysqli_query($db_connection, $soundQuery);
-$sound = mysqli_fetch_assoc($soundPull);
-
-?>
-
-
 <main>
 
 <div class="main_label">
@@ -28,35 +16,31 @@ $sound = mysqli_fetch_assoc($soundPull);
         </div>
      
         <div class="main_label_header">
-                <h1 class="main_label_header TL quo">Hotlines</h1>
+                <h1 class="main_label_header TL">Hotlines</h1>
             </div>
+            <p class="phone BS">If you believe you are experiencing a medical emergency please call 911 (or your local medical emergency number).</p>
             <div class="freeblock">
-            <h3 class="font_center">Crisis Text Line</h3>
+            <h3 class="font_center TM">Crisis Text Line</h3>
             <p class="BS">A live, trained Crisis Counselor receives the text and responds, all from a secure online platform. The Counselor will help you move from a hot moment to a cool moment.</p>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="phone">Text HOME to 741741</a>
+            <p class="phone BS">Text HOME to 741741</p>
             </div>
-
+           
             <div class="freeblock">
-            <h3 class="font_center">Need2Text</h3>
+            <h3 class="font_center TM">Need2Text</h3>
             <p class="BS">Immediately be put into contact with a master’s-level counselor. Divulge optional personal info, then chat about what's going on.</p>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="phone">Text TALK to 38255</a>
+            <p class="phone BS">Text TALK to 38255</p>
             </div>
-
+        
             <div class="freeblock">
-            <h3 class="font_center">SAMHSA's National Helpline</h3>
+            <h3 class="font_center TM">SAMHSA's National Helpline</h3>
             <p class="BS"> A confidential, free, 24/7 information service in English and Spanish for individuals and family members facing mental and/or substance use disorders. </p>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="phone">1-800-662-4357</a>
+            <p class="phone BS">1-800-662-4357</p>
             </div>
 
-            <br>
-
-            
-
- <!-- ONE LEAF CARD -->
- <a href="meditations.php">
+            <a href="meditations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/air.svg"/>
+                    <img class="icon leaf_icon" src="media/icons/meditation.svg"/>
                 </div>
 
                     <div class="leaf_card_text">
@@ -71,37 +55,7 @@ $sound = mysqli_fetch_assoc($soundPull);
             </div>
         </a>
 
-        <!-- END OF LEAF CARD -->
-
-        <!-- ONE LEAF CARD -->
-        <?php if (mysqli_num_rows($soundPull) > 0){
-                   $soundCategory = str_replace('_', ' ', $sound['category']);
-
-                   $fileTitle = $sound['file'];
-                     list($f, $e) = explode('.', $fileTitle);
-echo 
-"
-<a href='sound.php?id={$sound['id']}'>
-            <div class='leaf_card flex aicenter'>
-            <div class='leaf_card_image'>
-                <img class='icon leaf_icon_1' src='media/AudioThumbnails/{$f}.jpg'/>
-            </div>
-
-                        <div class='leaf_card_text'>
-                        <div class='leaf_card_title'>
-                            <h3 class='TS'>{$sound['title']}</h3>
-                        </div>
-                        <div class='leaf_card_caption'>
-                            <p class='BS'>Sounds</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        ";
- }else{
-    echo "
-    <a href='listen.php'>
+        <a href='listen.php'>
             <div class='leaf_card flex aicenter'>
                 <div class='leaf_card_image'>
                     <img class='icon leaf_icon' src='media/icons/headphones.svg'/>
@@ -118,41 +72,11 @@ echo
                 </div>
             </div>
         </a>
-    ";
- };
- ?>
 
-        <!-- END OF LEAF CARD -->
-
-<!-- ONE LEAF CARD -->
-<?php if (mysqli_num_rows($affirmationPull) > 0){
-echo 
-"
-<a href='paSaved.php'>
+            <a href='affirmations.php'>
             <div class='leaf_card flex aicenter'>
                 <div class='leaf_card_image'>
-                    <img class='icon leaf_icon' src='media/icons/lightbulb.svg'/>
-                </div>
-
-                    <div class='leaf_card_text'>
-                      <h3 class='BS'>{$affirmation['affirmation']}</h3>
-                        <!-- <div class='leaf_card_title'>
-                            <h3 class='TS'>Affirmations</h3>
-                        </div>
-                        <div class='leaf_card_caption'>
-                            <p class='BS'>For when you need inspiration.</p>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </a>
-        ";
- }else{
-    echo"
-    <a href='affirmations.php'>
-            <div class='leaf_card flex aicenter'>
-                <div class='leaf_card_image'>
-                    <img class='icon leaf_icon' src='media/icons/lightbulb.svg'/>
+                    <img class='icon leaf_icon' src='media/icons/affirmationNew.svg'/>
                 </div>
 
                     <div class='leaf_card_text'>
@@ -166,12 +90,8 @@ echo
                 </div>
             </div>
         </a>
-    ";
+            <br>
 
- };
- ?>
-
-        <!-- END OF LEAF CARD -->
 
 
 </main>
@@ -187,6 +107,9 @@ echo
     margin-bottom: 15px;
     cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
     width: 25px;
+}
+.emergency{
+    color: darkred;
 }
 .icon-2 {
     margin-left: 95px; /* Adjust the spacing between the button and the bookmark icon */
@@ -218,15 +141,24 @@ echo
     border-top-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
+h3 {
+text-align: left;
+font-size:  16px;
+font-weight: 600;
+}
 
 .freeblock {
-  text-align: center;
+    margin: 0;
+    margin-bottom: 16px;
+    background-color: var(--OffWhite);
+  border-radius: 16px;
+  padding: 1rem;
 }
 
-.phone {
-  color: #FF0000;
-  font-size: 18px;
+p.phone {
+  color: #006970 !important;
+  font-size: 16px;
+  display: flex;
 }
-
 
 </style>

@@ -9,8 +9,8 @@
                 $litClassToggle = "100%";
                 $litClassToggle2 = "0";
                 // $affirmationText = "I have value.";
-                $query = 'SELECT *';
-                $query .= ' FROM Puzzles';
+
+                $query = "SELECT Puzzles.id, Puzzles.title, Puzzles.link, Puzzles.category, users.user_id, users.item_id, users.saved_status FROM Puzzles LEFT JOIN users ON Puzzles.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Puzzles'";
                 // $query .= " ORDER BY RAND()";
                 // $query .= " LIMIT 1;";
                 $site_url = site_url();
@@ -19,12 +19,11 @@
                 $features = mysqli_query($db_connection, $query);
 
 ?>
-
-<main>
 <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+<main>
 
 <div class="main_label">
             <div class="main_label_header">
@@ -32,15 +31,16 @@
                 <h1 class="main_label_header TL">Puzzles</h1>
             </div>
             <p class="BM main_label_caption">
-            Here are some puzzles to help you unwind, destress, and focus
+            Here are some puzzles to help you unwind, de-stress, and focus
             </p>
         </div>
 
 
         <div class="filterButtons">
-        <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Animals</div></div>
-        <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Art</div></div>
-        <div class="filterButton LM"><img class="check hidden" src="/media/icons/check.svg"><div class="js-filter">Nature</div></div>
+        <div class="filterButton js-all LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">All</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Animals</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Art</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Nature</div></div>
             </div>
 
 
@@ -48,6 +48,16 @@
             <div class="articleListings">
               <?php
             while ($article = mysqli_fetch_array($features)) {
+                $aid = $article['user_id'];
+              $gid = $user_data['user_id'];
+              // echo $aid;
+              // echo $gid;
+
+              if (($aid ==  $gid)&&($article['saved_status'])){
+                $lit = 1;
+              }else{
+                $lit = 0;
+              }
 
               $category = str_replace('_', ' ', $article['category']);
                   echo
@@ -72,11 +82,10 @@
                             <input type='hidden' name='id' value='{$article['id']}'>
 
                             <input type='hidden' name='dbName' value='Puzzles'>
-                            <input type='hidden' name='colName' value='puzzleSaved'>
                             <input type='hidden' name='redirect' value='/puzzlelist.php'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                         <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:{$article['puzzleSaved']};' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img style='opacity:{$lit};' class='icon saveLit' src='media/icons/savedLit.svg'/>
                                 </button>
                             </form>
                     </div>

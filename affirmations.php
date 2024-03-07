@@ -6,14 +6,26 @@
                 $litClassToggle2 = "0";
                 $litClassToggle3 = "0";
                 $litClassToggle4 = "0";
+                $spinToggle = "";
                 $affirmationText = "I have value.";
 
 
                 if (!$_POST) {
+                    
+                    //JOIN TABLE 
+                    //ON LOAD, go to the table and parse the information
+                    //Look into SQL JOIN. 
+                    //Look at the affirmation ID, then look at the other table with a USER and AFFIRMATION ID. 
+                    //Grab affirmation table, then new table, join them together, where affirmation.id = affirmation_actions.affirmation_id, ALSO where user_ID = affirmation_actions_user_ID
+
+//                     SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+// FROM Orders
+// INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+
                     $query = 'SELECT *';
                     $query .= ' FROM Affirmations';
                     $query .= " WHERE affirmationRead = FALSE";
-                    // $query .= " ORDER BY RAND()";
                     $query .= " LIMIT 1;";
                     $site_url = site_url();
                     // echo $db_connection;
@@ -21,9 +33,9 @@
                     $features = mysqli_query($db_connection, $query);
                     $row = mysqli_fetch_assoc($features);
 
-
+                    $spinToggle = "spin";
                     if (mysqli_num_rows($features) > 0) {
-
+                        // echo "Yes";
 
 
 
@@ -36,11 +48,15 @@
                             $litClassToggle = "0";
                             $litClassToggle2 = "1";
                         }
+                        //FOR USER
+                        //go into the row to see if you have an existing user / affirmation ID. 
+                        //If there isn't one, create one, if there is, update it. 
 
                         $updateSql = "UPDATE Affirmations SET affirmationRead = TRUE WHERE id = " . $row["id"];
                         mysqli_query($db_connection, $updateSql);
                         $affirmationText = $row["affirmation"];
                     } else {
+                        // echo "No results";
                         $resetReadStatusSql = "UPDATE Affirmations SET affirmationRead = FALSE";
                         mysqli_query($db_connection, $resetReadStatusSql);
 
@@ -113,16 +129,15 @@
   $page_name = 'Affirmations'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-
-    <main class="affirmations_main">
-        
-        <div class="main_label">
         <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+    <main class="affirmations_main">
+        
+
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/lightbulb.svg"/>
+                <img class="icon main_label_icon" src="media/icons/affirmationNew.svg"/>
                 <h1 class="main_label_header TL">Affirmations</h1>
             </div>
             <p class="BM main_label_caption bookmark">
@@ -137,14 +152,14 @@
 
             <a class="flex aicenter" href="">
                     <button class="affirmations_main_content_button regenerate flex aicenter round">
-                        <img class="icon" src="media/icons/regen.svg"/>
-                        
+                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg"/>
+                    </button>
                 </a>
 
             <form id="saveButton" method="post" action="">
                 <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round <?php echo $litClassToggle; ?>">
-                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon saveUnlit bookmark" src="media/icons/affirmationsSave.svg"/>
-                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon saveLit" src="media/icons/savedLit.svg"/>
+                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon AffSaveUnlit bookmark" src="media/icons/affirmationsSave.svg"/>
+                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon AffSaveLit" src="media/icons/savedLit.svg"/>
                 </button>
             </form>
  
@@ -160,7 +175,7 @@
         <div class="affirmations_saved_switch">
             
             <div class="saved_switch_left saved_switch_lit">
-            <img class="check" src="media/icons/check.svg">
+            <img class="check" src="media/icons/oldCheck.svg">
                 <h3 class="LM">All</h3>
             </div>
             <a href="paSaved.php" class="saved_switch_right">

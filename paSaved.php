@@ -7,6 +7,7 @@
                 $litClassToggle3 = "0";
                 $litClassToggle4 = "0";
                 $affirmationText = "I have value.";
+                $spinToggle ="";
 
 
                 if (!$_POST) {
@@ -21,6 +22,7 @@
                     // echo $query;  
                     $features = mysqli_query($db_connection, $query);
                     $row = mysqli_fetch_assoc($features);
+                    $spinToggle="spin";
 
 
                     if (mysqli_num_rows($features) > 0) {
@@ -115,14 +117,15 @@
   $page_name = 'Saved Affirmations'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-    <main class="affirmations_main">
     <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+    <main class="affirmations_main">
+
         <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/lightbulb.svg"/>
+                <img class="icon main_label_icon" src="media/icons/affirmationNew.svg"/>
                 <h1 class="main_label_header TL">Affirmations</h1>
             </div>
             <p class="BM main_label_caption bookmark">
@@ -137,8 +140,8 @@
 
             <a class="flex aicenter" href="">
                     <button class="affirmations_main_content_button regenerate flex aicenter round">
-                        <img class="icon" src="media/icons/regen.svg"/>
-                        
+                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg"/>
+                        </button>
                 </a>
 
             <form id="saveButton" method="post" action="">
@@ -149,10 +152,10 @@
             </form>
  
             </div>
-            <div class="saved_notification">
+            <!-- <div class="saved_notification">
                 <p class="BM saved_notification_text" style="opacity:<?php echo $litClassToggle3?>;">Affirmation saved!</p>
                 <p class="BM saved_notification_text" style="opacity:<?php echo $litClassToggle4?>;">Removed from saved.</p>
-            </div>
+            </div> -->
         </div>
 
         
@@ -166,7 +169,7 @@
             </a>
 
             <div class="saved_switch_right saved_switch_lit">
-                <img class="check" src="media/icons/check.svg">
+                <img class="check" src="media/icons/oldCheck.svg">
                 <h3 class="LM">Saved</h3>
                 </div>
         </div>

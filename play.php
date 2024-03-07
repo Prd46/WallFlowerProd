@@ -5,6 +5,22 @@
 
   $query = "SELECT * FROM Puzzles WHERE id = {$_GET['id']}";
   $result = mysqli_query($db_connection, $query);
+
+
+  $query2 = "SELECT * FROM users WHERE item_id = {$_GET['id']} AND user_id = {$user_data['user_id']} AND item_category='Puzzles'";
+  $result2 = mysqli_query($db_connection, $query2);
+  $row = "0";
+  
+  if ($result2->num_rows > 0) {
+    // Get row from results and assign to $user variable;
+    $row = mysqli_fetch_assoc($result2);
+    $seen = true;
+  }else{
+    // echo "not seen";
+    $seen = false;
+  }  
+
+
   if ($result->num_rows > 0) {
       // Get row from results and assign to $user variable;
       $article = mysqli_fetch_assoc($result);
@@ -15,12 +31,13 @@
 $site_url = site_url();
 
 ?>
-<main>
-<div class="main_label">
     <a href="puzzlelist.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Puzzles</p>
         </a>
+<main>
+<div class="main_label">
+
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/extension.svg"/>
                 <h1 class="main_label_header TL">Puzzles</h1>
@@ -30,11 +47,10 @@ $site_url = site_url();
                             <input type='hidden' name='id' value='<?php echo $article['id'];?>'>
 
                             <input type='hidden' name='dbName' value='Puzzles'>
-                            <input type='hidden' name='colName' value='puzzleSaved'>
                             <input type='hidden' name='redirect' value='/play.php?id=<?php echo $article['id'];?>'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                         <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:<?php echo $article['puzzleSaved'];?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
                                 </button>
                             </form>
 
@@ -49,6 +65,13 @@ $site_url = site_url();
         </div>
         <div id="board"></div>
         <h2 class="BS flex jccenter">Turns: <span id="turns">0</span></h2>
+        <div class="hidden winMessage">
+            <img class="regen_icon invis" src="media/icons/regen.svg"/>
+            <h3 class="LL">You did it! Great job!</h3>
+            <a class="flex aicenter" href="">
+                <img class="regen_icon" src="media/icons/regen.svg"/>
+            </a>
+    </div>
         <div id="pieces"></div>
     </main>
 
@@ -60,12 +83,16 @@ var currTile;
 var otherTile;
 
 var turns = 0;
-
+let n = 1;
+let boardPieces = [];
+const winMessage = document.querySelector('.winMessage');
 window.onload = function() {
     //initialize the 5x5 board
     for (let r = 0; r < rows; r++) {
+        var changeCheck = n
         for (let c = 0; c < columns; c++) {
             //<img>
+
             let tile = document.createElement("img");
             tile.src = "./media/puzzleImages/blank.jpg";
 
@@ -76,9 +103,16 @@ window.onload = function() {
             tile.addEventListener("dragleave", dragLeave); //dragging an image away from another one
             tile.addEventListener("drop", dragDrop);       //drop an image onto another one
             tile.addEventListener("dragend", dragEnd);      //after you completed dragDrop
-
+            tile.classList.add(n);
             document.getElementById("board").append(tile);
+            
+            n++;
         }
+        if (changeCheck != n){
+                console.log("Changed")
+            }else{
+                n++;
+            };
     }
 
     //pieces
@@ -99,6 +133,8 @@ window.onload = function() {
     for (let i = 0; i < pieces.length; i++) {
         let tile = document.createElement("img");
         tile.src = "./media/puzzle_pieces/<?php echo $article['link']?>/" + pieces[i] + ".png";
+        // console.log(i)
+       
 
         //DRAG FUNCTIONALITY
         tile.addEventListener("dragstart", dragStart); //click on image to drag
@@ -111,6 +147,7 @@ window.onload = function() {
         document.getElementById("pieces").append(tile);
     }
 }
+
 
 //DRAG TILES
 function dragStart() {
@@ -144,7 +181,27 @@ function dragEnd() {
 
     turns += 1;
     document.getElementById("turns").innerText = turns;
-}
+
+    // console.log(currImg, otherImg);
+
+    var a = currImg.toString()
+    var b = a.replace('<?php echo $site_url?>/media/puzzle_pieces/<?php echo $article['link']?>/','');
+    // console.log(otherTile.classList);
+    c = b.replace('.png', '');
+
+    if (otherTile.classList.contains(c)){
+        // console.log("Match!")
+        if (!boardPieces.includes(c)){
+            boardPieces.push(c);
+            // console.log(boardPieces.length);
+            if (boardPieces.length == 25){
+                console.log("Win!");
+                winMessage.classList.remove('hidden');
+            };
+        };
+    };
+
+};
 
 
     </script>
@@ -171,12 +228,14 @@ function dragEnd() {
 }
 .template_image{
     opacity: 20%;
-   
     margin: 0 auto;
     left: 20%;
-    width: 290px;
-    height: 300px;
+    width: 285px;
+    height: 295px;
     pointer-events: none;
+}
+.regen_icon{
+    padding: 0 1rem;
 }
 </style>
 <?php 

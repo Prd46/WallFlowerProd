@@ -3,11 +3,12 @@
   $page_name = 'Journal'; // Gives a value if page name is missing
   include_once __DIR__ . '/components/header.php'
 ?>
-<main>
 <a href="index.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Explore</p>
         </a>
+<main>
+
 <div class="main_label">
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/edit.svg"/>
@@ -20,7 +21,7 @@
           
                     <div class='leaf_card new_journal flex aicenter'>
                       <div class='journal_card_date'>
-                        <img src="/media/icons/edit.svg">
+                      <img class="icon main_label_icon" src="media/icons/edit.svg"/>
                       </div>
                       <div class='journal_card_text'>
                         <div class='leaf_card_title'>
@@ -38,9 +39,7 @@
                 FROM Questions
                 ORDER BY RAND()  
                 LIMIT 1; */
-                $query = 'SELECT *';
-                $query .= ' FROM JournalEntries';
-                $query .= " ORDER BY EntryDate DESC";
+                $query = "SELECT * FROM JournalEntries WHERE user_id = {$user_data['user_id']} ORDER BY EntryDate DESC";
                 $site_url = site_url();
                 $entries = mysqli_query($db_connection, $query);
                 if ($entries->num_rows == 0){
@@ -97,7 +96,7 @@
                       echo
                       "
                   
-                  <a href='{$site_url}/editJournal.php?id={$entry['id']}'>
+                  <a href='{$site_url}/journalEntry.php?id={$entry['id']}'>
                     <div class='leaf_card flex aicenter'>
                       <div class='journal_card_date'>
                         <h3 class='TL'>{$Ad}</h3>
