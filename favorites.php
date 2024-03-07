@@ -18,19 +18,19 @@ $convoPull = mysqli_query($db_connection, $convoQuery);
 // $convo = mysqli_fetch_assoc($convoPull);
 
 
-$soundQuery = "SELECT Audio.id, Audio.title, Audio.file, Audio.category, users.user_id, users.item_id, users.saved_status FROM Audio INNER JOIN users ON Audio.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Audio' AND saved_status = TRUE";
+$soundQuery = "SELECT Audio.id, Audio.title, Audio.file, Audio.category, users.user_id, users.item_id, users.saved_status FROM Audio INNER JOIN users ON Audio.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Audio' AND users.saved_status = TRUE";
 $soundPull = mysqli_query($db_connection, $soundQuery);
 // $sound = mysqli_fetch_assoc($soundPull);
 
-$medQuery = "SELECT Meditations.id, Meditations.meditationName, Meditations.type, users.user_id, users.item_id, users.saved_status FROM Meditations INNER JOIN users ON Meditations.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Meditations' AND saved_status = TRUE";
+$medQuery = "SELECT Meditations.id, Meditations.meditationName, Meditations.type, users.user_id, users.item_id, users.saved_status FROM Meditations INNER JOIN users ON Meditations.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Meditations' AND users.saved_status = TRUE";
 $medPull = mysqli_query($db_connection, $medQuery);
 // $med = mysqli_fetch_assoc($medPull);
 
-$articleQuery = "SELECT Articles.id, Articles.Title, Articles.Source, Articles.Category, users.user_id, users.item_id, users.saved_status FROM Articles INNER JOIN users ON Articles.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Articles' AND saved_status = TRUE";
+$articleQuery = "SELECT Articles.id, Articles.Title, Articles.Source, Articles.Category, users.user_id, users.item_id, users.saved_status FROM Articles INNER JOIN users ON Articles.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Articles' AND users.saved_status = TRUE";
 $articlePull = mysqli_query($db_connection, $articleQuery);
 // $article = mysqli_fetch_assoc($articlePull);
 
-$puzzleQuery = "SELECT Puzzles.id, Puzzles.title, Puzzles.link, Puzzles.category, users.user_id, users.item_id, users.saved_status FROM Puzzles INNER JOIN users ON Puzzles.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Puzzles' AND saved_status = TRUE";
+$puzzleQuery = "SELECT Puzzles.id, Puzzles.title, Puzzles.link, Puzzles.category, users.user_id, users.item_id, users.saved_status FROM Puzzles INNER JOIN users ON Puzzles.id=users.item_id AND users.user_id={$user_data['user_id']} AND item_category='Puzzles' AND users.saved_status = TRUE";
 $puzzlePull = mysqli_query($db_connection, $puzzleQuery);
 // $puzzle = mysqli_fetch_assoc($puzzlePull);
 
