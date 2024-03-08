@@ -2,7 +2,7 @@
 global $db_connection;
 global $site_url;
 
-function getDefaultUser() {
+function getDefaultUser() { //Unused, but creates a default user to reference to if you cannot make a cookie based one
     global $db_connection;
     $checkForDefault = "SELECT * FROM users WHERE user_id = 1"; //Check to see if the default user is there (as a backup)
     $OGUserCheck = mysqli_query($db_connection, $checkForDefault);
@@ -22,7 +22,7 @@ function generateUserId() {
     $idGenerate = rand(111111111,999999999);
 }
 
-function createCookie($uid) {
+function createCookie($uid) {//Make a cookie for the user
     global $site_url;
     $cookie_name = "user_id";
     $expire_date = time() + (86400 * 30);
@@ -101,11 +101,12 @@ function getUserById($user_id) {
 
 $cookie_name = "user_id";
 
-// Attempt to create cookie
+// WRITE OUT PAGE FUNCTIONS LIKE THIS.
+// WRITE IN COMMENTS WHAT YOU WANT TO BE ABLE TO DO, THEN MAKE FUNCTIONS UP ABOVE AND CALL THEM DOWN HERE. 
 if(!isset($_COOKIE[$cookie_name])) {//If there is no cookie set, set one
     $user_id = uniqid();
     createCookie($user_id);
-    setcookie('$cookie_name', '$uid', $expire_date, "/", ".pauldigerolamo.com"); // 86400 = 1 day
+    setcookie('$cookie_name', '$uid', time() + (86400 * 30), "/", ".pauldigerolamo.com"); // 86400 = 1 day
 
     $user = createUser($user_id);
     // $save_enabled = 0; //The set cookie function doesn't work until AFTER reload, so it disables functionality requiring cookies.

@@ -181,7 +181,6 @@
     width: 80px;
     height: 80px;
     border-top-left-radius: 12px;
-    border-bottom-right-radius: 12px;
 }
 
 </style>

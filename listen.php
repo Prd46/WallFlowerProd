@@ -42,7 +42,7 @@
               <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Guided Imagery</div></div>
               <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Color Noise</div></div>
               <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Guided Meditation</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Lo fi</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Lo-fi</div></div>
               
             </div>
              <!-- ONE LEAF CARD -->
@@ -140,6 +140,5 @@
     height: 80px;
     object-fit: cover;
     border-top-left-radius: 12px;
-    border-bottom-right-radius: 12px;
 }
 </style>

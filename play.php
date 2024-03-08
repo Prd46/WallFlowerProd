@@ -40,7 +40,7 @@ $site_url = site_url();
 
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/extension.svg"/>
-                <h1 class="main_label_header TL">Puzzles</h1>
+                <h1 class="main_label_header TL"><?php echo $article['title']?></h1>
 
 
                 <form class='save_button_container'  id='saveButton' method='post' action='<?php echo $site_url?>/includes/saveFunction.php'>
@@ -56,15 +56,19 @@ $site_url = site_url();
 
 
             </div>
-            <p class="BM main_label_caption"><?php echo $article['title']?></p>
         </div>
 
 <br>
     <div class="template_image_box">
-        <img class="template_image" src="media/puzzle_thumbnails/<?php echo $article['link']?>.jpg">
+        <img class="hidden template_image" src="media/puzzle_thumbnails/<?php echo $article['link']?>.jpg">
         </div>
         <div id="board"></div>
-        <h2 class="BS flex jccenter">Turns: <span id="turns">0</span></h2>
+        <div class="guideButton">
+            <img class="regen_icon invis" src="media/icons/sun.svg"/>
+            <h2 class="BS flex jccenter">Turns: <span id="turns">0</span></h2>
+            <img class="pts js-pts-lit regen_icon" src="media/icons/sun.svg"/>
+            <img class="pts js-pts-unlit hidden regen_icon" src="media/icons/moon.svg"/>
+        </div>
         <div class="hidden winMessage">
             <img class="regen_icon invis" src="media/icons/regen.svg"/>
             <h3 class="LL">You did it! Great job!</h3>
@@ -76,6 +80,26 @@ $site_url = site_url();
     </main>
 
     <script>
+const timg = document.querySelector('.template_image');
+const togglebs = document.querySelectorAll('.pts');
+const visButton = document.querySelector('.js-pts-unlit');
+togglebs.forEach(button =>{
+    button.addEventListener('click', function(){
+        togglebs.forEach(button =>{
+            if (button.classList.contains('hidden')){
+                button.classList.remove('hidden');
+            }else{
+                button.classList.add('hidden');
+            };
+        });
+        if (!visButton.classList.contains('hidden')){
+            timg.classList.remove('hidden');
+        }else{
+            timg.classList.add('hidden');
+        };
+    });
+});
+
 var rows = 5;
 var columns = 5;
 
@@ -236,6 +260,11 @@ img{
     width: 285px;
     height: 298px;
     pointer-events: none;
+}
+.guideButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .regen_icon{
     padding: 0 1rem;

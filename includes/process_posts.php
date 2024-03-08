@@ -10,7 +10,7 @@ if (!$_POST) {
 $title = sanitize_value($_POST['title']);
 $entryText = sanitize_value($_POST['entryText']);
 
-$result = add_journal($user_data['user_id'], $title, $entryText);
+$result = add_journal($user['user_id'], $title, $entryText);
 
 // Check there are no errors with our SQL statement
 if ($result) {

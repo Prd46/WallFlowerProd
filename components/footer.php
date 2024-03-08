@@ -33,7 +33,7 @@
                     <img class="fbi3 icon footer_icon_image bookmark" src="media/icons/darkPhone.svg"/>
                     <img class="icon footer_icon_image" src="media/icons/phone.svg"/>
                 </div>
-                <p class="footer_button_text LM">S.O.S</p>
+                <p class="footer_button_text LM">S.O.S.</p>
             </div>
         </a>   
     </div>

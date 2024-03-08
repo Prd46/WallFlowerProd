@@ -1,8 +1,9 @@
 /* Font Log */
 @font-face {
   font-family: "DMSans";
-  src: url("../fonts/DMSans-Medium.woff2") format("woff2"),
-    url("../fonts/DMSans-Medium.woff") format("woff");
+  src: url("../fonts/dmsans-variablefont_opszwght-webfont.woff2")
+      format("woff2"),
+    url("../fonts/dmsans-variablefont_opszwght-webfont.woff") format("woff");
   font-weight: 100 1000;
   font-style: normal;
 }
@@ -364,6 +365,7 @@ button {
 }
 .leaf_card_image {
   width: 80px;
+  border-bottom-right-radius: 0px;
   display: flex;
   justify-content: center;
 }
@@ -427,7 +429,6 @@ button {
   width: 80px;
   height: 80px;
   border-top-left-radius: 12px;
-  border-bottom-right-radius: 12px;
 }
 .filterButtons {
   width: 100%;
@@ -979,12 +980,8 @@ textarea {
   text-overflow: ellipsis;
 }
 
-
-
-
-
 .footer_button.active {
-  background-color: #B6D085;
+  background-color: #b6d085;
 }
 
 .footer_buttons {
@@ -1013,20 +1010,19 @@ textarea {
   background-repeat: repeat-x;
   z-index: 0; 
 } */
-.footer_grass{
-    display: flex;
+.footer_grass {
+  display: flex;
   justify-content: center;
   position: absolute;
   width: 100.4%;
   bottom: 60px;
-  height: 50px; 
+  height: 50px;
   margin: 0 auto;
-  background-image: url('../media/grassy_border.svg'); 
-  background-size: cover; 
+  background-image: url("../media/grassy_border.svg");
+  background-size: cover;
   background-position: center;
   background-repeat: repeat-x;
 }
-
 
 /* Audio page */
 @media screen and (max-width: 430px) {

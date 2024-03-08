@@ -29,13 +29,11 @@ if ($result->num_rows > 0) {
 }
 $site_url = site_url();
 ?>
-
-<main>
-
 <a href="meditations.php" class="label_back">
         <img class="label_back_arrow" src="media/icons/back.svg">
         <p class=" BS label_back_text">Meditations</p>
         </a>
+<main>
 <div class="main_label">
 
             <div class="main_label_header">

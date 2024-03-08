@@ -69,7 +69,7 @@ $category = str_replace('_', ' ', $article['category']);
 <div class="container">
         <img src="media/AudioThumbnails/<?php echo $f?>.jpg" alt="Wallflower" class="imagecoffee">
         <div class="buttons" src="path/to/icon.png">
-    <button class="musicstart" id="play"><img id="play_icon"  alt=""></button>
+    <div class="musicstart" id="play"><img id="play_icon"  alt=""></div>
     <input type="range" id="range" class="level" value="0" min="0">  
 </div>
 </div>
@@ -81,7 +81,7 @@ $category = str_replace('_', ' ', $article['category']);
 
         <!--GUIDED IMAGERY  -->
         <div class="text-container">
-        <h3 class="title HS"><img src="media/icons/phonecheck.svg" alt="guide" class="guide"> <?php echo $category?></h3>
+        <h3 class="title HS"><img src="media/icons/info.svg" alt="guide" class="guide"> <?php echo $category?></h3>
             <p class="description BM"><?php echo $article['description']?></p>
             
         
@@ -277,6 +277,8 @@ margin-bottom: 30px;
   border-radius: 60px;
   background-color: #e3e3d8;
   border: none;
+  width: 60px;
+  height: 36px;
 }
 
 </style>
