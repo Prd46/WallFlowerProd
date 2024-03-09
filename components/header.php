@@ -21,11 +21,11 @@ $document_title = $page_name . ' | ' . $site_name;
 </head>
 <body>
     <div class="header_leavesImage">
-        <img class="leaves_image" src="media/topImage.png"/>
+        <img class="leaves_image" src="media/topImage.png" alt="image">
     </div>
             <header>
             <div class="header_logo">
-                        <img src="media/icons/logo.svg"/>
+                        <img src="media/icons/logo.svg" alt="image">
                     </div>
                     <!-- <div class="header_menu_button_container">
                         <div class="header_menu_button js-menu-button round">

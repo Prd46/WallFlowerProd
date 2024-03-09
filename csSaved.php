@@ -117,17 +117,17 @@
   include_once __DIR__ . '/components/header.php'
 ?>
     <a href="index.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt="image">
         <p class=" BS label_back_text">Explore</p>
         </a>
     <main class="affirmations_main">
 
         <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/forum.svg"/>
+                <img class="icon main_label_icon" src="media/icons/forum.svg" alt="image">
                 <h1 class="main_label_header TL">Icebreakers</h1>
             </div>
-            <p class="BM main_label_caption bookmark">
+            <p class="BSH main_label_caption bookmark">
                 Here are some ideas for ways to start a conversation with someone.
             </p>
         </div>
@@ -139,14 +139,14 @@
 
             <a class="flex aicenter" href="">
                     <button class="affirmations_main_content_button regenerate flex aicenter round">
-                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg"/>
+                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg" alt="image">
                         </button>
                 </a>
 
             <form id="saveButton" method="post" action="">
                 <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round <?php echo $litClassToggle; ?>">
-                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon AffSaveUnlit bookmark" src="media/icons/affirmationsSave.svg"/>
-                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon AffSaveLit" src="media/icons/savedLit.svg"/>
+                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon AffSaveUnlit bookmark" src="media/icons/affirmationsSave.svg" alt="image">
+                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon AffSaveLit" src="media/icons/savedLit.svg" alt="image">
                 </button>
             </form>
  
@@ -165,7 +165,7 @@
                 <h3 class="LM">All</h3>
             </a>
             <div class="saved_switch_right saved_switch_lit">
-                <img class="check" src="media/icons/oldCheck.svg">
+                <img class="check" src="media/icons/oldCheck.svg" alt="image">
                 <h3 class="LM">Saved</h3>
             </div>
         </div>

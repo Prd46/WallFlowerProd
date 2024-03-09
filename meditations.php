@@ -16,7 +16,7 @@
 
 ?>
 <a href="index.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt='image'>
         <p class=" BS label_back_text">Explore</p>
         </a>
 <main>
@@ -24,19 +24,19 @@
 
 <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/meditation.svg"/>
+                <img class="icon main_label_icon" src="media/icons/meditation.svg" alt='image'>
                 <h1 class="main_label_header TL">Meditations</h1>
             </div>
-            <p class="BM main_label_caption">
+            <p class="BSH main_label_caption">
             Here are some calming exercises to put your mind at ease.
             </p>
         </div>
 
 
         <div class="filterButtons">
-        <div class="filterButton js-all LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">All</div></div>
-        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Grounding</div></div>
-        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Breathing</div></div>
+        <div class="filterButton js-all LM"><img class="check hidden" src="media/icons/check.svg" alt='image'><img class="uncheck" src="media/icons/unchecked.svg" alt='image'><div class="js-filter">All</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg" alt='image'><img class="uncheck" src="media/icons/unchecked.svg" alt='image'><div class="js-filter">Grounding</div></div>
+        <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg" alt='image'><img class="uncheck" src="media/icons/unchecked.svg" alt='image'><div class="js-filter">Breathing</div></div>
             </div>
 
 
@@ -61,7 +61,7 @@
                   <a href='{$site_url}/meditation.php?id={$article['id']}' class='{$article['type']} js-dbResult'>
                     <div class='leaf_card flex aicenter'>
                       <div class='leaf_card_image'>
-                        <img class='icon leaf_icon' src='media/icons/meditation.svg'/>
+                        <img class='icon leaf_icon' src='media/icons/meditation.svg' alt='image'>
                       </div>
                       <div class='leaf_card_text_non_index'>
                         <div class='leaf_card_title'>
@@ -80,8 +80,8 @@
                             <input type='hidden' name='dbName' value='Meditations'>
                             <input type='hidden' name='redirect' value='/meditations.php'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:{$lit};' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                        <img style='opacity:{$lit};' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                                 </button>
                             </form>
                     </div>

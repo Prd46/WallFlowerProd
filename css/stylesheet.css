@@ -264,8 +264,13 @@ h3 {
 .BS {
   font: var(--BS);
 }
+.BSH {
+  font: var(--BS);
+  line-height: 1.5rem;
+}
 .BSI {
   font: var(--BSI);
+
 }
 
 .LL {
@@ -620,6 +625,10 @@ main {
   padding: 0;
   margin: 0;
 }
+.cscap{
+  position: absolute;
+  width: 80%;
+}
 .main_label_icon {
   padding: 0 0.5rem;
   height: 24px;
@@ -862,20 +871,11 @@ footer {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-.editSubmit {
-  margin-top: 1rem;
-  width: 100%;
-  background-color: #ebffc6;
-}
-.journal_delete_button {
-  background-color: #ffc6c6;
-  border: solid 1px var(--n50);
-  width: 40%;
+.editButtonBar{
   display: flex;
-  padding: 1rem 0;
-  justify-content: center;
-  border-radius: 4px;
 }
+
+
 .delete_confirmation {
   position: relative;
   display: flex;
@@ -980,6 +980,31 @@ textarea {
   text-overflow: ellipsis;
 }
 
+.editSubmit {
+  margin-top: 1rem;
+  border-radius: 60px;
+  color: white;
+  width: 100%;
+  background-color: #4f6527;
+}
+.editDeleteSubmit{
+  margin-top: 1rem;
+  border-radius: 60px;
+  color: white;
+  width: 57%;
+  background-color: #4f6527;
+}
+.editDeleteSubmitDelete{
+  margin-top: 1rem;
+  border: solid 1px #ba1b1a;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3%;
+  width: 40%;
+  background-color: var(--invis);
+}
 .footer_button.active {
   background-color: #b6d085;
 }

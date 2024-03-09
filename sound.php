@@ -33,7 +33,7 @@ list($f, $e) = explode('.', $fileTitle);
 $category = str_replace('_', ' ', $article['category']);
 ?>
 <a href="listen.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt="image">
         <p class=" BS label_back_text">Sounds</p>
         </a>
 
@@ -43,7 +43,7 @@ $category = str_replace('_', ' ', $article['category']);
 <div class="main_label">
 
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/headphones.svg"/>
+                <img class="icon main_label_icon" src="media/icons/headphones.svg" alt="image">
                 <h1 class="main_label_header TL">Sounds</h1>
 
 
@@ -53,14 +53,14 @@ $category = str_replace('_', ' ', $article['category']);
                             <input type='hidden' name='dbName' value='Audio'>
                             <input type='hidden' name='redirect' value='/sound.php?id=<?php echo $article['id'];?>'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt="image">
+                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg' alt="image">
                                 </button>
                             </form>
 
 
             </div>
-            <p class="BM main_label_caption"><?php echo $article['title']?></p>
+            <p class="BSH main_label_caption"></p>
         </div>
 
 <br><br>
@@ -69,7 +69,7 @@ $category = str_replace('_', ' ', $article['category']);
 <div class="container">
         <img src="media/AudioThumbnails/<?php echo $f?>.jpg" alt="Wallflower" class="imagecoffee">
         <div class="buttons" src="path/to/icon.png">
-    <div class="musicstart" id="play"><img id="play_icon"  alt=""></div>
+    <div class="musicstart" id="play"><img id="play_icon"  alt="image"></div>
     <input type="range" id="range" class="level" value="0" min="0">  
 </div>
 </div>

@@ -7,10 +7,10 @@
 
 <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/blackPhone.svg"/>
+                <img class="icon main_label_icon" src="media/icons/blackPhone.svg" alt='image'>
                 <h1 class="main_label_header TL">S.O.S.</h1>
             </div>
-            <p class="BM main_label_caption">
+            <p class="BSH main_label_caption">
             We all need extra help sometimes. Stay calm and take a deep breath.
             </p>
         </div>
@@ -40,7 +40,7 @@
             <a href="meditations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/meditation.svg"/>
+                    <img class="icon leaf_icon" src="media/icons/meditation.svg" alt='image'>
                 </div>
 
                     <div class="leaf_card_text">
@@ -58,7 +58,7 @@
         <a href='listen.php'>
             <div class='leaf_card flex aicenter'>
                 <div class='leaf_card_image'>
-                    <img class='icon leaf_icon' src='media/icons/headphones.svg'/>
+                    <img class='icon leaf_icon' src='media/icons/headphones.svg' alt='image'>
                 </div>
 
                     <div class='leaf_card_text'>
@@ -76,7 +76,7 @@
             <a href='affirmations.php'>
             <div class='leaf_card flex aicenter'>
                 <div class='leaf_card_image'>
-                    <img class='icon leaf_icon' src='media/icons/affirmationNew.svg'/>
+                    <img class='icon leaf_icon' src='media/icons/affirmationNew.svg' alt='image'>
                 </div>
 
                     <div class='leaf_card_text'>

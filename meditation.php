@@ -30,14 +30,14 @@ if ($result->num_rows > 0) {
 $site_url = site_url();
 ?>
 <a href="meditations.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt='image'>
         <p class=" BS label_back_text">Meditations</p>
         </a>
 <main>
 <div class="main_label">
 
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/meditation.svg"/>
+                <img class="icon main_label_icon" src="media/icons/meditation.svg" alt='image'>
                 <h1 class="main_label_header TL">Meditations</h1>
 
 
@@ -47,8 +47,8 @@ $site_url = site_url();
                             <input type='hidden' name='dbName' value='Meditations'>
                             <input type='hidden' name='redirect' value='/meditation.php?id=<?php echo $article['id'];?>'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                                 </button>
                             </form>
 

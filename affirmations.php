@@ -130,17 +130,17 @@
   include_once __DIR__ . '/components/header.php'
 ?>
         <a href="index.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt="image">
         <p class=" BS label_back_text">Explore</p>
         </a>
     <main class="affirmations_main">
         
 
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/affirmationNew.svg"/>
+                <img class="icon main_label_icon" src="media/icons/affirmationNew.svg" alt="image">
                 <h1 class="main_label_header TL">Affirmations</h1>
             </div>
-            <p class="BM main_label_caption bookmark">
+            <p class="BSH main_label_caption bookmark">
                 Here are phrases to inspire and uplift.
             </p>
         </div>
@@ -152,14 +152,14 @@
 
             <a class="flex aicenter" href="">
                     <button class="affirmations_main_content_button regenerate flex aicenter round">
-                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg"/>
+                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg" alt="image">
                     </button>
                 </a>
 
             <form id="saveButton" method="post" action="">
                 <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round <?php echo $litClassToggle; ?>">
-                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon AffSaveUnlit bookmark" src="media/icons/affirmationsSave.svg"/>
-                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon AffSaveLit" src="media/icons/savedLit.svg"/>
+                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon AffSaveUnlit bookmark" src="media/icons/affirmationsSave.svg" alt="image">
+                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon AffSaveLit" src="media/icons/savedLit.svg" alt="image">
                 </button>
             </form>
  
@@ -175,7 +175,7 @@
         <div class="affirmations_saved_switch">
             
             <div class="saved_switch_left saved_switch_lit">
-            <img class="check" src="media/icons/oldCheck.svg">
+            <img class="check" src="media/icons/oldCheck.svg" alt="image">
                 <h3 class="LM">All</h3>
             </div>
             <a href="paSaved.php" class="saved_switch_right">

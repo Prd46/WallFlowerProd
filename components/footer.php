@@ -11,8 +11,8 @@
         <a href="favorites.php">
             <div class="footer_button flex column aicenter">
                 <div class="footer_homeButton_oval js-fbutton fb1">
-                    <img class="fbi1 icon footer_icon_image bookmark" src="media/icons/darkBookmark.svg"/>
-                    <img class="icon footer_icon_image" src="media/icons/saved.svg"/>
+                    <img class="fbi1 icon footer_icon_image bookmark" src="media/icons/darkBookmark.svg" alt="image">
+                    <img class="icon footer_icon_image" src="media/icons/saved.svg" alt="image">
                 </div>
                 <p class="footer_button_text LM">Saved</p>
             </div>
@@ -21,8 +21,8 @@
             <div class="footer_button flex column aicenter">
                 <div class="footer_homeButton_oval js-fbutton fb2 oval_lit">
                     
-                    <img class="fbi2 icon footer_icon_image bookmark" src="media/icons/home_icon.svg"/>
-                    <img class="icon footer_icon_image" src="media/icons/whiteHome.svg"/>
+                    <img class="fbi2 icon footer_icon_image bookmark" src="media/icons/home_icon.svg" alt="image">
+                    <img class="icon footer_icon_image" src="media/icons/whiteHome.svg" alt="image">
                 </div>
                 <p class="footer_button_text LM">Explore</p>
             </div>
@@ -30,8 +30,8 @@
         <a href="sos.php">
             <div class="footer_button flex column aicenter">
                 <div class="footer_homeButton_oval js-fbutton fb3">
-                    <img class="fbi3 icon footer_icon_image bookmark" src="media/icons/darkPhone.svg"/>
-                    <img class="icon footer_icon_image" src="media/icons/phone.svg"/>
+                    <img class="fbi3 icon footer_icon_image bookmark" src="media/icons/darkPhone.svg" alt="image">
+                    <img class="icon footer_icon_image" src="media/icons/phone.svg" alt="image">
                 </div>
                 <p class="footer_button_text LM">S.O.S.</p>
             </div>

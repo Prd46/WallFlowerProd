@@ -32,14 +32,14 @@ $site_url = site_url();
 
 ?>
     <a href="puzzlelist.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt='image'>
         <p class=" BS label_back_text">Puzzles</p>
         </a>
 <main>
 <div class="main_label">
 
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/extension.svg"/>
+                <img class="icon main_label_icon" src="media/icons/extension.svg" alt='image'>
                 <h1 class="main_label_header TL"><?php echo $article['title']?></h1>
 
 
@@ -49,8 +49,8 @@ $site_url = site_url();
                             <input type='hidden' name='dbName' value='Puzzles'>
                             <input type='hidden' name='redirect' value='/play.php?id=<?php echo $article['id'];?>'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                                 </button>
                             </form>
 
@@ -60,20 +60,20 @@ $site_url = site_url();
 
 <br>
     <div class="template_image_box">
-        <img class="hidden template_image" src="media/puzzle_thumbnails/<?php echo $article['link']?>.jpg">
+        <img class="hidden template_image" src="media/puzzle_thumbnails/<?php echo $article['link']?>.jpg" alt='image'>
         </div>
         <div id="board"></div>
         <div class="guideButton">
-            <img class="regen_icon invis" src="media/icons/sun.svg"/>
+            <img class="regen_icon invis" src="media/icons/sun.svg" alt='image'>
             <h2 class="BS flex jccenter">Turns: <span id="turns">0</span></h2>
-            <img class="pts js-pts-lit regen_icon" src="media/icons/sun.svg"/>
-            <img class="pts js-pts-unlit hidden regen_icon" src="media/icons/moon.svg"/>
+            <img class="pts js-pts-lit regen_icon" src="media/icons/sun.svg" alt='image'>
+            <img class="pts js-pts-unlit hidden regen_icon" src="media/icons/moon.svg" alt='image'>
         </div>
         <div class="hidden winMessage">
-            <img class="regen_icon invis" src="media/icons/regen.svg"/>
+            <img class="regen_icon invis" src="media/icons/regen.svg" alt='image'>
             <h3 class="LL">You did it! Great job!</h3>
             <a class="flex aicenter" href="">
-                <img class="regen_icon" src="media/icons/regen.svg"/>
+                <img class="regen_icon" src="media/icons/regen.svg" alt='image'>
             </a>
     </div>
         <div id="pieces"></div>
@@ -157,6 +157,7 @@ window.onload = function() {
     for (let i = 0; i < pieces.length; i++) {
         let tile = document.createElement("img");
         tile.src = "./media/puzzle_pieces/<?php echo $article['link']?>/" + pieces[i] + ".png";
+        tile.alt ="puzzlePiece";
         // console.log(i)
        
 

@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
 $site_url = site_url();
 ?>
 <a href="journal.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt='image'>
         <p class=" BS label_back_text">Journal</p>
         </a>
 <main>
@@ -44,7 +44,7 @@ $site_url = site_url();
 <br></br>
 </main>
 <a class="journalED" href='<?php echo $site_url ?>/editJournal.php?id=<?php echo $_GET['id']?>'>
-  <img class="icon" src="media/icons/edit.svg">
+  <img class="icon" src="media/icons/edit.svg" alt='image'>
 </a>
 <?php include "components/footer.php" ?>
 

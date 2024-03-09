@@ -38,20 +38,20 @@ $puzzlePull = mysqli_query($db_connection, $puzzleQuery);
 <main>
 <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/blackbookmark.svg"/>
+                <img class="icon main_label_icon" src="media/icons/blackbookmark.svg" alt="image">
                 <h1 class="main_label_header TL">Saved</h1>
             </div>
             <p class="BM main_label_caption">
             Here's a list of some of your saved affirmations, icebreakers, audios, and more.
             </p>
             <div class="filterButtons">
-            <div class="filterButton js-all LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">All</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Sounds</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Meditations</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Articles</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Puzzles</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Affirmations</div></div>
-              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Icebreakers</div></div>
+            <div class="filterButton js-all LM"><img class="check hidden" src="media/icons/check.svg" alt="image"><img class="uncheck" src="media/icons/unchecked.svg" alt="image"><div class="js-filter">All</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg" alt="image"><img class="uncheck" src="media/icons/unchecked.svg" alt="image"><div class="js-filter">Sounds</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg" alt="image"><img class="uncheck" src="media/icons/unchecked.svg" alt="image"><div class="js-filter">Meditations</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg" alt="image"><img class="uncheck" src="media/icons/unchecked.svg" alt="image"><div class="js-filter">Articles</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg" alt="image"><img class="uncheck" src="media/icons/unchecked.svg" alt="image"><div class="js-filter">Puzzles</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg" alt="image"><img class="uncheck" src="media/icons/unchecked.svg" alt="image"><div class="js-filter">Affirmations</div></div>
+              <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg" alt="image"><img class="uncheck" src="media/icons/unchecked.svg" alt="image"><div class="js-filter">Icebreakers</div></div>
             </div>
         </div>
  <!-- ONE LEAF CARD -->
@@ -73,7 +73,7 @@ echo
 <a href='sound.php?id={$soundList['id']}' class='Sounds js-dbResult All'>
             <div class='leaf_card flex aicenter'>
             <div class='leaf_card_image'>
-                <img class='icon leaf_icon_1' src='media/AudioThumbnails/{$f}.jpg'/>
+                <img class='icon leaf_icon_1' src='media/AudioThumbnails/{$f}.jpg' alt='image'>
             </div>
 
                         <div class='leaf_card_text'>
@@ -90,8 +90,8 @@ echo
                       <input type='hidden' name='dbName' value='Audio'>
                       <input type='hidden' name='redirect' value='/favorites.php'>
                           <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                  <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg'/>
-                                  <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg'/>
+                                  <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                  <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                           </button>
                       </form>
 
@@ -116,7 +116,7 @@ echo
 <a href='sound.php?id={$medList['id']}' class='Meditations js-dbResult All'>
         <div class='leaf_card flex aicenter'>
             <div class='leaf_card_image'>
-                <img class='icon leaf_icon' src='media/icons/meditation.svg'/>
+                <img class='icon leaf_icon' src='media/icons/meditation.svg' alt='image'>
             </div>
 
                     <div class='leaf_card_text'>
@@ -133,8 +133,8 @@ echo
                     <input type='hidden' name='dbName' value='Meditations'>
                     <input type='hidden' name='redirect' value='/favorites.php'>
                         <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg'/>
-                                <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg'/>
+                                <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                         </button>
                     </form>
                 </div>
@@ -159,7 +159,7 @@ echo
         <a href='{$site_url}/article.php?id={$artList['id']}' class='Articles js-dbResult All'>
                     <div class='large_leaf_card flex aicenter'>
                       <div class='leaf_card_image'>
-                        <img class='icon leaf_icon' src='media/icons/newsmode.svg'/>
+                        <img class='icon leaf_icon' src='media/icons/newsmode.svg' alt='image'>
                       </div>
                       <div class='leaf_card_text_non_index'>
                         <div class='leaf_card_title'>
@@ -175,8 +175,8 @@ echo
                     <input type='hidden' name='dbName' value='Articles'>
                     <input type='hidden' name='redirect' value='/favorites.php'>
                         <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg'/>
-                                <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg'/>
+                                <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                         </button>
                     </form>
             </div>
@@ -199,7 +199,7 @@ $category = str_replace('_', ' ', $pList['category']);
                   <a href='{$site_url}/play.php?id={$pList['id']}' class='Puzzles js-dbResult All'>
                     <div class='leaf_card flex aicenter'>
                       <div class='leaf_card_image'>
-                        <img class='icon leaf_icon_1' src='media/puzzle_thumbnails/{$pList['link']}.jpg'/>
+                        <img class='icon leaf_icon_1' src='media/puzzle_thumbnails/{$pList['link']}.jpg' alt='image'>
                       </div>
                       <div class='leaf_card_text_non_index'>
                         <div class='leaf_card_title'>
@@ -218,8 +218,8 @@ $category = str_replace('_', ' ', $pList['category']);
                     <input type='hidden' name='dbName' value='Puzzles'>
                     <input type='hidden' name='redirect' value='/favorites.php'>
                         <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg'/>
-                                <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg'/>
+                                <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                         </button>
                     </form>
                         </div>
@@ -251,8 +251,8 @@ echo
                       <input type='hidden' name='colName' value='affirmationSaved'>
                       <input type='hidden' name='redirect' value='/favorites.php'>
                           <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                  <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg'/>
-                                  <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg'/>
+                                  <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                  <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                           </button>
                       </form>
 
@@ -286,8 +286,8 @@ echo
                       <input type='hidden' name='colName' value='starterSaved'>
                       <input type='hidden' name='redirect' value='/favorites.php'>
                           <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                  <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg'/>
-                                  <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg'/>
+                                  <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                  <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                           </button>
                       </form>
 
