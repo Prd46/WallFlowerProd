@@ -90,8 +90,8 @@
                             <input type='hidden' name='dbName' value='Audio'>
                             <input type='hidden' name='redirect' value='/listen.php'>
                                 <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                        <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
-                                        <img style='opacity:{$lit};' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                        <img style='opacity:{$lit};' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                                 </button>
                             </form>
                     </div>

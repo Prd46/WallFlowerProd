@@ -90,8 +90,8 @@ echo
                       <input type='hidden' name='dbName' value='Audio'>
                       <input type='hidden' name='redirect' value='/favorites.php'>
                           <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                  <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
-                                  <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
+                                  <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                  <img style='opacity:1;' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                           </button>
                       </form>
 
@@ -132,8 +132,8 @@ echo
                     <input type='hidden' name='dbName' value='Meditations'>
                     <input type='hidden' name='redirect' value='/favorites.php'>
                         <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
-                                <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
+                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                        <img style='opacity:1;' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                         </button>
                     </form>
                 </div>
@@ -172,8 +172,8 @@ echo
                     <input type='hidden' name='dbName' value='Articles'>
                     <input type='hidden' name='redirect' value='/favorites.php'>
                         <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
-                                <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
+                          <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                          <img style='opacity:1;' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                         </button>
                     </form>
     
@@ -217,8 +217,8 @@ $category = str_replace('_', ' ', $pList['category']);
                     <input type='hidden' name='dbName' value='Puzzles'>
                     <input type='hidden' name='redirect' value='/favorites.php'>
                         <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
-                                <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
+                          <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                          <img style='opacity:1;' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                         </button>
                     </form>
               
@@ -250,8 +250,8 @@ echo
                       <input type='hidden' name='colName' value='affirmationSaved'>
                       <input type='hidden' name='redirect' value='/favorites.php'>
                           <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                  <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
-                                  <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
+                          <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                          <img style='opacity:1;' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                           </button>
                       </form>
 
@@ -285,8 +285,8 @@ echo
                       <input type='hidden' name='colName' value='starterSaved'>
                       <input type='hidden' name='redirect' value='/favorites.php'>
                           <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                  <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
-                                  <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
+                          <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                          <img style='opacity:1;' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                           </button>
                       </form>
 
