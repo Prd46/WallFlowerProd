@@ -177,8 +177,10 @@ echo
                         </button>
                     </form>
     
-            </a>
+
             </div>
+            </a>
+
 ";
 };
 ?>
@@ -219,8 +221,9 @@ $category = str_replace('_', ' ', $pList['category']);
                                 <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                         </button>
                     </form>
-                        </a>
+              
                         </div>
+                        </a>
                         ";
 };
 ?>
