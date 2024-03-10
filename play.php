@@ -158,6 +158,7 @@ window.onload = function() {
         let tile = document.createElement("img");
         tile.src = "./media/puzzle_pieces/<?php echo $article['link']?>/" + pieces[i] + ".png";
         tile.alt ="puzzlePiece";
+        tile.style = "cursor:pointer;"
         // console.log(i)
        
 
@@ -230,47 +231,6 @@ function dragEnd() {
 
 
     </script>
-<style>
-#board{
-    width: 310px;
-    height: 290px;
-    padding-bottom: 1rem;
-    /* background: url('media/puzzle_thumbnails/<?php echo $article['link']?>.jpg'); */
-}
-#pieces{
-    width: 310px;
-    height: 290px;
-   margin: 0 auto 2rem auto;
-}
-img{
-    cursor: pointer;
-}
-.template_image_box{
-    width: 100%;
-    height: 290px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    left: 0;
-    pointer-events: none;
-}
-.template_image{
-    opacity: 20%;
-    margin: 0 auto;
-    left: 20%;
-    width: 285px;
-    height: 298px;
-    pointer-events: none;
-}
-.guideButton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.regen_icon{
-    padding: 0 1rem;
-}
-</style>
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>

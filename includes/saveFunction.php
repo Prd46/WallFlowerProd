@@ -6,7 +6,7 @@ $redirect = $_POST['redirect'];
 $newRow = "FALSE";
 if (($dbName == "Affirmations") ||($dbName == "ConversationStarters")){
     $colName = $_POST['colName'];
-    if (isset($_POST['toggle'])) {
+    if (isset($_POST)) {
         $query = "SELECT * FROM {$dbName} WHERE id = '{$id}'" ;
         // echo $query;
         $site_url = site_url();
@@ -57,7 +57,7 @@ if (($dbName == "Affirmations") ||($dbName == "ConversationStarters")){
                 // $litClassToggle3 = "0";
                 // $litClassToggle4 = "0";
                 // Handle button click
-                if (isset($_POST['toggle'])) {
+                if (isset($_POST)) {
                     $query = "SELECT * FROM users WHERE item_id = '{$id}' AND item_category = '{$dbName}' AND user_id = '{$user['user_id']}'" ;
                     $site_url = site_url();
                     // echo $db_connection;

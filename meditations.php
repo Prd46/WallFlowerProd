@@ -65,7 +65,7 @@
                       </div>
                       <div class='leaf_card_text_non_index'>
                         <div class='leaf_card_title'>
-                          <h3 class='TS articleTitle'>{$article['meditationName']}</h1>
+                          <h3 class='TS articleTitle'>{$article['meditationName']}</h3>
                           </div>
 
                           <div class='leaf_card_caption'>
@@ -74,12 +74,12 @@
 
                             
                         </div>
-                        <form class='save_button_container'  id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                        <form class='save_button_container' method='post' action='{$site_url}/includes/saveFunction.php'>
                             <input type='hidden' name='id' value='{$article['id']}'>
 
                             <input type='hidden' name='dbName' value='Meditations'>
                             <input type='hidden' name='redirect' value='/meditations.php'>
-                                <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                                <button class='affirmations_main_content_button save flex aicenter round'>
                                         <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
                                         <img style='opacity:{$lit};' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                                 </button>
@@ -97,82 +97,3 @@
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>
-
-<style>
-
-/* .animate {
-       margin: 0;
-       padding: 0;
-       border: 0;
-       font-size: 16px;
-       text-align: center;
-   }
-   
-   .animate:before {
-       content: 'Breath In ...';
-       -webkit-animation-name: animate;
-       -webkit-animation-duration: 25s;
-       animation-name: animate;
-       animation-duration: 14s;
-       animation-delay: 3s;
-       animation-iteration-count: infinite;
-   }
-   
-   @keyframes animate {
-    0% {
-       content: 'Breath In ...';
-   }
-   21% {
-       content: 'Hold ...';
-   }
-   58% {
-       content: 'Hold ..';
-   }
-   80% {
-       content: 'Exhale ..'; /* Adjusted timing for the end of exhale */
-   /* }
-   100% {
-       content: 'Breath In ...'; /* Delay before starting over */
-   /* } */
-       
-   /* } */ 
-
-   .animate {
-  align-items: center;
-  font-size: 1.2em;
-} */
-
-.anitext {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 20px;
-    margin-top: 20px;
-
-}
-.container1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    margin-top: 8px;
-}
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 600px;
-}
-
-.imagecoffee {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 20px;
-    border-radius: 12px;
-
-}
-
-
-
-</style>

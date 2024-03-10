@@ -71,7 +71,7 @@
                   <a href='{$site_url}/sound.php?id={$article['id']}' class='{$article['category']} js-dbResult'>
                     <div class='leaf_card flex aicenter'>
                       <div class='leaf_card_image'>
-                        <img class='icon leaf_icon_1' src='media/AudioThumbnails/{$f}.jpg'/>
+                        <img class='icon leaf_icon_1' src='media/AudioThumbnails/{$f}.jpg' alt='image'>
                       </div>
                       <div class='leaf_card_text_non_index'>
                         <div class='leaf_card_title'>
@@ -84,14 +84,14 @@
 
                             
                         </div>
-                        <form class='save_button_container'  id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                        <form class='save_button_container' method='post' action='{$site_url}/includes/saveFunction.php'>
                             <input type='hidden' name='id' value='{$article['id']}'>
 
                             <input type='hidden' name='dbName' value='Audio'>
                             <input type='hidden' name='redirect' value='/listen.php'>
-                                <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                        <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:{$lit};' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg'/>
+                                <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                                        <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                        <img style='opacity:{$lit};' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                                 </button>
                             </form>
                     </div>
@@ -108,37 +108,3 @@
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>
-
-<style>
-
-.icon-1 {
-    margin-left: 113px; /* Adjust the spacing between the button and the bookmark icon */
-    margin-bottom: 15px;
-    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
-    width: 25px;
-}
-.icon-2 {
-    margin-left: 95px; /* Adjust the spacing between the button and the bookmark icon */
-    margin-bottom: 15px;
-    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
-    width: 25px;
-}
-.icon-3 {
-    margin-left: 135px; /* Adjust the spacing between the button and the bookmark icon */
-    margin-bottom: 15px;
-    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
-    width: 25px;
-}
-.icon-4 {
-    margin-left: 135px; /* Adjust the spacing between the button and the bookmark icon */
-    margin-bottom: 15px;
-    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
-    width: 25px;
-}
-.leaf_icon_1{
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-}
-</style>

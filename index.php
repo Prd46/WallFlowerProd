@@ -24,7 +24,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <!-- END OF LEAF CARD -->
         <a href="conversationStarters.php">
@@ -42,7 +41,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <a href="listen.php">
             <div class="leaf_card flex aicenter">
@@ -59,7 +57,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <a href="meditations.php">
             <div class="leaf_card flex aicenter">
@@ -76,7 +73,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <a href="articles.php">
             <div class="leaf_card flex aicenter">
@@ -93,7 +89,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <a href="puzzlelist.php">
             <div class="leaf_card flex aicenter">
@@ -110,7 +105,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <a href='journal.php'>
             <div class='leaf_card flex aicenter'>
@@ -127,8 +121,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
+</div>
     </main>
 
 <?php 

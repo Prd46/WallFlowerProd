@@ -127,7 +127,7 @@
                 <img class="icon main_label_icon" src="media/icons/forum.svg" alt="image">
                 <h1 class="main_label_header TL">Icebreakers</h1>
             </div>
-            <p class="BSH main_label_caption bookmark">
+            <p class="BSH main_label_caption cscap">
                 Here are some ideas for ways to start a conversation with someone.
             </p>
         </div>
@@ -138,9 +138,9 @@
             <div class="affirmations_main_content_buttons flex">
 
             <a class="flex aicenter" href="">
-                    <button class="affirmations_main_content_button regenerate flex aicenter round">
+                    <div class="affirmations_main_content_button regenerate flex aicenter round">
                         <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg" alt="image">
-                        </button>
+            </div>
                 </a>
 
             <form id="saveButton" method="post" action="">

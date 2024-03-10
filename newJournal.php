@@ -31,7 +31,7 @@ $result = mysqli_query($db_connection, $query);
     <label for="title">Title</label>
     <input class="journal_title" type="text" id="title" name="title"> 
     <label for="title">Text</label> 
-    <textarea class="journal_text" type="text" id="entryText" name="entryText"></textarea>
+    <textarea class="journal_text" id="entryText" name="entryText"></textarea>
     <input type="submit" value="Submit" class="LL editSubmit">
     </form>
 </main>

@@ -35,7 +35,7 @@
 <main>
 <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/newsmode.svg"/>
+                <img class="icon main_label_icon" src="media/icons/newsmode.svg" alt="image">
                 <h1 class="main_label_header TL">Articles</h1>
             </div>
             <p class="BSH main_label_caption">
@@ -80,18 +80,18 @@
                       </div>
                       <div class='leaf_card_text_non_index'>
                         <div class='leaf_card_title'>
-                          <h3 class='TS articleTitle'>{$article['Title']}</h1>
+                          <h3 class='TS articleTitle'>{$article['Title']}</h3>
                           </div>
                             <div class='leaf_card_caption'>
                             <p class='LM'>- {$article['Source']}</p>
                           </div>
                         </div>
-                        <form class ='save_button_container' id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                        <form class ='save_button_container' method='post' action='{$site_url}/includes/saveFunction.php'>
                             <input type='hidden' name='id' value='{$article['id']}'>
 
                             <input type='hidden' name='dbName' value='Articles'>
                             <input type='hidden' name='redirect' value='/articles.php'>
-                                <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                                <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                         <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
                                         <img style='opacity:{$lit};' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                                 </button>

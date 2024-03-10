@@ -84,24 +84,23 @@ echo
                             <p class='BS'>Sounds</p>
                         </div>
                     </div>
-                    <form class='save_button_container'  id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                    <form class='save_button_container' method='post' action='{$site_url}/includes/saveFunction.php'>
                       <input type='hidden' name='id' value='{$soundList['id']}'>
 
                       <input type='hidden' name='dbName' value='Audio'>
                       <input type='hidden' name='redirect' value='/favorites.php'>
-                          <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                          <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                   <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
                                   <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                           </button>
                       </form>
 
                 </div>
-            </div>
         </a>
+        </div>
         ";
  };
  ?>
- </div>
 
  <?php if (mysqli_num_rows($medPull) > 0){
     echo"
@@ -127,24 +126,22 @@ echo
                             <p class='BS'>{$medList['type']}</p>
                         </div>
                     </div>
-                    <form class='save_button_container'  id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                    <form class='save_button_container' method='post' action='{$site_url}/includes/saveFunction.php'>
                     <input type='hidden' name='id' value='{$medList['id']}'>
     
                     <input type='hidden' name='dbName' value='Meditations'>
                     <input type='hidden' name='redirect' value='/favorites.php'>
-                        <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                        <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                 <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
                                 <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                         </button>
                     </form>
                 </div>
-
-            </div>
         </a>
+        </div>
         ";
  };
  ?>
-  </div>
  <?php if (mysqli_num_rows($articlePull) > 0){
     echo"
  <div class='All Articles js-dbResult'>
@@ -169,22 +166,22 @@ echo
                             <p class='LM'>- {$artList['Source']}</p>
                           </div>
                         </div>
-                        <form class='save_button_container'  id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                        <form class='save_button_container'   method='post' action='{$site_url}/includes/saveFunction.php'>
                     <input type='hidden' name='id' value='{$artList['id']}'>
     
                     <input type='hidden' name='dbName' value='Articles'>
                     <input type='hidden' name='redirect' value='/favorites.php'>
-                        <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                        <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                 <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
                                 <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                         </button>
                     </form>
-            </div>
+    
             </a>
+            </div>
 ";
 };
 ?>
- </div>
 <?php if (mysqli_num_rows($puzzlePull) > 0){
     echo"
  <div class='All Puzzles js-dbResult'>
@@ -212,22 +209,21 @@ $category = str_replace('_', ' ', $pList['category']);
 
                             
                         </div>
-                        <form class='save_button_container'  id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                        <form class='save_button_container' method='post' action='{$site_url}/includes/saveFunction.php'>
                     <input type='hidden' name='id' value='{$pList['id']}'>
     
                     <input type='hidden' name='dbName' value='Puzzles'>
                     <input type='hidden' name='redirect' value='/favorites.php'>
-                        <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                        <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                 <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
                                 <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                         </button>
                     </form>
-                        </div>
                         </a>
+                        </div>
                         ";
 };
 ?>
-</div>
      <?php if (mysqli_num_rows($affirmationPull) > 0){
     echo"
  <div class='All Affirmations js-dbResult'>
@@ -244,13 +240,13 @@ echo
                     <div class='affirmationBox'>
                       <h3 class='BS affBoxText'>{$affList['affirmation']}</h3>
 
-                      <form class='save_button_container'  id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                      <form class='save_button_container' method='post' action='{$site_url}/includes/saveFunction.php'>
                       <input type='hidden' name='id' value='{$affList['id']}'>
 
                       <input type='hidden' name='dbName' value='Affirmations'>
                       <input type='hidden' name='colName' value='affirmationSaved'>
                       <input type='hidden' name='redirect' value='/favorites.php'>
-                          <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                          <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                   <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
                                   <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                           </button>
@@ -258,10 +254,10 @@ echo
 
 
                     </div>
+                    </div>
         ";
  };
  ?>
- </div>
  <?php if (mysqli_num_rows($convoPull) > 0){
     echo"
  <div class='All Icebreakers js-dbResult'>
@@ -279,13 +275,13 @@ echo
                     <div class='affirmationBox'>
                       <h3 class='BS affBoxText'>{$conList['conversationStarter']}</h3>
 
-                      <form class='save_button_container'  id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                      <form class='save_button_container' method='post' action='{$site_url}/includes/saveFunction.php'>
                       <input type='hidden' name='id' value='{$conList['id']}'>
 
                       <input type='hidden' name='dbName' value='ConversationStarters'>
                       <input type='hidden' name='colName' value='starterSaved'>
                       <input type='hidden' name='redirect' value='/favorites.php'>
-                          <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                          <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
                                   <img class='icon saveUnlit underMark' src='media/icons/affirmationsSave.svg' alt='image'>
                                   <img style='opacity:1;' class='icon saveLit fixedBookmark' src='media/icons/savedLit.svg' alt='image'>
                           </button>
@@ -296,8 +292,6 @@ echo
         ";
  };
  ?>
- </div>
-</div>
 <?php 
 if ((mysqli_num_rows($affirmationPull) == 0) && (mysqli_num_rows($convoPull) == 0) && (mysqli_num_rows($soundPull) == 0) && (mysqli_num_rows($medPull) == 0) && (mysqli_num_rows($articlePull) == 0) && (mysqli_num_rows($puzzlePull) == 0)){
     echo"<p class='LL'>Nothing saved yet!</p>";

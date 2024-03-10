@@ -37,7 +37,7 @@
 
 <?php
                   if (!$entries) {
-                    echo '<br></br><h3 class="BS">Nothing here yet!</h3>';
+                    echo '<br><h3 class="BS">Nothing here yet!</h3>';
                 }
 
         if ($entries){
@@ -76,6 +76,14 @@
                       }
                       
                       ;
+                      global $crypkey;
+                      $cipher = "AES-128-CTR";
+                      $iv = "1234567890123456";
+
+                      $titleValue = $entry['title'];
+                      $entryText_value = $entry['entryText'];
+                      $decryptedTitle =  openssl_decrypt($titleValue, $cipher, $crypkey,$options=0,$iv);
+                      $decryptedEntry =  openssl_decrypt($entryText_value, $cipher, $crypkey,$options=0,$iv);
 
                       echo
                       "
@@ -88,10 +96,10 @@
                       </div>
                       <div class='journal_card_text'>
                         <div class='leaf_card_title'>
-                          <h3 class='TS articleTitle'>{$entry['title']}</h1>
+                          <h3 class='TS articleTitle'>{$decryptedTitle}</h1>
                           </div>
                             <div class='leaf_card_caption'>
-                            <p class='LM long_caption'>{$entry['entryText']}</p>
+                            <p class='LM long_caption'>{$decryptedEntry}</p>
                           </div>
                         </div>
                     </div>
@@ -105,7 +113,7 @@
 ?>
 
 </main>
-<a class="journalED" href='<?php echo $site_url ?>/newJournal.php?id=<?php echo $_GET['id']?>'>
+<a class="journalED" href='<?php echo $site_url ?>/newJournal.php'>
   <img class="icon" src="media/icons/add.svg" alt='image'>
 </a>
 <?php 

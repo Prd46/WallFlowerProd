@@ -60,7 +60,6 @@ $site_url = site_url();
             </div>
 </div>
             <p class="BSH main_label_caption"><?php echo $article['Title']?></p>
-        </div>
 <!-- THIS IS THE ARTICLE TEXT PARAGRAPHS -->
 <a class="TS" href="<?php echo $article['Link']?>" target="_blank">
   <div class="source LM"><p class="TS"><?php echo $article['Source']?></p>
@@ -73,48 +72,7 @@ $site_url = site_url();
     </p>
   </div>
 
-<br></br>
+<br>
   </main>
 
 <?php include "components/footer.php" ?>
-
-
-<style>
-
-.source, .breakdown {
-  font-family: "DM Sans";
-  font-size: 16px; /* Example font size */
-  font-style: normal;
-  font-weight: 400; /* Example font weight */
-  line-height: 24px; /* Example line height */
-  letter-spacing: 0.5px; /* Example letter spacing */
-}
-.source{
-  color: var(--t40);
-  text-decoration: underline;
-}
-.breakdown {
-  background-color: var(--OffWhite);
-  border-radius: 16px;
-  padding: .5rem 1rem;
-}
-
-
-.con1 {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Align items vertically */
-  margin-bottom: 13px;
-}
-
-
-.con {
-  display: inline-block; /* Ensures container size fits its content */
-}
-
-.link {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Vertically center content */
-  text-decoration: none; /* Remove default link underline */
-}
-
-</style>

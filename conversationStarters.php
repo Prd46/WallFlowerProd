@@ -136,9 +136,9 @@
             <div class="affirmations_main_content_buttons flex">
 
             <a class="flex aicenter" href="">
-                    <button class="affirmations_main_content_button regenerate flex aicenter round">
+                    <div class="affirmations_main_content_button regenerate flex aicenter round">
                         <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg" alt="image">
-                        </button>
+            </div>
                 </a>
 
             <form id="saveButton" method="post" action="">

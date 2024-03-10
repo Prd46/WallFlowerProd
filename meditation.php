@@ -65,10 +65,9 @@ $site_url = site_url();
 $url = $article['link'];
 echo"
 <iframe width='100%' 
-height='300px' 
+height='300' 
 src='$url' 
 title='YouTube video player' 
-frameborder='0' 
 allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' 
 allowfullscreen></iframe>"
 ?>
@@ -86,13 +85,3 @@ allowfullscreen></iframe>"
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>
-
-<style>
-  .iframe_div{
-    border-radius: 16px;
-    width: 100%;
-    height: 300px;
-    padding: 0;
-    overflow: hidden;
-  }
-  </style>
