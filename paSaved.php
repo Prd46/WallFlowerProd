@@ -15,6 +15,7 @@
                     $query .= ' FROM Affirmations';
                     $query .= " WHERE affirmationRead = FALSE";
                     $query .= " AND affirmationSaved = TRUE";
+                    $query .= " ORDER BY id";
                     // $query .= " ORDER BY RAND()";
                     $query .= " LIMIT 1;";
                     $site_url = site_url();
@@ -138,7 +139,7 @@
             </h2>
             <div class="affirmations_main_content_buttons flex">
 
-            <a class="flex aicenter" href="<?php echo $site_url?>/affirmations.php">
+            <a class="flex aicenter" href="<?php echo $site_url?>/paSaved.php">
                     <div class="affirmations_main_content_button regenerate flex aicenter round">
                         <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg" alt='image'>
             </div>

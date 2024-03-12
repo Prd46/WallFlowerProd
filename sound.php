@@ -44,7 +44,7 @@ $category = str_replace('_', ' ', $article['category']);
 
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/headphones.svg" alt="image">
-                <h1 class="main_label_header TL">Sounds</h1>
+                <h1 class="main_label_header TL"><?php echo $article['title'];?></h1>
 
 
                 <form class='save_button_container'  id='saveButton' method='post' action='<?php echo $site_url?>/includes/saveFunction.php'>

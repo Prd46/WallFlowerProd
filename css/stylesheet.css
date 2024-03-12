@@ -606,10 +606,11 @@ main {
   padding: 0 var(--gutter) var(--gutter) var(--gutter);
   overflow-y: scroll;
   position: relative;
-  top: 1rem;
+  top: 0rem;
 }
 .main_label_header {
   display: flex;
+  width: 90%;
   align-items: center;
   -ms-word-break: break-all;
   word-break: break-all;
@@ -625,6 +626,7 @@ main {
   padding: 0;
   margin: 0;
 }
+
 .cscap {
   position: absolute;
   width: 80%;
@@ -668,6 +670,8 @@ footer {
   justify-content: space-around;
   align-items: center;
   height: 80px;
+  position: relative;
+  top: -1rem;
   padding: 0;
   background-color: var(--dark);
 }
@@ -1039,7 +1043,7 @@ textarea {
   justify-content: center;
   position: absolute;
   width: 100.4%;
-  bottom: 60px;
+  bottom: 76px;
   height: 50px;
   margin: 0 auto;
   background-image: url("../media/grassy_border.svg");
@@ -1195,19 +1199,16 @@ input[type="range"] {
 }
 
 #board {
-  width: 310px;
-  height: 290px;
   padding-bottom: 1rem;
+
   /* background: url('media/puzzle_thumbnails/<?php echo $article['link']?>.jpg'); */
 }
 #pieces {
-  width: 310px;
-  height: 290px;
   margin: 0 auto 2rem auto;
 }
 .template_image_box {
   width: 100%;
-  height: 290px;
+  height: 100%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -1218,14 +1219,19 @@ input[type="range"] {
   opacity: 20%;
   margin: 0 auto;
   left: 20%;
-  width: 285px;
-  height: 298px;
+  width: 255px;
+  height: 255px;
   pointer-events: none;
 }
 .guideButton {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.gameContainer {
+  margin: 0 auto;
+  height: 620px;
+  width: 330px;
 }
 .regen_icon {
   padding: 0 1rem;

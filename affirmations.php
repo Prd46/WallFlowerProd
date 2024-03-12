@@ -26,6 +26,7 @@
                     $query = 'SELECT *';
                     $query .= ' FROM Affirmations';
                     $query .= " WHERE affirmationRead = FALSE";
+                    $query .= " ORDER BY id";
                     $query .= " LIMIT 1;";
                     $site_url = site_url();
                     // echo $db_connection;

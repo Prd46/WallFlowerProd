@@ -38,7 +38,7 @@ $site_url = site_url();
 
             <div class="main_label_header">
                 <img class="icon main_label_icon" src="media/icons/meditation.svg" alt='image'>
-                <h1 class="main_label_header TL">Meditations</h1>
+                <h1 class="main_label_header TL"><?php echo $article['meditationName']?></h1>
 
 
                 <form class='save_button_container'  id='saveButton' method='post' action='<?php echo $site_url?>/includes/saveFunction.php'>
@@ -54,10 +54,10 @@ $site_url = site_url();
 
 
             </div>
-            <p class="BM main_label_caption"><?php echo $article['meditationName']?></p>
+            <!-- <p class="BM main_label_caption"></p> -->
         </div>
 
-<br><br>
+<br>
 
 <?php $firstCycle = 1?>
 <div class="iframe_div">
@@ -72,6 +72,7 @@ allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-pi
 allowfullscreen></iframe>"
 ?>
 </div>
+<br>
 
 <div class="breakdown">
     <p class="BS" style="line-height:1.75rem;">

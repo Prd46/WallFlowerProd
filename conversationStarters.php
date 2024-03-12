@@ -14,6 +14,7 @@
                     $query = 'SELECT *';
                     $query .= ' FROM ConversationStarters';
                     $query .= " WHERE starterRead = FALSE";
+                    $query .= " ORDER BY id";
                     // $query .= " ORDER BY RAND()";
                     $query .= " LIMIT 1;";
                     $site_url = site_url();

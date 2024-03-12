@@ -59,9 +59,10 @@ $site_url = site_url();
         </div>
 
 <br>
-    <div class="template_image_box">
-        <img class="hidden template_image" src="media/puzzle_thumbnails/<?php echo $article['link']?>.jpg" alt='image'>
-        </div>
+<div class="gameContainer">
+            <div class="template_image_box">
+                <img class="hidden template_image" src="media/puzzle_thumbnails/<?php echo $article['link']?>.jpg" alt='image'>
+            </div>
         <div id="board"></div>
         <div class="guideButton">
             <img class="regen_icon invis" src="media/icons/sun.svg" alt='image'>
@@ -77,6 +78,7 @@ $site_url = site_url();
             </a>
     </div>
         <div id="pieces"></div>
+</div>
     </main>
 
     <script>
@@ -110,6 +112,7 @@ var turns = 0;
 let n = 1;
 let boardPieces = [];
 const winMessage = document.querySelector('.winMessage');
+let toggle = 0;
 window.onload = function() {
     //initialize the 5x5 board
     for (let r = 0; r < rows; r++) {
@@ -119,6 +122,9 @@ window.onload = function() {
 
             let tile = document.createElement("img");
             tile.src = "./media/puzzleImages/blank.jpg";
+            tile.alt ="puzzlePiece";
+            tile.style = "cursor:pointer; height:50px; width:50px;";
+
 
             //DRAG FUNCTIONALITY
             tile.addEventListener("dragstart", dragStart); //click on image to drag
@@ -158,7 +164,7 @@ window.onload = function() {
         let tile = document.createElement("img");
         tile.src = "./media/puzzle_pieces/<?php echo $article['link']?>/" + pieces[i] + ".png";
         tile.alt ="puzzlePiece";
-        tile.style = "cursor:pointer;"
+        tile.style = "cursor:pointer; height:50px; width:50px;";
         // console.log(i)
        
 
@@ -174,10 +180,10 @@ window.onload = function() {
     }
 }
 
-
 //DRAG TILES
 function dragStart() {
     currTile = this; //this refers to image that was clicked on for dragging
+    currTile.style = "height:50px; width:50px; filter:sepia(100%); border:solid 1px yellow;"
 }
 
 function dragOver(e) {
@@ -204,6 +210,7 @@ function dragEnd() {
     let otherImg = otherTile.src;
     currTile.src = otherImg;
     otherTile.src = currImg;
+    currTile.style = "height:50px; width:50px; filter:sepia(0%); border:none;"
 
     turns += 1;
     document.getElementById("turns").innerText = turns;
