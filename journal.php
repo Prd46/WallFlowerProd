@@ -4,35 +4,19 @@
   include_once __DIR__ . '/components/header.php'
 ?>
 <a href="index.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt='image'>
         <p class=" BS label_back_text">Explore</p>
         </a>
 <main>
 
 <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/edit.svg"/>
+                <img class="icon main_label_icon" src="media/icons/edit.svg" alt='image'>
                 <h1 class="main_label_header TL">Journal</h1>
             </div>
-            <p class="BM main_label_caption">
+            <p class="BSH main_label_caption">
             Here you can write your thoughts about your day.
             </p>
-            <a href="newJournal.php">
-          
-                    <div class='leaf_card new_journal flex aicenter'>
-                      <div class='journal_card_date'>
-                      <img class="icon main_label_icon" src="media/icons/edit.svg"/>
-                      </div>
-                      <div class='journal_card_text'>
-                        <div class='leaf_card_title'>
-                          <h3 class='TS articleTitle'>New Journal</h1>
-                          </div>
-                            <div class='leaf_card_caption'>
-                            <p class='LM long_caption'>Write how you feel today.</p>
-                          </div>
-                        </div>
-                    </div>
-            </a>
         </div>
 <?php
                 /*SELECT QUESTION
@@ -53,7 +37,7 @@
 
 <?php
                   if (!$entries) {
-                    echo '<h3 class="BS">Nothing here yet!</h3>';
+                    echo '<br><h3 class="BS">Nothing here yet!</h3>';
                 }
 
         if ($entries){
@@ -92,6 +76,14 @@
                       }
                       
                       ;
+                      global $crypkey;
+                      $cipher = "AES-128-CTR";
+                      $iv = "1234567890123456";
+
+                      $titleValue = $entry['title'];
+                      $entryText_value = $entry['entryText'];
+                      $decryptedTitle =  openssl_decrypt($titleValue, $cipher, $crypkey,$options=0,$iv);
+                      $decryptedEntry =  openssl_decrypt($entryText_value, $cipher, $crypkey,$options=0,$iv);
 
                       echo
                       "
@@ -104,10 +96,10 @@
                       </div>
                       <div class='journal_card_text'>
                         <div class='leaf_card_title'>
-                          <h3 class='TS articleTitle'>{$entry['title']}</h1>
+                          <h3 class='TS articleTitle'>{$decryptedTitle}</h1>
                           </div>
                             <div class='leaf_card_caption'>
-                            <p class='LM long_caption'>{$entry['entryText']}</p>
+                            <p class='LM long_caption'>{$decryptedEntry}</p>
                           </div>
                         </div>
                     </div>
@@ -121,6 +113,9 @@
 ?>
 
 </main>
+<a class="journalED" href='<?php echo $site_url ?>/newJournal.php'>
+  <img class="icon" src="media/icons/add.svg" alt='image'>
+</a>
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>

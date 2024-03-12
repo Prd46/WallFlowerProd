@@ -10,7 +10,15 @@ if (!$_POST) {
 $title = sanitize_value($_POST['title']);
 $entryText = sanitize_value($_POST['entryText']);
 
-$result = add_journal($user_data['user_id'], $title, $entryText);
+global $crypkey;
+$cipher = "AES-128-CTR";
+$iv = "1234567890123456";
+$titleEncryption =  openssl_encrypt($title, $cipher, $crypkey,$options=0,$iv);
+$entryEncryption =  openssl_encrypt($entryText, $cipher, $crypkey,$options=0,$iv);
+// $encryptedTitle = password_hash("$title", PASSWORD_DEFAULT);
+// $encryptedTitle = password_hash("$title", PASSWORD_DEFAULT);
+
+$result = add_journal($user['user_id'], $titleEncryption, $entryEncryption);
 
 // Check there are no errors with our SQL statement
 if ($result) {

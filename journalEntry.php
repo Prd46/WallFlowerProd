@@ -7,10 +7,8 @@
 // get users data from database
 $query = "SELECT * FROM JournalEntries WHERE id = {$_GET['id']}";
 $result = mysqli_query($db_connection, $query);
+
 $site_url = site_url();
-
-
-
 if ($result->num_rows > 0) {
     // Get row from results and assign to $user variable;
     $article = mysqli_fetch_assoc($result);
@@ -18,10 +16,27 @@ if ($result->num_rows > 0) {
     $error_message = 'User does not exist';
     // redirect_to('/admin/users?error=' . $error_message);
 }
+
+global $user;
+if($article['user_id'] != $user['user_id']){
+  redirect_to('/404.php');
+};
 $site_url = site_url();
+
+global $crypkey;
+$cipher = "AES-128-CTR";
+$iv = "1234567890123456";
+
+$titleValue = $article['title'];
+$entryText_value = $article['entryText'];
+$decryptedTitle =  openssl_decrypt($titleValue, $cipher, $crypkey,$options=0,$iv);
+$decryptedEntry =  openssl_decrypt($entryText_value, $cipher, $crypkey,$options=0,$iv);
+
+
+
 ?>
 <a href="journal.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt='image'>
         <p class=" BS label_back_text">Journal</p>
         </a>
 <main>
@@ -29,7 +44,7 @@ $site_url = site_url();
 <div class="main_label">
 
             <div class="main_label_header">
-                <h1 class="main_label_header TL"><?php echo $article['title']?></h1>
+                <h1 class="main_label_header TL"><?php echo $decryptedTitle?></h1>
 
             </div>
 </div>
@@ -37,14 +52,14 @@ $site_url = site_url();
         </div>
   <div class="breakdown">
     <p class="BS" style="line-height:1.75rem;">
-    <?php echo $article['entryText']?>
+    <?php echo $decryptedEntry?>
     </p>
   </div>
 
 <br></br>
 </main>
 <a class="journalED" href='<?php echo $site_url ?>/editJournal.php?id=<?php echo $_GET['id']?>'>
-  <img class="icon" src="media/icons/edit.svg">
+  <img class="icon" src="media/icons/edit.svg" alt='image'>
 </a>
 <?php include "components/footer.php" ?>
 

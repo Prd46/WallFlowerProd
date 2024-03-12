@@ -32,15 +32,15 @@ $site_url = site_url();
 
 ?>
     <a href="puzzlelist.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt='image'>
         <p class=" BS label_back_text">Puzzles</p>
         </a>
 <main>
 <div class="main_label">
 
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/extension.svg"/>
-                <h1 class="main_label_header TL">Puzzles</h1>
+                <img class="icon main_label_icon" src="media/icons/extension.svg" alt='image'>
+                <h1 class="main_label_header TL"><?php echo $article['title']?></h1>
 
 
                 <form class='save_button_container'  id='saveButton' method='post' action='<?php echo $site_url?>/includes/saveFunction.php'>
@@ -49,33 +49,59 @@ $site_url = site_url();
                             <input type='hidden' name='dbName' value='Puzzles'>
                             <input type='hidden' name='redirect' value='/play.php?id=<?php echo $article['id'];?>'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                                 </button>
                             </form>
 
 
             </div>
-            <p class="BM main_label_caption"><?php echo $article['title']?></p>
         </div>
 
 <br>
-    <div class="template_image_box">
-        <img class="template_image" src="media/puzzle_thumbnails/<?php echo $article['link']?>.jpg">
-        </div>
+<div class="gameContainer">
+            <div class="template_image_box">
+                <img class="hidden template_image" src="media/puzzle_thumbnails/<?php echo $article['link']?>.jpg" alt='image'>
+            </div>
         <div id="board"></div>
-        <h2 class="BS flex jccenter">Turns: <span id="turns">0</span></h2>
+        <div class="guideButton">
+            <img class="regen_icon invis" src="media/icons/sun.svg" alt='image'>
+            <h2 class="BS flex jccenter">Turns: <span id="turns">0</span></h2>
+            <img class="pts js-pts-lit regen_icon" src="media/icons/sun.svg" alt='image'>
+            <img class="pts js-pts-unlit hidden regen_icon" src="media/icons/moon.svg" alt='image'>
+        </div>
         <div class="hidden winMessage">
-            <img class="regen_icon invis" src="media/icons/regen.svg"/>
+            <img class="regen_icon invis" src="media/icons/regen.svg" alt='image'>
             <h3 class="LL">You did it! Great job!</h3>
             <a class="flex aicenter" href="">
-                <img class="regen_icon" src="media/icons/regen.svg"/>
+                <img class="regen_icon" src="media/icons/regen.svg" alt='image'>
             </a>
     </div>
         <div id="pieces"></div>
+</div>
     </main>
 
     <script>
+const timg = document.querySelector('.template_image');
+const togglebs = document.querySelectorAll('.pts');
+const visButton = document.querySelector('.js-pts-unlit');
+togglebs.forEach(button =>{
+    button.addEventListener('click', function(){
+        togglebs.forEach(button =>{
+            if (button.classList.contains('hidden')){
+                button.classList.remove('hidden');
+            }else{
+                button.classList.add('hidden');
+            };
+        });
+        if (!visButton.classList.contains('hidden')){
+            timg.classList.remove('hidden');
+        }else{
+            timg.classList.add('hidden');
+        };
+    });
+});
+
 var rows = 5;
 var columns = 5;
 
@@ -86,6 +112,7 @@ var turns = 0;
 let n = 1;
 let boardPieces = [];
 const winMessage = document.querySelector('.winMessage');
+let toggle = 0;
 window.onload = function() {
     //initialize the 5x5 board
     for (let r = 0; r < rows; r++) {
@@ -95,6 +122,9 @@ window.onload = function() {
 
             let tile = document.createElement("img");
             tile.src = "./media/puzzleImages/blank.jpg";
+            tile.alt ="puzzlePiece";
+            tile.style = "cursor:pointer; height:50px; width:50px;";
+
 
             //DRAG FUNCTIONALITY
             tile.addEventListener("dragstart", dragStart); //click on image to drag
@@ -133,6 +163,8 @@ window.onload = function() {
     for (let i = 0; i < pieces.length; i++) {
         let tile = document.createElement("img");
         tile.src = "./media/puzzle_pieces/<?php echo $article['link']?>/" + pieces[i] + ".png";
+        tile.alt ="puzzlePiece";
+        tile.style = "cursor:pointer; height:50px; width:50px;";
         // console.log(i)
        
 
@@ -148,10 +180,10 @@ window.onload = function() {
     }
 }
 
-
 //DRAG TILES
 function dragStart() {
     currTile = this; //this refers to image that was clicked on for dragging
+    currTile.style = "height:50px; width:50px; filter:sepia(100%); border:solid 1px yellow;"
 }
 
 function dragOver(e) {
@@ -178,6 +210,7 @@ function dragEnd() {
     let otherImg = otherTile.src;
     currTile.src = otherImg;
     otherTile.src = currImg;
+    currTile.style = "height:50px; width:50px; filter:sepia(0%); border:none;"
 
     turns += 1;
     document.getElementById("turns").innerText = turns;
@@ -205,42 +238,6 @@ function dragEnd() {
 
 
     </script>
-<style>
-#board{
-    width: 310px;
-    height: 290px;
-    padding-bottom: 1rem;
-    /* background: url('media/puzzle_thumbnails/<?php echo $article['link']?>.jpg'); */
-}
-#pieces{
-    width: 310px;
-    height: 290px;
-   margin: 0 auto 2rem auto;
-}
-img{
-    cursor: pointer;
-}
-.template_image_box{
-    width: 100%;
-    height: 290px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    left: 0;
-    pointer-events: none;
-}
-.template_image{
-    opacity: 20%;
-    margin: 0 auto;
-    left: 20%;
-    width: 285px;
-    height: 298px;
-    pointer-events: none;
-}
-.regen_icon{
-    padding: 0 1rem;
-}
-</style>
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>

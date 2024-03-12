@@ -29,23 +29,23 @@
   include_once __DIR__ . '/components/header.php'
 ?>
 <a href="index.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt="image">
         <p class=" BS label_back_text">Explore</p>
         </a>
 <main>
 <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/newsmode.svg"/>
+                <img class="icon main_label_icon" src="media/icons/newsmode.svg" alt="image">
                 <h1 class="main_label_header TL">Articles</h1>
             </div>
-            <p class="BM main_label_caption">
+            <p class="BSH main_label_caption">
             Here are some advice articles to help better understand and manage feelings of social anxiety.
             </p>
             <div class="filterButtons">
-            <div class="filterButton js-all LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">All</div></div>
-            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Meditation</div></div>
-            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Causes of Social Anxiety</div></div>
-            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg"><img class="uncheck" src="media/icons/unchecked.svg"><div class="js-filter">Social Improvement</div></div>
+            <div class="filterButton js-all LM"><img class="check hidden" src="media/icons/check.svg" alt="image"><img class="uncheck" src="media/icons/unchecked.svg" alt="image"><div class="js-filter">All</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg" alt="image"><img class="uncheck" src="media/icons/unchecked.svg" alt="image"><div class="js-filter">Meditation</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg" alt="image"><img class="uncheck" src="media/icons/unchecked.svg" alt="image"><div class="js-filter">Causes of Social Anxiety</div></div>
+            <div class="filterButton LM"><img class="check hidden" src="media/icons/check.svg" alt="image"><img class="uncheck" src="media/icons/unchecked.svg" alt="image"><div class="js-filter">Social Improvement</div></div>
             </div>
             <!-- <div class="categoryDropdown js-dropdown .js-dropdown_closed">
               <div class="LM dropdownButton js-categoryButton">Category</div>
@@ -76,24 +76,24 @@
                   <a href='{$site_url}/article.php?id={$article['id']}' class='{$article['Category']} js-dbResult'>
                     <div class='large_leaf_card flex aicenter'>
                       <div class='leaf_card_image'>
-                        <img class='icon leaf_icon' src='media/icons/newsmode.svg'/>
+                        <img class='icon leaf_icon' src='media/icons/newsmode.svg' alt='image'>
                       </div>
                       <div class='leaf_card_text_non_index'>
                         <div class='leaf_card_title'>
-                          <h3 class='TS articleTitle'>{$article['Title']}</h1>
+                          <h3 class='TS articleTitle'>{$article['Title']}</h3>
                           </div>
                             <div class='leaf_card_caption'>
                             <p class='LM'>- {$article['Source']}</p>
                           </div>
                         </div>
-                        <form class ='save_button_container' id='saveButton' method='post' action='{$site_url}/includes/saveFunction.php'>
+                        <form class ='save_button_container' method='post' action='{$site_url}/includes/saveFunction.php'>
                             <input type='hidden' name='id' value='{$article['id']}'>
 
                             <input type='hidden' name='dbName' value='Articles'>
                             <input type='hidden' name='redirect' value='/articles.php'>
-                                <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:{$lit};' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                <button name='toggle' class='affirmations_main_content_button save flex aicenter round'>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                        <img style='opacity:{$lit};' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                                 </button>
                             </form>
                     </div>

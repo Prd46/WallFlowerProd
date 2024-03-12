@@ -29,18 +29,16 @@ if ($result->num_rows > 0) {
 }
 $site_url = site_url();
 ?>
-
-<main>
-
 <a href="meditations.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt='image'>
         <p class=" BS label_back_text">Meditations</p>
         </a>
+<main>
 <div class="main_label">
 
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/meditation.svg"/>
-                <h1 class="main_label_header TL">Meditations</h1>
+                <img class="icon main_label_icon" src="media/icons/meditation.svg" alt='image'>
+                <h1 class="main_label_header TL"><?php echo $article['meditationName']?></h1>
 
 
                 <form class='save_button_container'  id='saveButton' method='post' action='<?php echo $site_url?>/includes/saveFunction.php'>
@@ -49,17 +47,17 @@ $site_url = site_url();
                             <input type='hidden' name='dbName' value='Meditations'>
                             <input type='hidden' name='redirect' value='/meditation.php?id=<?php echo $article['id'];?>'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt='image'>
+                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg' alt='image'>
                                 </button>
                             </form>
 
 
             </div>
-            <p class="BM main_label_caption"><?php echo $article['meditationName']?></p>
+            <!-- <p class="BM main_label_caption"></p> -->
         </div>
 
-<br><br>
+<br>
 
 <?php $firstCycle = 1?>
 <div class="iframe_div">
@@ -67,14 +65,14 @@ $site_url = site_url();
 $url = $article['link'];
 echo"
 <iframe width='100%' 
-height='300px' 
+height='300' 
 src='$url' 
 title='YouTube video player' 
-frameborder='0' 
 allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' 
 allowfullscreen></iframe>"
 ?>
 </div>
+<br>
 
 <div class="breakdown">
     <p class="BS" style="line-height:1.75rem;">
@@ -88,13 +86,3 @@ allowfullscreen></iframe>"
 <?php 
   include_once __DIR__ . '/components/footer.php'
 ?>
-
-<style>
-  .iframe_div{
-    border-radius: 16px;
-    width: 100%;
-    height: 300px;
-    padding: 0;
-    overflow: hidden;
-  }
-  </style>

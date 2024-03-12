@@ -13,9 +13,9 @@
                 if (!$_POST) {
                     $query = 'SELECT *';
                     $query .= ' FROM Affirmations';
-                    $query .= " WHERE affirmationRead = FALSE";
+                    $query .= " WHERE ASR = FALSE";
                     $query .= " AND affirmationSaved = TRUE";
-                    // $query .= " ORDER BY RAND()";
+                    $query .= " ORDER BY id";
                     $query .= " LIMIT 1;";
                     $site_url = site_url();
                     // echo $db_connection;
@@ -40,11 +40,11 @@
                             $litClassToggle2 = "1";
                         }
 
-                        $updateSql = "UPDATE Affirmations SET affirmationRead = TRUE WHERE id = " . $row["id"];
+                        $updateSql = "UPDATE Affirmations SET ASR = TRUE WHERE id = " . $row["id"];
                         mysqli_query($db_connection, $updateSql);
                         $affirmationText = $row["affirmation"];
                     } else {
-                        $resetReadStatusSql = "UPDATE Affirmations SET affirmationRead = FALSE";
+                        $resetReadStatusSql = "UPDATE Affirmations SET ASR = FALSE";
                         mysqli_query($db_connection, $resetReadStatusSql);
 
                         
@@ -58,7 +58,7 @@
                 if (isset($_POST['toggle'])) {
                     $query = 'SELECT *';
                     $query .= ' FROM Affirmations';
-                    $query .= " WHERE affirmationRead = TRUE";
+                    $query .= " WHERE ASR = TRUE";
                     $query .= " ORDER BY id DESC";
                     $query .= " LIMIT 1;";
                     $site_url = site_url();
@@ -118,17 +118,17 @@
   include_once __DIR__ . '/components/header.php'
 ?>
     <a href="index.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt='image'>
         <p class=" BS label_back_text">Explore</p>
         </a>
     <main class="affirmations_main">
 
         <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/affirmationNew.svg"/>
+                <img class="icon main_label_icon" src="media/icons/affirmationNew.svg" alt='image'>
                 <h1 class="main_label_header TL">Affirmations</h1>
             </div>
-            <p class="BM main_label_caption bookmark">
+            <p class="BSH main_label_caption bookmark">
                 Here are phrases to inspire and uplift.
             </p>
         </div>
@@ -138,16 +138,16 @@
             </h2>
             <div class="affirmations_main_content_buttons flex">
 
-            <a class="flex aicenter" href="">
-                    <button class="affirmations_main_content_button regenerate flex aicenter round">
-                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg"/>
-                        </button>
+            <a class="flex aicenter" href="<?php echo $site_url?>/paSaved.php">
+                    <div class="affirmations_main_content_button regenerate flex aicenter round">
+                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg" alt='image'>
+            </div>
                 </a>
 
             <form id="saveButton" method="post" action="">
                 <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round <?php echo $litClassToggle; ?>">
-                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon saveUnlit bookmark" src="media/icons/affirmationsSave.svg"/>
-                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon saveLit" src="media/icons/savedLit.svg"/>
+                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon AffSaveUnlit bookmark" src="media/icons/affirmationsSave.svg" alt='image'>
+                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon AffSaveLit" src="media/icons/savedLit.svg" alt='image'>
                 </button>
             </form>
  

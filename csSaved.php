@@ -13,8 +13,9 @@
                 if (!$_POST) {
                     $query = 'SELECT *';
                     $query .= ' FROM ConversationStarters';
-                    $query .= " WHERE starterRead = FALSE";
+                    $query .= " WHERE CSR = FALSE";
                     $query .= " AND starterSaved = TRUE";
+                    $query .= " ORDER BY id";
                     // $query .= " ORDER BY RAND()";
                     $query .= " LIMIT 1;";
                     $site_url = site_url();
@@ -40,11 +41,11 @@
                             $litClassToggle2 = "1";
                         }
 
-                        $updateSql = "UPDATE ConversationStarters SET starterRead = TRUE WHERE id = " . $row["id"];
+                        $updateSql = "UPDATE ConversationStarters SET CSR = TRUE WHERE id = " . $row["id"];
                         mysqli_query($db_connection, $updateSql);
                         $affirmationText = $row["conversationStarter"];
                     } else {
-                        $resetReadStatusSql = "UPDATE ConversationStarters SET starterRead = FALSE";
+                        $resetReadStatusSql = "UPDATE ConversationStarters SET CSR = FALSE";
                         mysqli_query($db_connection, $resetReadStatusSql);
 
                         
@@ -117,17 +118,17 @@
   include_once __DIR__ . '/components/header.php'
 ?>
     <a href="index.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt="image">
         <p class=" BS label_back_text">Explore</p>
         </a>
     <main class="affirmations_main">
 
         <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/forum.svg"/>
+                <img class="icon main_label_icon" src="media/icons/forum.svg" alt="image">
                 <h1 class="main_label_header TL">Icebreakers</h1>
             </div>
-            <p class="BM main_label_caption bookmark">
+            <p class="BSH main_label_caption cscap">
                 Here are some ideas for ways to start a conversation with someone.
             </p>
         </div>
@@ -138,15 +139,15 @@
             <div class="affirmations_main_content_buttons flex">
 
             <a class="flex aicenter" href="">
-                    <button class="affirmations_main_content_button regenerate flex aicenter round">
-                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg"/>
-                        </button>
+                    <div class="affirmations_main_content_button regenerate flex aicenter round">
+                        <img class="icon <?php echo $spinToggle?>" src="media/icons/regen.svg" alt="image">
+            </div>
                 </a>
 
             <form id="saveButton" method="post" action="">
                 <button name="toggle" id="toggle" class="affirmations_main_content_button save flex aicenter round <?php echo $litClassToggle; ?>">
-                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon AffSaveUnlit bookmark" src="media/icons/affirmationsSave.svg"/>
-                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon AffSaveLit" src="media/icons/savedLit.svg"/>
+                        <img style="opacity:<?php echo $litClassToggle?>;" class="icon AffSaveUnlit bookmark" src="media/icons/affirmationsSave.svg" alt="image">
+                        <img style="opacity:<?php echo $litClassToggle2?>;" class="icon AffSaveLit" src="media/icons/savedLit.svg" alt="image">
                 </button>
             </form>
  
@@ -165,7 +166,7 @@
                 <h3 class="LM">All</h3>
             </a>
             <div class="saved_switch_right saved_switch_lit">
-                <img class="check" src="media/icons/oldCheck.svg">
+                <img class="check" src="media/icons/oldCheck.svg" alt="image">
                 <h3 class="LM">Saved</h3>
             </div>
         </div>

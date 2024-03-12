@@ -10,17 +10,17 @@ $result = mysqli_query($db_connection, $query);
 
 ?>
 <a href="journal.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt='image'>
         <p class=" BS label_back_text">Journal</p>
         </a>
 <main>
 
 <div class="main_label">
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/edit.svg"/>
+                <img class="icon main_label_icon" src="media/icons/edit.svg" alt='image'>
                 <h1 class="main_label_header TL">New Entry</h1>
             </div>
-            <p class="BM main_label_caption">
+            <p class="BSH main_label_caption">
             Write how you feel.
             </p>
         </div>
@@ -31,8 +31,8 @@ $result = mysqli_query($db_connection, $query);
     <label for="title">Title</label>
     <input class="journal_title" type="text" id="title" name="title"> 
     <label for="title">Text</label> 
-    <textarea class="journal_text" type="text" id="entryText" name="entryText"></textarea>
-    <input type="submit" value="Submit" class="TS editSubmit">
+    <textarea class="journal_text" id="entryText" name="entryText"></textarea>
+    <input type="submit" value="Submit" class="LL editSubmit">
     </form>
 </main>
 <script src="scripts/app.js"></script>

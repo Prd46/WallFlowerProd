@@ -12,7 +12,7 @@
         <a href="affirmations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/affirmationNew.svg"/>
+                    <img class="icon leaf_icon" src="media/icons/affirmationNew.svg" alt='image'>
                 </div>
 
                     <div class="leaf_card_text">
@@ -24,13 +24,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <!-- END OF LEAF CARD -->
         <a href="conversationStarters.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/forum.svg"/>
+                    <img class="icon leaf_icon" src="media/icons/forum.svg" alt='image'>
                 </div>
 
                     <div class="leaf_card_text">
@@ -42,12 +41,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <a href="listen.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/headphones.svg"/>
+                    <img class="icon leaf_icon" src="media/icons/headphones.svg" alt='image'>
                 </div>
 
                     <div class="leaf_card_text">
@@ -59,12 +57,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <a href="meditations.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/meditation.svg"/>
+                    <img class="icon leaf_icon" src="media/icons/meditation.svg" alt='image'>
                 </div>
 
                     <div class="leaf_card_text">
@@ -76,12 +73,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <a href="articles.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/newsmode.svg"/>
+                    <img class="icon leaf_icon" src="media/icons/newsmode.svg" alt='image'>
                 </div>
 
                     <div class="leaf_card_text">
@@ -93,12 +89,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <a href="puzzlelist.php">
             <div class="leaf_card flex aicenter">
                 <div class="leaf_card_image">
-                    <img class="icon leaf_icon" src="media/icons/extension.svg"/>
+                    <img class="icon leaf_icon" src="media/icons/extension.svg" alt='image'>
                 </div>
 
                     <div class="leaf_card_text">
@@ -110,12 +105,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
         <a href='journal.php'>
             <div class='leaf_card flex aicenter'>
                 <div class='leaf_card_image'>
-                    <img class='icon leaf_icon' src='media/icons/edit.svg'/>
+                    <img class='icon leaf_icon' src='media/icons/edit.svg' alt='image'>
                 </div>
 
                     <div class='leaf_card_text'>
@@ -127,8 +121,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </a>
+</div>
     </main>
 
 <?php 

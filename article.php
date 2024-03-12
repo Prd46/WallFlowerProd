@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
 $site_url = site_url();
 ?>
 <a href="articles.php" class="label_back">
-        <img class="label_back_arrow" src="media/icons/back.svg">
+        <img class="label_back_arrow" src="media/icons/back.svg" alt="image">
         <p class=" BS label_back_text">Articles</p>
         </a>
 <main>
@@ -41,7 +41,7 @@ $site_url = site_url();
 <div class="main_label">
 
             <div class="main_label_header">
-                <img class="icon main_label_icon" src="media/icons/newsmode.svg"/>
+                <img class="icon main_label_icon" src="media/icons/newsmode.svg" alt="image">
                 <h1 class="main_label_header TL">Articles</h1>
 
 
@@ -51,19 +51,18 @@ $site_url = site_url();
                             <input type='hidden' name='dbName' value='Articles'>
                             <input type='hidden' name='redirect' value='/article.php?id=<?php echo $article['id'];?>'>
                                 <button name='toggle' id='toggle' class='affirmations_main_content_button save flex aicenter round'>
-                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg'/>
-                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg'/>
+                                        <img class='icon saveUnlit bookmark' src='media/icons/affirmationsSave.svg' alt="image">
+                                        <img style='opacity:0;opacity:<?php if($seen){echo $row['saved_status'];}?>' class='icon saveLit' src='media/icons/savedLit.svg' alt="image">
                                 </button>
                             </form>
 
 
             </div>
 </div>
-            <p class="BM main_label_caption"><?php echo $article['Title']?></p>
-        </div>
+            <p class="BSH main_label_caption"><?php echo $article['Title']?></p>
 <!-- THIS IS THE ARTICLE TEXT PARAGRAPHS -->
 <a class="TS" href="<?php echo $article['Link']?>" target="_blank">
-  <div class="source LM"><p class="TS"><?php echo $article['Source']?></p>
+  <div class="source"><p class="LL"><?php echo $article['Source']?></p>
 </div>
 </a>
 
@@ -73,48 +72,7 @@ $site_url = site_url();
     </p>
   </div>
 
-<br></br>
+<br>
   </main>
 
 <?php include "components/footer.php" ?>
-
-
-<style>
-
-.source, .breakdown {
-  font-family: "DM Sans";
-  font-size: 16px; /* Example font size */
-  font-style: normal;
-  font-weight: 400; /* Example font weight */
-  line-height: 24px; /* Example line height */
-  letter-spacing: 0.5px; /* Example letter spacing */
-}
-.source{
-  color: var(--t40);
-  text-decoration: underline;
-}
-.breakdown {
-  background-color: var(--OffWhite);
-  border-radius: 16px;
-  padding: .5rem 1rem;
-}
-
-
-.con1 {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Align items vertically */
-  margin-bottom: 13px;
-}
-
-
-.con {
-  display: inline-block; /* Ensures container size fits its content */
-}
-
-.link {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Vertically center content */
-  text-decoration: none; /* Remove default link underline */
-}
-
-</style>
