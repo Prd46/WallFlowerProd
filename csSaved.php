@@ -13,7 +13,7 @@
                 if (!$_POST) {
                     $query = 'SELECT *';
                     $query .= ' FROM ConversationStarters';
-                    $query .= " WHERE starterRead = FALSE";
+                    $query .= " WHERE CSR = FALSE";
                     $query .= " AND starterSaved = TRUE";
                     $query .= " ORDER BY id";
                     // $query .= " ORDER BY RAND()";
@@ -41,11 +41,11 @@
                             $litClassToggle2 = "1";
                         }
 
-                        $updateSql = "UPDATE ConversationStarters SET starterRead = TRUE WHERE id = " . $row["id"];
+                        $updateSql = "UPDATE ConversationStarters SET CSR = TRUE WHERE id = " . $row["id"];
                         mysqli_query($db_connection, $updateSql);
                         $affirmationText = $row["conversationStarter"];
                     } else {
-                        $resetReadStatusSql = "UPDATE ConversationStarters SET starterRead = FALSE";
+                        $resetReadStatusSql = "UPDATE ConversationStarters SET CSR = FALSE";
                         mysqli_query($db_connection, $resetReadStatusSql);
 
                         

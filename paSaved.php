@@ -13,10 +13,9 @@
                 if (!$_POST) {
                     $query = 'SELECT *';
                     $query .= ' FROM Affirmations';
-                    $query .= " WHERE affirmationRead = FALSE";
+                    $query .= " WHERE ASR = FALSE";
                     $query .= " AND affirmationSaved = TRUE";
                     $query .= " ORDER BY id";
-                    // $query .= " ORDER BY RAND()";
                     $query .= " LIMIT 1;";
                     $site_url = site_url();
                     // echo $db_connection;
@@ -41,11 +40,11 @@
                             $litClassToggle2 = "1";
                         }
 
-                        $updateSql = "UPDATE Affirmations SET affirmationRead = TRUE WHERE id = " . $row["id"];
+                        $updateSql = "UPDATE Affirmations SET ASR = TRUE WHERE id = " . $row["id"];
                         mysqli_query($db_connection, $updateSql);
                         $affirmationText = $row["affirmation"];
                     } else {
-                        $resetReadStatusSql = "UPDATE Affirmations SET affirmationRead = FALSE";
+                        $resetReadStatusSql = "UPDATE Affirmations SET ASR = FALSE";
                         mysqli_query($db_connection, $resetReadStatusSql);
 
                         
@@ -59,7 +58,7 @@
                 if (isset($_POST['toggle'])) {
                     $query = 'SELECT *';
                     $query .= ' FROM Affirmations';
-                    $query .= " WHERE affirmationRead = TRUE";
+                    $query .= " WHERE ASR = TRUE";
                     $query .= " ORDER BY id DESC";
                     $query .= " LIMIT 1;";
                     $site_url = site_url();

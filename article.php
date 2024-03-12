@@ -62,7 +62,7 @@ $site_url = site_url();
             <p class="BSH main_label_caption"><?php echo $article['Title']?></p>
 <!-- THIS IS THE ARTICLE TEXT PARAGRAPHS -->
 <a class="TS" href="<?php echo $article['Link']?>" target="_blank">
-  <div class="source LM"><p class="TS"><?php echo $article['Source']?></p>
+  <div class="source"><p class="LL"><?php echo $article['Source']?></p>
 </div>
 </a>
 
