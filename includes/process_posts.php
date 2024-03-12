@@ -7,14 +7,19 @@ if (!$_POST) {
 }
 
 // Store $_POST data to variables for readability
-$title = sanitize_value($_POST['title']);
-$entryText = sanitize_value($_POST['entryText']);
+$t = sanitize_value($_POST['title']);
+$et = sanitize_value($_POST['entryText']);
+
+$title = stripslashes($t);
+$entryText = stripslashes($et);
 
 global $crypkey;
 $cipher = "AES-128-CTR";
 $iv = "1234567890123456";
 $titleEncryption =  openssl_encrypt($title, $cipher, $crypkey,$options=0,$iv);
 $entryEncryption =  openssl_encrypt($entryText, $cipher, $crypkey,$options=0,$iv);
+// echo openssl_decrypt($titleEncryption, $cipher, $crypkey,$options=0,$iv);
+// echo openssl_decrypt($entryEncryption, $cipher, $crypkey,$options=0,$iv);
 // $encryptedTitle = password_hash("$title", PASSWORD_DEFAULT);
 // $encryptedTitle = password_hash("$title", PASSWORD_DEFAULT);
 
