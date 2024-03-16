@@ -16,9 +16,8 @@ $now = sanitize_value(date('Y-m-d H:i:s'));
 
 
 global $crypkey;
-$cipher = "AES-128-CTR";
-$iv = "1234567890123456";
-$key = "$crypkey";
+global $cipher;
+global $iv;
 $titleEncryption =  openssl_encrypt($title_value, $cipher, $crypkey,$options=0,$iv);
 $entryEncryption =  openssl_encrypt($entryText_value, $cipher, $crypkey,$options=0,$iv);
 

@@ -77,8 +77,8 @@
                       
                       ;
                       global $crypkey;
-                      $cipher = "AES-128-CTR";
-                      $iv = "1234567890123456";
+                      global $cipher;
+                      global $iv;
 
                       $titleValue = $entry['title'];
                       $entryText_value = $entry['entryText'];

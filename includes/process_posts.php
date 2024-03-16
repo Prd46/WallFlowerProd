@@ -14,8 +14,8 @@ $title = stripslashes($t);
 $entryText = stripslashes($et);
 
 global $crypkey;
-$cipher = "AES-128-CTR";
-$iv = "1234567890123456";
+global $cipher;
+global $iv;
 $titleEncryption =  openssl_encrypt($title, $cipher, $crypkey,$options=0,$iv);
 $entryEncryption =  openssl_encrypt($entryText, $cipher, $crypkey,$options=0,$iv);
 // echo openssl_decrypt($titleEncryption, $cipher, $crypkey,$options=0,$iv);

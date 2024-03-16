@@ -6,6 +6,8 @@ $db_user = $APP_CONFIG['database_user'];
 $db_pass = $APP_CONFIG['database_pass'];
 $db_name = $APP_CONFIG['database_name'];
 $crypkey = $APP_CONFIG['crypkey'];
+$cipher = $APP_CONFIG['cipher'];
+$iv = $APP_CONFIG['iv'];
 
 // Create a database connection with correct credentials
 $db_connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
